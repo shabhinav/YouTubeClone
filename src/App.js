@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
+import YouTube from './youtube';
+import Sidedrawer from './Components/Sidedraw'
+import Home from './Components/Home'
 
 class App extends Component{
-  async componentDidMount(){
-    let data = await axios.get("https://api.spotify.com/v1/tracks/{6are001c9z5muhk60v1ch05jr}", {
-      headers: {
-        Accept: "application/json",
-        Authorization: "Bearer BQDx7tRKinbXc_dG330Ahh6O6dkGevbpjBFxo2pNypRJ93ZDGf-FZf7bKQ9MhyUo2UncafY06S2K-q-sRTL_cdZERdQsuUFH1ZoxWpN9GFkudfpv8buzE7qXvYoV1lUDsGzB5p-XTy25YNa_snrRnGLvpDXBeFWsILyRV7txtw",
-        "Content-Type": "application/json"
-      }
+
+    state={
+      sidedrawer:false
+    }
+
+  sidedrawerHandler=()=>{
+    this.setState({
+      sidedrawer:!this.state.sidedrawer
     })
-    console.log(data.data)
   }
 
 
+
   render() {
+    let sidedrawer
+    if(this.state.sidedrawer){
+      sidedrawer=<Sidedrawer show={this.state.sidedrawer}/>
+    }
     return (
       <div className='App'>
-        
+        <p onClick={this.sidedrawerHandler}>|||</p>
+        {sidedrawer}
+        <Home/>
+        <YouTube/>
       </div>
     )
   }
