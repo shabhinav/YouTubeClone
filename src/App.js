@@ -3,11 +3,13 @@ import './App.css';
 import YouTube from './youtube';
 import Sidedrawer from './Components/Sidedraw'
 import Home from './Components/Home'
-
+import Login from './Components/Login'
+import Yourac from './Components/YourAc'
 class App extends Component{
 
     state={
-      sidedrawer:false
+      sidedrawer:false,
+      loginpage:false
     }
 
   sidedrawerHandler=()=>{
@@ -16,19 +18,25 @@ class App extends Component{
     })
   }
 
-
+  loadLoginPage=()=>{
+    this.setState({
+      loginpage:true
+    })
+  }
 
   render() {
+    let loadLoginPage
+    if(this.state.loginpage){
+      loadLoginPage=<Login/>
+    }
+
     let sidedrawer
     if(this.state.sidedrawer){
       sidedrawer=<Sidedrawer show={this.state.sidedrawer}/>
     }
     return (
       <div className='App'>
-        <p onClick={this.sidedrawerHandler}>|||</p>
-        {sidedrawer}
         <Home/>
-        <YouTube/>
       </div>
     )
   }
