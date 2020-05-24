@@ -1,13 +1,43 @@
-img{
-    width:300px;
-    height:150px;
-    padding-right: 10px;
-}
+
 
 .home{
+    background-color: #F9F9F9;
 
-    div{
-        display: inline-block !important;
+    img{
+        width:305px;
+        height:150px;
+        padding-right: 10px;
+    }
+
+    .videoThumbnail {
+        overflow: scroll;
+        div{
+            display: inline-block !important;
+        }
+    }
+
+    .Navbar{
+        width: 100%;
+        background-color: white !important;
+    }
+
+
+    .chooseCat{
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+        width:100%;
+        p{
+            margin-right: 10px;
+            border: 1px solid black;
+            width: 200px;
+            border-radius: 100px;
+            padding:5px;
+            min-width: 200px;
+      }
     }
 
 }
+
+
+

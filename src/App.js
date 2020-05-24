@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import YouTube from './youtube';
+// import YouTube from './youtube';
 import Sidedrawer from './Components/Sidedraw'
 import Home from './Components/Home'
 import Login from './Components/Login'
-import Yourac from './Components/YourAc'
+// import Yourac from './Components/YourAc'
 class App extends Component{
 
     state={
       sidedrawer:false,
-      loginpage:false
+      loginpage:false,
     }
 
   sidedrawerHandler=()=>{
@@ -34,6 +34,8 @@ class App extends Component{
     if(this.state.sidedrawer){
       sidedrawer=<Sidedrawer show={this.state.sidedrawer}/>
     }
+
+    console.log(this.state.VideoPlayer)
     return (
       <div className='App'>
         <Home/>
