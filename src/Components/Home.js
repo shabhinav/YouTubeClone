@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import {categoryList} from './categoryList';
 import './Home.scss'
-// import Card from 'react-bootstrap/Card';
 import VideoPlayer from './VideoPlayer';
-import {Redirect,BrowserRouter as Router} from 'react-router-dom';
 
 
 class Home extends Component{
@@ -15,7 +12,6 @@ class Home extends Component{
         redirect:false
     }
     async componentDidMount(){
-       let vidcat=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&videoCategoryId=1&key=AIzaSyAZvQKKPmseuVb8IIw6CgeZhIIn42UM7t4`)
         // categoryList.map(async(category)=>
         //         this.setState({
         //             vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&videoCategoryId=${category.id}&key=AIzaSyAZvQKKPmseuVb8IIw6CgeZhIIn42UM7t4`)
@@ -25,12 +21,12 @@ class Home extends Component{
                 // .then((res)=>{
                 //     console.log(res)
                 // })
-                console.log(vidcat.data)
-        }
-        loadVideoHandler=()=>{
-            this.setState({
-                loadVideoplayer:true
-            })
+        //         console.log(vidcat.data)
+        // }
+        // loadVideoHandler=()=>{
+        //     this.setState({
+        //         loadVideoplayer:true
+        //     })
         }
 
         sortAccToCat=(catId)=>{
@@ -42,40 +38,13 @@ class Home extends Component{
 
 
     render() {
-        if(this.state.redirect){
-
-            return (
-                <Router>
-                    <Redirect  to="/category" />
-                </Router>
-            ) 
-        }
 
         return (
             //main component
             <div className="home"> 
 
-            {/*NavBar*/}
-                <div className='Navbar'>
-                   <nav className="navbar navbar-fixed-top">
-                        <a href='/' className="navbar-brand">Navbar</a>
-                        <form class="form-inline">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </nav>
-                    <hr className='container' style={{marginTop:'0px'}}/>
-                </div>
-
-                {/* category*/}    
-            
-                <div className='chooseCat container'>
-                     {categoryList.map(category=>
-                        <p key={category.id} onClick={()=>this.sortAccToCat(category.id)}>{category.name}</p>
-                        )}
-                </div> 
-
-
+                {/* category*/}                
+                 
 
                 {/*Printing thumbnail*/}
                 <div className='videoThumbnail'>
@@ -104,6 +73,6 @@ class Home extends Component{
 }
 
 
-export default Home
+export default Home;
 
 

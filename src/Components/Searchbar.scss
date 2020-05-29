@@ -1,0 +1,19 @@
+.Navbar{
+    width: 100%;
+    background-color: white !important;
+}
+
+.chooseCat{
+    display: flex;
+    flex-flow: row nowrap;
+    overflow-x: scroll;
+    width:100%;
+    .link{
+        margin-right: 10px;
+        border: 1px solid black;
+        width: 200px;
+        border-radius: 100px;
+        padding:5px;
+        min-width: 200px;
+  }
+}

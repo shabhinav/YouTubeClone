@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-// import YouTube from './youtube';
 import Sidedrawer from './Components/Sidedraw'
 import Home from './Components/Home'
 import Login from './Components/Login'
-// import Yourac from './Components/YourAc'
+import {BrowserRouter as Router,Route} from 'react-router-dom';
+import Category from './Components/Category';
+import SearchBar from './Components/Searchbar'
+
 class App extends Component{
 
     state={
@@ -38,7 +40,11 @@ class App extends Component{
     console.log(this.state.VideoPlayer)
     return (
       <div className='App'>
-        <Home/>
+        <SearchBar/>
+        <Router>
+              <Route path='/' exact component={Home}/>
+              <Route path='/category/:category' component={Category}/>            
+        </Router>
       </div>
     )
   }
