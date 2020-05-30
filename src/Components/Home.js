@@ -38,7 +38,6 @@ class Home extends Component{
 
 
     render() {
-
         return (
             //main component
             <div className="home"> 
@@ -49,13 +48,13 @@ class Home extends Component{
                 {/*Printing thumbnail*/}
                 <div className='videoThumbnail'>
                 {categoryList.map(category=>
-                    <section className='container'>
-                     <h5 key={category.id} style={{textAlign:'left',marginLeft:'30px'}}>{category.name}</h5>
+                    <section key={Math.random()} className='container'>
+                     <h5  style={{textAlign:'left',marginLeft:'30px'}}>{category.name}</h5>
                         <div className='style'>
                             {
                                 this.state.array.map(array=>
-                                    <div>
-                                        <img key={category.id} src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' alt='' onClick={this.loadVideoHandler}/>
+                                    <div key={Math.random()}>
+                                        <img  src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' alt='' onClick={this.loadVideoHandler}/>
                                         {/* <iframe title='video' src='' onClick={this.loadVideoHandler}/> */}
                                         <span><p key={category.id}>description</p></span>
                                     </div>

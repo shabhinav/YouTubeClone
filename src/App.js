@@ -27,17 +27,15 @@ class App extends Component{
   }
 
   render() {
-    let loadLoginPage
-    if(this.state.loginpage){
-      loadLoginPage=<Login/>
-    }
+    // let loadLoginPage
+    // if(this.state.loginpage){
+    //   loadLoginPage=<Login/>
+    // }
 
-    let sidedrawer
-    if(this.state.sidedrawer){
-      sidedrawer=<Sidedrawer show={this.state.sidedrawer}/>
-    }
-
-    console.log(this.state.VideoPlayer)
+    // let sidedrawer
+    // if(this.state.sidedrawer){
+    //   sidedrawer=<Sidedrawer show={this.state.sidedrawer}/>
+    // }
     return (
       <div className='App'>
         <SearchBar/>

@@ -4,8 +4,8 @@ import axios from 'axios';
 class Youtube extends Component{
 
         async componentDidMount(){
-            let data =await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyAZvQKKPmseuVb8IIw6CgeZhIIn42UM7t4
-            `)
+            // let data =await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&key=AIzaSyAZvQKKPmseuVb8IIw6CgeZhIIn42UM7t4
+            // `)
             // console.log('mostpop',data.data)
         }
     // async componentDidMount(){

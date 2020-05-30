@@ -1,0 +1,3 @@
+// export const SEARCHVALUE='SEARCHVALUE';
+
+export const SEARCHEDVALUE='SEARCHEDVALUE'
