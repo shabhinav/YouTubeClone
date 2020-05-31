@@ -29,7 +29,6 @@ class Searchbar extends Component{
 
     render() {
         // console.log(this.state.inputValue)
-        console.log(this.props.val)
         return (
             <div className='Searchbar'>
                 <div className='Navbar'>
@@ -49,8 +48,6 @@ class Searchbar extends Component{
                     )}
                     </Router>
                 </div>
-                    <h1>hello</h1>
-                    <p>{this.props.val}</p>
             </div>
         )
     }

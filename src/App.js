@@ -6,6 +6,7 @@ import Login from './Components/Login'
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Category from './Components/Category';
 import SearchBar from './Components/Searchbar'
+import SearchResult from './Components/searchResult'
 
 class App extends Component{
 
@@ -39,6 +40,7 @@ class App extends Component{
     return (
       <div className='App'>
         <SearchBar/>
+        <SearchResult/>
         <Router>
               <Route path='/' exact component={Home}/>
               <Route path='/category/:category' component={Category}/>            

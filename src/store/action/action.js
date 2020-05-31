@@ -1,17 +1,47 @@
-// import * as actionTypes from './actionTypes'
+import * as actionTypes from './actionTypes'
+import axios from 'axios'
 
-// export const searchValue=(searchValue)=>{
+
+export const searchedValue=(srchval)=>{
+    return dispatch=>{
+        // dispatch(addData())
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${srchval}&key=${process.env.REACT_APP_NOT_SECRET_CODE}
+        `)
+        .then(res=>{
+            console.log('res',res)
+            dispatch(successData(res.data.items))
+        })
+        .catch((err)=>{
+            dispatch(failData(err))
+        })
+    }
+    
+
+}
+
+
+// const addData=()=>{
 //     return{
-//         type:actionTypes.SEARCHVALUE,
-//         searchValue:searchValue
+//         type:actionTypes.SEARCHEDVALUE
 //     }
 // }
 
-import * as actionTypes from './actionTypes'
-
-export const searchedValue=(srchval)=>{
+const successData=(success)=>{
+    console.log('success',success)
     return{
-        type:actionTypes.SEARCHEDVALUE,
-        searchedval:srchval
+        type:actionTypes.SUCCESSCONDITION,
+        getData:{
+            ...success
+        }
     }
 }
+
+const failData=(fail)=>{
+    return{
+        type:actionTypes.FAILURECONDITION,
+        fail:{
+            ...fail
+        }
+    }
+}
+
