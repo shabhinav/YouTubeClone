@@ -7,6 +7,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Category from './Components/Category';
 import SearchBar from './Components/Searchbar'
 import SearchResult from './Components/searchResult'
+import Trending from './Components/Trending'
 
 class App extends Component{
 
@@ -43,7 +44,8 @@ class App extends Component{
         <SearchResult/>
         <Router>
               <Route path='/' exact component={Home}/>
-              <Route path='/category/:category' component={Category}/>            
+              <Route path='/category/:category' component={Category}/>
+              <Route path='/trending' component={Trending}/>            
         </Router>
       </div>
     )

@@ -40,10 +40,7 @@ class Home extends Component{
     render() {
         return (
             //main component
-            <div className="home"> 
-
-                {/* category*/}                
-                 
+            <div className="home">                  
 
                 {/*Printing thumbnail*/}
                 <div className='videoThumbnail'>

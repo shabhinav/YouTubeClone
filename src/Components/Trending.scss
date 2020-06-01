@@ -1,0 +1,29 @@
+// .Trending{
+//     display: flex;
+//     flex-flow: row wrap;
+// }
+
+.Trending{
+    .row{
+        margin-top: 5px;
+    }
+
+    .description{
+        white-space: nowrap; 
+        width: 100%; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h6{
+        text-align:left;
+    }
+    p{
+        margin-bottom: 0px;
+        font-size: 13px;
+        text-align: left;
+    }
+    a{
+        color: black;
+    }
+}

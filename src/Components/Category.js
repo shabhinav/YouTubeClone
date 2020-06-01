@@ -35,8 +35,7 @@ class Category extends Component{
             <div className='category'>
                 {this.state.videoData.map(category=>
                     <div key={Math.random()} className=''>
-                        {/* <iframe src={url} title='video'/> */}
-                    {/* <p>    {category.id.videoId}</p> */}
+                        <iframe src={'https://www.youtube.com/'+category.id.videoId} title='video'/>
                     </div>
                     )}
             </div>
