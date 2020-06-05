@@ -2,37 +2,34 @@ import * as actionTypes from './action/actionTypes'
 
 const initialState={
     searchedData:[],
-    error:''
+    error:'',
+    videoId:'',
+    videotitle:''
 }
 
 const reducer=(state=initialState,action)=>{
-    console.log('serdata',action.getData)
-    // if(action.type===actionTypes.SEARCHEDVALUE){
-    //     return{
-    //         ...state,
-    //         searchResult:action.searchedval
-    //     }
-    // }
-    // switch(action.type){
-    //     case actionTypes.SUCCESSCONDITION:
-    //         return{
-    //             ...state,
-    //             searchedData:[...state.searchedData,action.success]
-    //         }
-    //     case actionTypes.FAILURECONDITION:
-    //         return{
-    //             ...state,
-    //             error:action.fail
-    //         }
-    //     default:
-    //         return state
-    // }
+    // console.log('serdata',action.getData)
         if(action.type===actionTypes.SUCCESSCONDITION){
             return{
                 ...state,
                 searchedData:[...state.searchedData,action.getData]
             }
         }
+
+        if(action.type===actionTypes.VIDEOPLAYER){
+            console.log('videoId',action.videoId)
+            console.log(action.videoTitle)
+            return{
+                ...state,
+                videoId:action.videoId,
+                videotitle:action.videoTitle
+            }
+        }
+
+        // if(action.type===actionTypes.VIDEOTITLE){
+        //     console.log('VideoTitle',action.videoTitle)
+        // }
+
         return state
 
 }

@@ -16,13 +16,13 @@
   position: fixed; /* Stay in place */
   /* margin: 13% 30% 17%; 15% from the top and centered */
   /* padding: 40px; */
-  /* margin:25% auto; */
+  //  margin:25% auto; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid #888;
   width:35%;
-  height:70%;
+  height:50%;
 }
 
 .close {
@@ -33,4 +33,27 @@
   cursor: pointer;
   margin-top:1px ;
   margin-right: 6px;
+}
+
+
+
+.input1{
+  padding:5px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px !important;
+  outline: none;
+}
+
+.input2{
+  padding:5px;
+  border-radius: 5px;
+  width:100%;
+  margin-bottom: 10px !important;
+  outline: none;
+
+}
+
+.loginform{
+  margin-top: 25px;
 }

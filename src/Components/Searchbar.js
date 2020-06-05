@@ -3,7 +3,8 @@ import './Searchbar.scss';
 import {categoryList} from './categoryList';
 import {BrowserRouter as Router,NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
-import * as actionCreators from '../store/action/index'
+import * as actionCreators from '../store/action/index';
+import Login from './Login'
 
 
 class Searchbar extends Component{
@@ -11,9 +12,24 @@ class Searchbar extends Component{
         super(props)
         this.search=React.createRef();
         this.state={
-            inputValue:''
+            inputValue:'',
+            loadloginpage:false
         }
     }
+
+    loadLoadLogin=(e)=>{
+        e.preventDefault()
+        this.setState({
+            loadloginpage:true
+        })
+    }
+
+    closeloginmodel=()=>{
+        this.setState({
+            loadloginpage:false
+        })
+    }
+
 
     onChangeHandler=()=>{
         this.setState({
@@ -28,25 +44,26 @@ class Searchbar extends Component{
     }
 
     render() {
-        // console.log(this.state.inputValue)
+        if(this.state.loadloginpage){
+            return(<Login closeloginmodel={this.closeloginmodel}/>)
+        }
         return (
             <div className='Searchbar'>
                 <div className='Navbar'>
                    <nav className="navbar navbar-fixed-top">
                         <a href='/' className="navbar-brand">Navbar</a>
-                        <form className="form-inline" onClick={this.reloadHandler}>
-                            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ref={this.search} onChange={this.onChangeHandler}/>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
+                        <form className="form-inline searchbox" onClick={this.reloadHandler}>
+                            <input className="form-control inputbox" type="search" placeholder="Search" aria-label="Search" ref={this.search} onChange={this.onChangeHandler}/>
+                            <button style={{marginLeft:'15px'}} className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
                         </form>
+                            <div className='loginlink'><a href='/' onClick={this.loadLoadLogin}>Login / Sign In</a></div>
                     </nav>
                     <hr className='container' style={{marginTop:'0px'}}/>
                 </div>
                 <div className='chooseCat container'> 
-                    <Router>
                     {categoryList.map(category=>
                         <NavLink key={Math.random()} className='link' to={'/category/'+category.id}>{category.name}</NavLink>
                     )}
-                    </Router>
                 </div>
             </div>
         )

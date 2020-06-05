@@ -1,0 +1,28 @@
+.comment{
+    img{
+        border-radius: 100px;
+        width:50px;
+        height:50px;
+    }
+    input{
+        width: 80%;
+        border:none;
+        border-bottom: 1px solid rgb(172, 169, 169);
+        background-color: #F9F9F9;
+        margin-left: 10px;
+        outline: none;
+    }
+    .cancelbtn{
+        margin-left: 15px;
+        border: none;
+        outline: none;
+    }&hover{
+        background-color:#F9F9F9 ;
+        border: none;
+        outline: none;
+    }
+    p{
+        margin:0px;
+        font-size: 15px;
+    }
+}

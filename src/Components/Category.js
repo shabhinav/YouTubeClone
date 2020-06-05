@@ -14,25 +14,18 @@ class Category extends Component{
             
             const categoryId =this.props.match.params.category
 
-            let vidcat=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=${categoryId}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
-            this.setState({
-                videoData:vidcat.data.items
-            })
+            // let vidcat=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=${categoryId}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+            // this.setState({
+            //     videoData:vidcat.data.items
+            // })
 
-            // console.log(this.state.videoData)
+            console.log(this.state.videoData)
         }
         
         render() {
-            // let url=`https://www.youtube.com/`
-
-            // this.state.videoData.map(category=>{
-            //     return(
-            //         url=`https://www.youtube.com/${category.id.videoId}`
-            //     )
-            // }
-            //     )
         return (
             <div className='category'>
+                <p>Hello</p>
                 {this.state.videoData.map(category=>
                     <div key={Math.random()} className=''>
                         <iframe src={'https://www.youtube.com/'+category.id.videoId} title='video'/>

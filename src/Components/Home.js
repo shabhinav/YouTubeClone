@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {categoryList} from './categoryList';
 import './Home.scss'
 import VideoPlayer from './VideoPlayer';
+import axios from 'axios';
 
 
 class Home extends Component{
@@ -12,21 +13,21 @@ class Home extends Component{
         redirect:false
     }
     async componentDidMount(){
-        // categoryList.map(async(category)=>
-        //         this.setState({
-        //             vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&type=video&videoCategoryId=${category.id}&key=AIzaSyAZvQKKPmseuVb8IIw6CgeZhIIn42UM7t4`)
-        //         })
-        //         ) 
+        categoryList.map(async(category)=>
+                this.setState({
+                    // vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=${category.id}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+                })
+                ) 
                 // Promise.all([this.state.vidcat])
                 // .then((res)=>{
                 //     console.log(res)
                 // })
-        //         console.log(vidcat.data)
-        // }
-        // loadVideoHandler=()=>{
-        //     this.setState({
-        //         loadVideoplayer:true
-        //     })
+                console.log(this.state.vidcat)
+        }
+        loadVideoHandler=()=>{
+            this.setState({
+                loadVideoplayer:true
+            })
         }
 
         sortAccToCat=(catId)=>{

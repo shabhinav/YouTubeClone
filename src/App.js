@@ -5,15 +5,18 @@ import Home from './Components/Home'
 import Login from './Components/Login'
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import Category from './Components/Category';
-import SearchBar from './Components/Searchbar'
-import SearchResult from './Components/searchResult'
-import Trending from './Components/Trending'
+import SearchBar from './Components/Searchbar';
+import SearchResult from './Components/searchResult';
+import Trending from './Components/Trending';
+import VideoPlayer from './Components/VideoPlayer';
+
+
 
 class App extends Component{
 
     state={
       sidedrawer:false,
-      loginpage:false,
+      loginpage:true,
     }
 
   sidedrawerHandler=()=>{
@@ -29,10 +32,10 @@ class App extends Component{
   }
 
   render() {
-    // let loadLoginPage
-    // if(this.state.loginpage){
-    //   loadLoginPage=<Login/>
-    // }
+    let loadLoginPage
+    if(this.state.loginpage){
+      loadLoginPage=<Login/>
+    }
 
     // let sidedrawer
     // if(this.state.sidedrawer){
@@ -40,12 +43,16 @@ class App extends Component{
     // }
     return (
       <div className='App'>
-        <SearchBar/>
+        {/* <SearchBar/> */}
         <SearchResult/>
+        {/* {loadLoginPage} */}
         <Router>
+              <Route path='/'  component={SearchBar}/>
               <Route path='/' exact component={Home}/>
               <Route path='/category/:category' component={Category}/>
-              <Route path='/trending' component={Trending}/>            
+              <Route path='/trending' component={Trending}/>  
+              <Route path='/videoplayer' component={VideoPlayer}/>
+              <Route path='/login' component={Login}/>
         </Router>
       </div>
     )

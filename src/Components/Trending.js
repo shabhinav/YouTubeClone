@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import axios from 'axios';
 import './Trending.scss';
 import done from '../Assests/done.svg';
+import {connect} from 'react-redux'
+import * as actionCreators from '../store/action/index'
+import {NavLink} from 'react-router-dom'
 
 class Trending extends Component{
 
@@ -22,31 +25,31 @@ class Trending extends Component{
 
 
 
-    render() {
-                        
+    render() {               
             return (
                 <div className='Trending container'>
-            {/* {this.state.trendingVideosdata.map(videoId=>
-            <div className='videos'>
-                <iframe src={'http://youtube.com/embed/'+videoId.id} title='video'/>
-                <p>{videoId.snippet.title}</p>
-            </div>
-            )} */}
-            {this.state.trendingVideosdata.map(videoId=>
-                <div className='row'>
-                    <div className='col-4'>
-                        <iframe src={'http://youtube.com/embed/'+videoId.id} title='video'/>
-                    </div>
-                    <div className='col-6'>
-                       <a href={'http://youtube.com/embed/'+videoId.id}><h6><strong>{videoId.snippet.title}</strong></h6></a> 
-                        <p >{videoId.snippet.channelTitle} <img src={done} alt=''/></p>
-                        <p className='description' style={{textOverflow:'ellipsis'}}>{videoId.snippet.description}</p>
-                    </div>
-                </div>    
-            )}
-            </div>
-        )
+                    {this.state.trendingVideosdata.map(videoId=>
+                        <div className='row'>
+                            <div className='col-4'>
+                                <iframe src={'http://youtube.com/embed/'+videoId.id} title='video' onClick={()=>this.props.onVideoPlayer(videoId.id)}/>
+                            </div>
+                            <div className='col-6'>
+                                <NavLink  to='/videoplayer' onClick={()=>this.props.onVideoPlayer(videoId.id,videoId.snippet.title)}><h6><strong>{videoId.snippet.title}</strong></h6></NavLink> 
+                                <p >{videoId.snippet.channelTitle} <img src={done} alt=''/></p>
+                                <p className='description' style={{textOverflow:'ellipsis'}}>{videoId.snippet.description}</p>
+                            </div>
+                        </div>    
+                    )}
+                </div>
+            )
+        }
+    }
+
+const mapDispatchToProps=(dispatch)=>{
+    console.log(dispatch)
+    return{
+        onVideoPlayer:(videoId,videotitle)=>dispatch(actionCreators.playVideo(videoId,videotitle))
     }
 }
 
-export default Trending;
+export default connect(null,mapDispatchToProps)(Trending);

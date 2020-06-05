@@ -16,13 +16,22 @@ export const searchedValue=(srchval)=>{
         })
     }
     
-
+    
 }
 
+export const playVideo=(videoId,videoTitle)=>{
+    console.log(videoTitle)
+    return{
+        type:actionTypes.VIDEOPLAYER,
+        videoId:videoId,
+        videoTitle:videoTitle
+    }
+}
 
-// const addData=()=>{
+// export const videoTitle=(videoTitle)=>{
 //     return{
-//         type:actionTypes.SEARCHEDVALUE
+//         type:actionTypes.VIDEOTITLE,
+//         videoTitle:videoTitle
 //     }
 // }
 
@@ -43,5 +52,15 @@ const failData=(fail)=>{
             ...fail
         }
     }
+    
+
+
+
+
+// const addData=()=>{
+//     return{
+//         type:actionTypes.SEARCHEDVALUE
+//     }
+// }
 }
 
