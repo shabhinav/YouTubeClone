@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './Login.scss';
 import axios from 'axios';
+import {connect} from 'react-redux'
+import * as actionCreators from '../store/action/index';
 
 class Login extends Component{
     constructor(props){
@@ -17,12 +19,24 @@ class Login extends Component{
     }
 
     onSignIn=async(e)=>{
-        let signIndetails=await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDdss6K1vedOCzGxDvN2E5W4EVIP9XY-c0`,{
+        try{
+            let signIndetails=await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDdss6K1vedOCzGxDvN2E5W4EVIP9XY-c0`,{
             email:this.email.current.value,
             password:this.password.current.value
         })
-        
+        this.setState({
+            signInData:signIndetails
+        })
+        this.props.closeloginmodel()
+        this.props.getUserDetail(this.state.signInData.data)
         console.log(signIndetails)
+        }
+        catch(err){
+            this.setState({
+                SignInError:err
+            })
+        }
+        
     }
 
 
@@ -32,8 +46,9 @@ class Login extends Component{
             password:this.password.current.value
         })
         this.setState({
-
+            signUpData:logindetails
         })
+        this.props.getUserDetail(this.state.signUpData.data)
         console.log(logindetails)
         this.props.closeloginmodel()
     }
@@ -70,4 +85,10 @@ class Login extends Component{
     }
 }
 
-export default Login
+const mapDispatchToProps=dispatch=>{
+    return{
+        getUserDetail:(userdata)=>dispatch(actionCreators.loginDetails(userdata))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(Login)

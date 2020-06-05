@@ -1,4 +1,10 @@
-.Category{
-    display: flex;
-    flex-flow: row wrap;
+.category{
+    margin-top: 50px;
+    
+    .description{
+        white-space: nowrap; 
+        width: 100%; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }

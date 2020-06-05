@@ -9,7 +9,7 @@ import SearchBar from './Components/Searchbar';
 import SearchResult from './Components/searchResult';
 import Trending from './Components/Trending';
 import VideoPlayer from './Components/VideoPlayer';
-
+import Feedback from './Components/feedback'
 
 
 class App extends Component{
@@ -46,6 +46,7 @@ class App extends Component{
         {/* <SearchBar/> */}
         <SearchResult/>
         {/* {loadLoginPage} */}
+        {/* <Feedback/> */}
         <Router>
               <Route path='/'  component={SearchBar}/>
               <Route path='/' exact component={Home}/>

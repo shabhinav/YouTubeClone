@@ -28,12 +28,12 @@ export const playVideo=(videoId,videoTitle)=>{
     }
 }
 
-// export const videoTitle=(videoTitle)=>{
-//     return{
-//         type:actionTypes.VIDEOTITLE,
-//         videoTitle:videoTitle
-//     }
-// }
+export const loginDetails=(loginData)=>{
+    return{
+        type:actionTypes.LOGINDETAILS,
+        loginData:loginData
+    }
+}
 
 const successData=(success)=>{
     console.log('success',success)
@@ -52,15 +52,5 @@ const failData=(fail)=>{
             ...fail
         }
     }
-    
-
-
-
-
-// const addData=()=>{
-//     return{
-//         type:actionTypes.SEARCHEDVALUE
-//     }
-// }
 }
 

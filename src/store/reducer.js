@@ -4,7 +4,8 @@ const initialState={
     searchedData:[],
     error:'',
     videoId:'',
-    videotitle:''
+    videotitle:'',
+    logindata:[]
 }
 
 const reducer=(state=initialState,action)=>{
@@ -12,7 +13,8 @@ const reducer=(state=initialState,action)=>{
         if(action.type===actionTypes.SUCCESSCONDITION){
             return{
                 ...state,
-                searchedData:[...state.searchedData,action.getData]
+                // searchedData:[...state.searchedData,action.getData]
+                searchedData:action.getData
             }
         }
 
@@ -26,9 +28,13 @@ const reducer=(state=initialState,action)=>{
             }
         }
 
-        // if(action.type===actionTypes.VIDEOTITLE){
-        //     console.log('VideoTitle',action.videoTitle)
-        // }
+        if(action.type===actionTypes.LOGINDETAILS){
+            console.log('loginData',action.loginData)
+            return{
+                ...state,
+                logindata:action.loginData
+            }
+        }
 
         return state
 

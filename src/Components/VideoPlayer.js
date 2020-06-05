@@ -30,7 +30,7 @@ class VideoPlayer extends Component{
                 </div>
                 <div className='col-md-4 vidrecomend'>
                     {this.state.recomendvideo.map(recomendvideo=>
-                        <div>
+                        <div key={Math.random()}>
                             <iframe title='video' src={'http://youtube.com/embed/'+recomendvideo.id.videoId} className='recomendvideo'/>
                             <p  className='videotitle' style={{fontSize:'15px',textAlign:'justify'}} onClick={()=>this.props.onVideoPlayer(recomendvideo.id.videoId,recomendvideo.snippet.title)}><strong>{recomendvideo.snippet.title}</strong></p>
                         </div>

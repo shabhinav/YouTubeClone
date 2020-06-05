@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Comment.scss'
+import './Comment.scss';
+import {connect} from 'react-redux'
 
 class Comment extends Component{
     constructor(props){
@@ -45,6 +46,7 @@ class Comment extends Component{
                 <button className='btn btn-light cancelbtn' onClick={this.removeButtonHandler}>Cancel</button>
             </div>
         }
+        console.log('dtata',this.props.userData)
         return (
             <div className='comment'>
                 <hr/>
@@ -53,7 +55,7 @@ class Comment extends Component{
                     <input type='text' placeholder='Add a public comment...' ref={this.comment} onClick={this.showButtonHandler} />
                     <div className='commentsection'>
                         {showbutton}
-                        <h6 style={{fontSize:'12px'}}><strong>USERNAME</strong></h6>
+                        <h6 style={{fontSize:'12px'}}><strong>{this.props.userData.email}</strong></h6>
                         <p>{this.state.comment}</p>
                     </div>
                 {/* </form> */}
@@ -62,4 +64,10 @@ class Comment extends Component{
     }
 }
 
-export default Comment
+const mapStateToProps=state=>{
+    return{
+        userData:state.logindata
+    }
+}
+
+export default connect(mapStateToProps)(Comment)

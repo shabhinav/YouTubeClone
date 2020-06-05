@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './Searchbar.scss';
 import {categoryList} from './categoryList';
-import {BrowserRouter as Router,NavLink} from 'react-router-dom';
+import {BrowserRouter as Router,NavLink,Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actionCreators from '../store/action/index';
 import Login from './Login'
@@ -62,7 +62,7 @@ class Searchbar extends Component{
                 </div>
                 <div className='chooseCat container'> 
                     {categoryList.map(category=>
-                        <NavLink key={Math.random()} className='link' to={'/category/'+category.id}>{category.name}</NavLink>
+                        <NavLink key={Math.random()} className='link' to={'/category/'+category.id} onClick={()=>this.props.history.push('/category/'+category.id)}>{category.name}</NavLink>
                     )}
                 </div>
             </div>
