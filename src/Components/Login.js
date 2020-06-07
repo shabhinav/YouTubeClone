@@ -30,6 +30,7 @@ class Login extends Component{
         this.props.closeloginmodel()
         this.props.getUserDetail(this.state.signInData.data)
         console.log(signIndetails)
+        this.props.signIn()
         }
         catch(err){
             this.setState({

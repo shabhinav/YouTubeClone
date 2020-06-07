@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {categoryList} from './categoryList';
 import './Home.scss'
-import VideoPlayer from './VideoPlayer';
+// import VideoPlayer from './VideoPlayer';
 import axios from 'axios';
 
 
@@ -13,11 +13,16 @@ class Home extends Component{
         redirect:false
     }
     async componentDidMount(){
-        categoryList.map(async(category)=>
-                this.setState({
-                    // vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=${category.id}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
-                })
-                ) 
+
+        // let viddata=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+            
+        // console.log(viddata)
+
+        // categoryList.map(async(category)=>
+                // this.setState({
+                //     vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+                // })
+                // ) 
                 // Promise.all([this.state.vidcat])
                 // .then((res)=>{
                 //     console.log(res)
@@ -63,7 +68,7 @@ class Home extends Component{
                     </section>
                     )}
                 </div>
-                {this.state.loadVideoplayer?<VideoPlayer/>:null}
+                {/* {this.state.loadVideoplayer?<VideoPlayer/>:null} */}
             </div>
         )
     }

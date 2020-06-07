@@ -5,15 +5,17 @@ import axios from 'axios'
 export const searchedValue=(srchval)=>{
     return dispatch=>{
         // dispatch(addData())
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${srchval}&key=${process.env.REACT_APP_NOT_SECRET_CODE}
+        if(srchval.length>1){
+            axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${srchval}&key=${process.env.REACT_APP_NOT_SECRET_CODE}
         `)
         .then(res=>{
             console.log('res',res)
-            dispatch(successData(res.data.items))
+            dispatch(successData(res.data))
         })
         .catch((err)=>{
             dispatch(failData(err))
         })
+        }
     }
     
     

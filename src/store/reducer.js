@@ -9,12 +9,13 @@ const initialState={
 }
 
 const reducer=(state=initialState,action)=>{
-    // console.log('serdata',action.getData)
+    console.log('serdata',action.getData)
+        let array=action.getData
         if(action.type===actionTypes.SUCCESSCONDITION){
             return{
                 ...state,
-                // searchedData:[...state.searchedData,action.getData]
-                searchedData:action.getData
+                // searchedData:state.searchedData.concat(array)
+                searchedData:action.getData.items
             }
         }
 
