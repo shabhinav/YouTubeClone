@@ -10,8 +10,8 @@ import Trending from './Components/Trending';
 import VideoPlayer from './Components/VideoPlayer';
 import Feedback from './Components/feedback';
 import Profile from './Components/profile';
-
-
+import History from './Components/History'
+import Yourac from './Components/YourAc'
 
 class App extends Component{
 
@@ -34,11 +34,6 @@ class App extends Component{
   }
 
   render() {
-    // let loadLoginPage
-    // if(this.state.loginpage){
-    //   loadLoginPage=<Login/>
-    // }
-
     if(this.state.loadprofile){
       return(<Profile/>)
     }
@@ -46,18 +41,19 @@ class App extends Component{
 
     return (
       <div className='App'>
-        {/* <SearchBar/> */}
-        <SearchResult/>
-        {/* {loadLoginPage} */}
-        {/* <Feedback/> */}
+      {/* <SearchResult/> */}
+      {/* <History/> */}
         <Router>
               <Route path='/'  component={SearchBar}/>
+              <Route path='/searchresult' component={SearchResult}/>
               <Route path='/feedback' component={Feedback}/>
               <Route path='/' exact component={Home}/>
               <Route path='/category/:category' component={Category}/>
               <Route path='/trending' component={Trending}/>  
               <Route path='/videoplayer' component={VideoPlayer}/>
               <Route path='/login' component={Login}/>
+              <Route path='/yourac' component={Yourac}/>
+              <Route path='/history' component={History}/>
         </Router>
       </div>
     )

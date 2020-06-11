@@ -6,29 +6,37 @@ import axios from 'axios';
 
 
 class Home extends Component{
-    state={
-        vidcat:null,
-        array:[1,2,3,4],
-        loadVideoplayer:false,
-        redirect:false
-    }
-    async componentDidMount(){
-
-        // let viddata=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
-            
-        // console.log(viddata)
-
-        // categoryList.map(async(category)=>
-                // this.setState({
-                //     vidcat:await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
-                // })
-                // ) 
-                // Promise.all([this.state.vidcat])
-                // .then((res)=>{
-                //     console.log(res)
-                // })
-                console.log(this.state.vidcat)
+    constructor(props){
+        super(props)
+        this.state={
+            vidcat:[],
+            array:[1,2,3,4],
+            loadVideoplayer:false,
+            redirect:false,
+            newCategoryArray:[],
+            categoriesDataArray:[]
         }
+    }
+
+    
+    async componentWillMount(){
+        var categoryArray=[...categoryList]
+            
+       await this.setState({
+            newCategoryArray:categoryArray.splice(0,5)
+        })
+            let categoryPromises=this.state.newCategoryArray.map((category)=>{
+              return  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=${category.id}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+            }
+            )
+            Promise.all(categoryPromises)
+            .then((res)=>{
+                   this.setState({
+                        categoriesDataArray:res
+                    })
+            })
+        }
+
         loadVideoHandler=()=>{
             this.setState({
                 loadVideoplayer:true
@@ -44,25 +52,24 @@ class Home extends Component{
 
 
     render() {
+        console.log(this.state.categoriesDataArray)
+        let a=this.state.categoriesDataArray[0]
+        console.log('category',a)
         return (
             //main component
             <div className="home">                  
 
                 {/*Printing thumbnail*/}
                 <div className='videoThumbnail'>
-                {categoryList.map(category=>
+                {this.state.newCategoryArray.map(category=>
                     <section key={Math.random()} className='container'>
                      <h5  style={{textAlign:'left',marginLeft:'30px'}}>{category.name}</h5>
                         <div className='style'>
-                            {
-                                this.state.array.map(array=>
-                                    <div key={Math.random()}>
-                                        <img  src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' alt='' onClick={this.loadVideoHandler}/>
-                                        {/* <iframe title='video' src='' onClick={this.loadVideoHandler}/> */}
-                                        <span><p key={category.id}>description</p></span>
-                                    </div>
-                                )
-                            }
+                            {/* {
+                                this.state.categoriesDataArray[0].data.items.map(category=>
+                                <li>{category.id.videoId}</li>
+                                    )
+                            } */}
                             <hr />
                         </div>
                     </section>

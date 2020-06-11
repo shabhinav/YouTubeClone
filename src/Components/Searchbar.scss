@@ -9,12 +9,22 @@
     overflow-x: scroll;
     width:100%;
     .link{
+        color: black;
+        background-color: #E0E0E0;
         margin-right: 10px;
-        border: 1px solid black;
+        border: 0.5px solid #D0D0D0;
         width: 200px;
         border-radius: 100px;
         padding:5px;
         min-width: 200px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        margin-top: 0px
+}
+.link:hover{
+    background-color:grey;
+    color:white;
+    font-weight: 900;
 }
 }
 
@@ -48,3 +58,50 @@
     text-align: center !important;
 
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 20px;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+  @media only screen and (max-width: 425px){
+    .Navbar{
+        width: 100%;
+        background-color: white !important;
+    }
+    .searchbox{
+        width:80%;
+    }
+    .inputbox{
+        width: 60% !important;
+        
+    }
+    .searchbtn{
+        // display: none !important;
+    }
+    .navbrand{
+        display: none !important;
+    }
+    .loginlink{
+        display: none;
+    }
+    
+  }

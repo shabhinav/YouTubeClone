@@ -57,3 +57,10 @@
 .loginform{
   margin-top: 25px;
 }
+
+@media only screen and (max-width: 425px){
+  .Form{
+    height: 50% !important;
+  }
+
+}

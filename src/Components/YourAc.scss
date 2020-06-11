@@ -1,0 +1,39 @@
+.header{
+    margin-top:20px;
+    padding-bottom: 50px;
+
+    .profileimg{
+        text-align: left;
+    }
+
+    .username{
+        display: inline-block;
+        margin-left:10px;
+    }
+
+    .profilepic{
+        border-radius: 100px;
+        width: 75px;
+        height: 75px;
+    }
+    .customizbtn{
+        margin-right: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 425px){
+    .username{
+        display: none !important;
+    }
+    
+    .customizbtn{
+        font-size: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    .videobtn{
+        font-size:10px !important;
+    }
+    
+}

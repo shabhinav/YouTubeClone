@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import axios from 'axios';
 import {connect} from 'react-redux';
 import {NavLink,BrowserRouter as Router} from 'react-router-dom'
+import * as actionCreators from '../store/action/index'
+
 class SearchResult extends Component{
     
     state={
@@ -12,12 +13,7 @@ class SearchResult extends Component{
     
 
     render() {
-        // console.log('state',this.state.data)
-        // console.log('state',this.state.data)
-        // console.log('ab')
         console.log('searchres',this.props.value)
-        // console.log('array',Array.isArray(this.props.value))
-        // console.log(Object.keys(this.props.value))
         return (
             <div className='searchResult'>
                 
@@ -27,7 +23,7 @@ class SearchResult extends Component{
                             <iframe title='video' src={'http://youtube.com/embed/'+val.id.videoId} />
                          </div>
                          <div className='col-6'>
-                            <h5>{val.snippet.title}</h5>
+                            <NavLink  to='/videoplayer' onClick={()=>this.props.onVideoPlayer(val.id.videoId,val.snippet.title)}><h5><strong>{val.snippet.title}</strong></h5></NavLink>                                                
                          </div>
                     </div>    
                 )}
@@ -42,5 +38,12 @@ const mapStateToProps=(state)=>{
     }
 }
 
+const mapDispatchToProps=(dispatch)=>{
+    console.log(dispatch)
+    return{
+        onVideoPlayer:(videoId,videotitle)=>dispatch(actionCreators.playVideo(videoId,videotitle))
+    }
+}
 
-export default connect(mapStateToProps)(SearchResult)
+
+export default connect(mapStateToProps,mapDispatchToProps)(SearchResult)

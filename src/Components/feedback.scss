@@ -46,3 +46,15 @@
       text-align: justify;
       outline: none;
   }
+
+  @media only screen and (max-width: 425px){
+  
+    .Form{
+      width:60%;
+      height:70%;
+    }
+    .textarea{
+      padding: 10px 0px 45px 0px;
+
+    }
+  }

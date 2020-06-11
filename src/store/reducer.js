@@ -5,12 +5,12 @@ const initialState={
     error:'',
     videoId:'',
     videotitle:'',
-    logindata:[]
+    logindata:[],
+    videohistory:[],
 }
 
 const reducer=(state=initialState,action)=>{
     console.log('serdata',action.getData)
-        let array=action.getData
         if(action.type===actionTypes.SUCCESSCONDITION){
             return{
                 ...state,
@@ -25,7 +25,8 @@ const reducer=(state=initialState,action)=>{
             return{
                 ...state,
                 videoId:action.videoId,
-                videotitle:action.videoTitle
+                videotitle:action.videoTitle,
+                videohistory:[...state.videohistory,action.videoId]
             }
         }
 

@@ -51,7 +51,7 @@ class Comment extends Component{
             <div className='comment'>
                 <hr/>
                 {/* <form onSubmit={this.onSubmit}> */}
-                    <img src='//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg' alt=''/>
+                    <img className='profileimage' src='//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg' alt=''/>
                     <input type='text' placeholder='Add a public comment...' ref={this.comment} onClick={this.showButtonHandler} />
                     <div className='commentsection'>
                         {showbutton}

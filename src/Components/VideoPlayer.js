@@ -20,10 +20,11 @@ class VideoPlayer extends Component{
     }
 
     render() {
+        console.log(this.props.videohistory)
         return (
             <div className='videoplayer container'>
                <div className='row'>
-               <div className='col-md-6'>
+               <div className='col-md-6 mainscreen'>
                     <iframe title='video' src={'http://youtube.com/embed/'+this.props.videoId} className='mainvideo'/>
                     <h5 style={{textAlign:'left',marginTop:'10px'}}>{this.props.videoTitle}</h5>
                     <Comment/>
@@ -47,6 +48,7 @@ const mapStateToProps=(state)=>{
     return{
         videoId:state.videoId,
         videoTitle:state.videotitle,
+        videohistory:state.videohistory
     }
 }
 

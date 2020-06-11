@@ -21,6 +21,8 @@ class Trending extends Component{
         this.setState({
             trendingVideosdata:Trendinglist.data.items
         })
+
+        console.log()
     }
 
 
@@ -30,7 +32,7 @@ class Trending extends Component{
                 <div className='Trending container'>
                     {this.state.trendingVideosdata.map(videoId=>
                         <div className='row'>
-                            <div className='col-4'>
+                            <div className='col-4 videoframe'>
                                 <iframe src={'http://youtube.com/embed/'+videoId.id} title='video' onClick={()=>this.props.onVideoPlayer(videoId.id)}/>
                             </div>
                             <div className='col-6'>
