@@ -19,7 +19,7 @@ class Home extends Component{
     }
 
     
-    async componentWillMount(){
+    async componentDidMount(){
         var categoryArray=[...categoryList]
             
        await this.setState({
@@ -52,9 +52,9 @@ class Home extends Component{
 
 
     render() {
-        console.log(this.state.categoriesDataArray)
+        console.log('ren',this.state.categoriesDataArray[0])
         let a=this.state.categoriesDataArray[0]
-        console.log('category',a)
+        // console.log('category',a)
         return (
             //main component
             <div className="home">                  
@@ -70,6 +70,11 @@ class Home extends Component{
                                 <li>{category.id.videoId}</li>
                                     )
                             } */}
+                            {
+                                this.state.categoriesDataArray.map(category=>
+                                    console.log(category.data)
+                                    )
+                            }
                             <hr />
                         </div>
                     </section>

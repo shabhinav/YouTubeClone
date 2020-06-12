@@ -5,7 +5,6 @@ import axios from 'axios';
 const Feedback=(props)=>{
     const feedbacks = useRef()
 
-    // const [feedback,setfeedback]=useState('')
     const onSubmit=()=>{
         let feedback=feedbacks.current.value
         let myfeedback= JSON.stringify(feedback)
@@ -22,7 +21,6 @@ const Feedback=(props)=>{
     return(
         <div className='Feedback'>
             <div className='Form'>
-                {/* <span className='close'>&times;</span> */}
                 <h6 style={{color:"white",backgroundColor:'#546E7A',padding:'15px 0px'}}><strong>Send FeedBack</strong></h6>
                 <div className='container'>
                 <textarea className='textarea' ref={feedbacks} placeholder='Have feeadback?We love to hear it,but please share Sensative Information.Have Questions?Try Help or Support'></textarea>

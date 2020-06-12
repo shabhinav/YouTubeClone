@@ -48,7 +48,8 @@ const mapStateToProps=(state)=>{
     return{
         videoId:state.videoId,
         videoTitle:state.videotitle,
-        videohistory:state.videohistory
+        videohistory:state.videohistory,
+        titlehistory:state.titlehistory
     }
 }
 

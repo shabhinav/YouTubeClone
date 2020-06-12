@@ -32,8 +32,8 @@ class Trending extends Component{
                 <div className='Trending container'>
                     {this.state.trendingVideosdata.map(videoId=>
                         <div className='row'>
-                            <div className='col-4 videoframe'>
-                                <iframe src={'http://youtube.com/embed/'+videoId.id} title='video' onClick={()=>this.props.onVideoPlayer(videoId.id)}/>
+                            <div className='col-4'>
+                                <iframe className='videoframe' src={'http://youtube.com/embed/'+videoId.id} title='video' onClick={()=>this.props.onVideoPlayer(videoId.id)}/>
                             </div>
                             <div className='col-6'>
                                 <NavLink  to='/videoplayer' onClick={()=>this.props.onVideoPlayer(videoId.id,videoId.snippet.title)}><h6><strong>{videoId.snippet.title}</strong></h6></NavLink> 

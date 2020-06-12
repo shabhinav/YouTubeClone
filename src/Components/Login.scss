@@ -9,21 +9,24 @@
   overflow: auto; /* Enable scroll if needed */
   /* background-color: rgb(0,0,0); Fallback color */
   background-color: rgba(0,0,0,0.4);
+
+  .Form{
+    background-color: #e2dfdf;
+    position: fixed; /* Stay in place */
+    /* margin: 13% 30% 17%; 15% from the top and centered */
+    /* padding: 40px; */
+    //  margin:25% auto; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #888;
+    width:35%;
+    height:55%;
+  }
+
 }
 
-.Form{
-  background-color: #e2dfdf;
-  position: fixed; /* Stay in place */
-  /* margin: 13% 30% 17%; 15% from the top and centered */
-  /* padding: 40px; */
-  //  margin:25% auto; */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #888;
-  width:35%;
-  height:50%;
-}
+
 
 .close {
   color: #aaa;
