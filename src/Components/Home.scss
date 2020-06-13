@@ -3,11 +3,6 @@
 .home{
     background-color: #F9F9F9;
 
-    .categoryname{
-        text-align: left;
-        margin-left: 30px;
-    }
-
     img{
         width:250px;
         height:150px;
@@ -30,10 +25,3 @@
 
 
 
-@media only screen and (max-width: 425px){
-    .home{
-        h5{
-            font-size: 15px !important;
-        }
-    }
-}
