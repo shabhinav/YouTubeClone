@@ -21,3 +21,15 @@
         text-overflow: ellipsis;
     }
 }
+
+@media only screen and (max-width: 425px){
+    .videothumbnail{
+        width: 90vw !important;
+        height: 150px !important;
+        margin-left:15px !important;
+    }
+    h6{
+        display: none;
+    }
+
+}

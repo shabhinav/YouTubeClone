@@ -96,8 +96,6 @@ class Searchbar extends Component{
 
     render() {
 
-        // let searchResult
-
         if(this.state.loadSearchresult){
             return <Searchresult/>
         }

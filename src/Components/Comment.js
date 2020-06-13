@@ -41,7 +41,7 @@ class Comment extends Component{
     render() {
         let showbutton
         if(this.state.showbutton){
-            showbutton=<div>
+            showbutton=<div className='displaybtn'>
                 <button className='btn btn-primary addbtn' onClick={this.addcomment}>Comment</button>
                 <button className='btn btn-light cancelbtn' onClick={this.removeButtonHandler}>Cancel</button>
             </div>

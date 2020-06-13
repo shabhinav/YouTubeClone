@@ -34,11 +34,11 @@
     }
     
     .searchbox{
-        width:70%;
+        width:70% ;
     }
     
     .inputbox{
-        width: 80% !important;
+        width: 80% ;
     }
     
     .loginlink{
@@ -98,7 +98,37 @@
         background-color: white !important;
     }
     .searchbox{
-        width:80%;
+        width:80% !important;
+    }
+    .inputbox{
+        width: 65% !important;
+        
+    }
+    .searchbtn{
+        // display: none !important;
+    }
+    .navbrand{
+        display: none !important;
+    }
+    .loginlink{
+        display: none;
+    }
+    .chooseCat{
+        .link{
+            font-size: 12px !important;
+            min-width: 130px !important;
+        }
+    }
+    
+  }
+
+  @media only screen and (max-width: 320px){
+    .Navbar{
+        width: 100%;
+        background-color: white !important;
+    }
+    .searchbox{
+        width:80% !important;
     }
     .inputbox{
         width: 60% !important;
@@ -113,5 +143,5 @@
     .loginlink{
         display: none;
     }
-    
-  }
+
+}
