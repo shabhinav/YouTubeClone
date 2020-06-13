@@ -25,16 +25,23 @@ class Home extends Component{
        await this.setState({
             newCategoryArray:categoryArray.splice(0,5)
         })
+            // console.log(this.state.newCategoryArray)
+
             let categoryPromises=this.state.newCategoryArray.map((category)=>{
               return  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=${category.id}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
             }
             )
             Promise.all(categoryPromises)
             .then((res)=>{
+                console.log('res',res)
                    this.setState({
-                        categoriesDataArray:res
+                        categoriesDataArray:[...res]
                     })
             })
+
+            // let data=await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
+            // console.log(data.data.items)        
+
         }
 
         loadVideoHandler=()=>{
@@ -52,8 +59,9 @@ class Home extends Component{
 
 
     render() {
-        console.log('ren',this.state.categoriesDataArray[0])
-        let a=this.state.categoriesDataArray[0]
+        // console.log('render',this.state.categoriesDataArray)
+        // console.log('ren',this.state.categoriesDataArray[0])
+        // let a=this.state.categoriesDataArray[0]
         // console.log('category',a)
         return (
             //main component

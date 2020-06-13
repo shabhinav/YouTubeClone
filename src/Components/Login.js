@@ -66,18 +66,18 @@ class Login extends Component{
             <div className='Login'>
                 <div className='Form'>
                     <span className="close" onClick={this.props.closeloginmodel}>&times;</span>
-                    <h1>{this.state.loadsignup?'SIGN IN':'SIGN UP'}</h1>
+                    <h1 className='loginheading'>{this.state.loadsignup?'SIGN IN':'SIGN UP'}</h1>
                     <div className='loginform container'>
                         <div className='row'>
                              <div className='col-12'>
-                                <input className='input1 input-group-text p-2' type='email' placeholder='Email' ref={this.email}/>  
+                                <input className='input1 input-group-text' type='email' placeholder='Email' ref={this.email}/>  
                              </div>
                              <div className='col-12'>
-                                <input className='input2 input-group-text p-2' type='password' placeholder='Password' ref={this.password}/>
+                                <input className='input2 input-group-text' type='password' placeholder='Password' ref={this.password}/>
                              </div>
                         </div>
                         {/*  */}
-                        {this.state.loadsignup?<button style={{marginTop:'20px'}} className='btn btn-primary' onClick={this.onSignIn}>SIGN IN</button>:<button style={{marginTop:'20px'}} className='btn btn-primary' onClick={this.onSignUp}>SIGN UP</button>}
+                        {this.state.loadsignup?<button style={{marginTop:'20px'}} className='btn btn-danger loginbtn' onClick={this.onSignIn}>SIGN IN</button>:<button style={{marginTop:'20px'}} className='btn btn-danger loginbtn'  onClick={this.onSignUp}>SIGN UP</button>}
                     </div>
                     {this.state.loadsignup?<p style={{marginTop:'30px'}}>New To Website?<a  href='/' onClick={this.loadsignup}>Sign Up Now</a></p>:<p style={{marginTop:'30px'}}>Already Have an Account?<a  href='/' onClick={this.loadsignup}>Sign In</a></p>}
                 </div>

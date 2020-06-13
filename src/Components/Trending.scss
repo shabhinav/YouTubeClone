@@ -1,7 +1,3 @@
-// .Trending{
-//     display: flex;
-//     flex-flow: row wrap;
-// }
 
 .Trending{
     .row{
@@ -15,6 +11,11 @@
         text-overflow: ellipsis;
     }
 
+    .videolink{
+        text-decoration: none;
+    }
+
+
     h6{
         text-align:left;
     }
@@ -24,6 +25,10 @@
         text-align: left;
     }
     a{
+        color: black;
+    }
+
+    .videolink:hover{
         color: black;
     }
 }

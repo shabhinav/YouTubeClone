@@ -9,9 +9,6 @@ class SearchResult extends Component{
         data:[]
     }
 
-    
-    
-
     render() {
         console.log('searchres',this.props.value)
         return (

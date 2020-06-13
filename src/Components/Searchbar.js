@@ -9,7 +9,8 @@ import Login from './Login';
 import openMenu from '../Assests/open-menu.svg';
 import Sidedrawer from './Sidedraw';
 import signout from '../Assests/login.svg';
-import Backdrop from './backdrop'
+import Backdrop from './backdrop';
+import Searchresult from './searchResult'
 
 class Searchbar extends Component{
     constructor(props){
@@ -21,7 +22,8 @@ class Searchbar extends Component{
             loadloginpage:false,
             signIn:false,
             loadsignin:false,
-            profile:false
+            profile:false,
+            loadSearchresult:false
         }
     }
 
@@ -54,6 +56,9 @@ class Searchbar extends Component{
 
     reloadHandler=(e)=>{
         e.preventDefault()
+        this.setState({
+            loadSearchresult:true
+        })
     }
 
     backdropClickHandler=()=>{
@@ -91,6 +96,12 @@ class Searchbar extends Component{
 
     render() {
 
+        // let searchResult
+
+        if(this.state.loadSearchresult){
+            return <Searchresult/>
+        }
+
         let backDrop;
     
         if(this.state.sidedrawer) {
@@ -113,15 +124,15 @@ class Searchbar extends Component{
 
         return (
             <div className='Searchbar'>
-                <div className='Navbar con'>
+                <div className='Navbar'>
                    <nav className="navbar navbar-fixed-top">
                         <img src={openMenu} alt='openmenu' className='sidedrawer' onClick={this.sidedrawerHandler}/>
                         {sidedrawer}
                         {backDrop}
                         <a href='/' className="navbar-brand navbrand">Navbar</a>
-                        <form className="form-inline searchbox" onClick={this.reloadHandler}>
+                        <form className="form-inline searchbox" onSubmit={this.reloadHandler}>
                             <input className="form-control inputbox" type="search" placeholder="Search" aria-label="Search" ref={this.search} onChange={this.onChangeHandler}/>
-                            <button style={{marginLeft:'15px'}} className="btn btn-outline-success my-2 my-sm-0 searchbtn" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
+                            <button style={{marginLeft:'15px'}} className="btn btn-danger my-2 my-sm-0 searchbtn" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
                         </form>
                         {this.state.signIn?
                         <div className="dropdown">
@@ -133,7 +144,7 @@ class Searchbar extends Component{
                                 <li><a href="#" onClick={this.SignedOut}><img style={{marginRight:'5px'}} src={signout} alt=''/>Sign Out</a></li>
                             </ul>
                         </div>
-                        :<div className='loginlink'><a href='/' onClick={this.loadLogin}>Login / Sign In</a></div>}
+                        :<div className='loginlink'><a href='/' style={{textDecoration:'none'}} onClick={this.loadLogin}>Login / Sign In</a></div>}
                         {profile}
                     </nav>
                     <hr className='container' style={{marginTop:'0px'}}/>
@@ -142,6 +153,10 @@ class Searchbar extends Component{
                     {categoryList.map(category=>
                         <NavLink key={Math.random()} className='link' to={'/category/'+category.id} onClick={()=>this.props.history.push('/category/'+category.id)}>{category.name}</NavLink>
                     )}
+                    {/* {categoryList.map(category=>
+                        <NavLink className='link' to={'/category/'+category.id}>{category.name}</NavLink>
+                    <p className='link'>{category.name}</p>
+                    )} */}
                 </div>
             </div>
         )

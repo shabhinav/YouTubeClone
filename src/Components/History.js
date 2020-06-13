@@ -13,10 +13,14 @@ class History extends Component{
     
 
     async componentDidMount(){
+        const videodata={
+            videoid:this.props.videohistory,
+            videohistory:this.props.titlehistory
+        }
         
         let video=await axios.post(`https://clone-1d9c2.firebaseio.com/VideoId.json`,{
-            videoid:this.props.videohistory,
-            videotitle:this.props.titlehistory
+        videoid:this.props.videohistory,
+        videotitle:this.props.titlehistory
         })
 
         console.log('hisvid',video.data.name);

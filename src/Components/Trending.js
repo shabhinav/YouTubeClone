@@ -36,7 +36,7 @@ class Trending extends Component{
                                 <iframe className='videoframe' src={'http://youtube.com/embed/'+videoId.id} title='video' onClick={()=>this.props.onVideoPlayer(videoId.id)}/>
                             </div>
                             <div className='col-6'>
-                                <NavLink  to='/videoplayer' onClick={()=>this.props.onVideoPlayer(videoId.id,videoId.snippet.title)}><h6><strong>{videoId.snippet.title}</strong></h6></NavLink> 
+                                <NavLink className='videolink' to='/videoplayer' onClick={()=>this.props.onVideoPlayer(videoId.id,videoId.snippet.title)}><h6><strong>{videoId.snippet.title}</strong></h6></NavLink> 
                                 <p >{videoId.snippet.channelTitle} <img src={done} alt=''/></p>
                                 <p className='description' style={{textOverflow:'ellipsis'}}>{videoId.snippet.description}</p>
                             </div>

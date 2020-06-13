@@ -1,62 +1,72 @@
-.Navbar{
-    width: 100%;
-    background-color: white !important;
-}
-
-.chooseCat{
-    display: flex;
-    flex-flow: row nowrap;
-    overflow-x: scroll;
-    width:100%;
-    .link{
-        color: black;
-        background-color: #E0E0E0;
+.Searchbar{
+    .Navbar{
+        width: 100%;
+        background-color: white !important;
+    }
+    
+    .chooseCat{
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+        width:100%;
+        
+        .link{
+            flex: auto;
+            // display: inline-block !important;
+            // flex: 1 1 auto;
+            color: black;
+            background-color: #E0E0E0;
+            margin-right: 10px;
+            border: 0.5px solid #D0D0D0;
+            width: 200px !important;
+            border-radius: 100px;
+            padding:5px;
+            min-width: 200px;
+            margin-bottom: 10px;
+            text-decoration: none !important;
+            margin-top: 0px
+    }
+    .link:hover{
+        background-color:grey;
+        color:white;
+        font-weight: 900;
+    }
+    }
+    
+    .searchbox{
+        width:70%;
+    }
+    
+    .inputbox{
+        width: 80% !important;
+    }
+    
+    .loginlink{
         margin-right: 10px;
-        border: 0.5px solid #D0D0D0;
-        width: 200px;
+        a{
+            color: #C82333 !important;
+        }
+    }
+
+    
+    .sidedrawer{
+        width: 20px;
+        height: 25px;
+    }
+    
+    .profilepic{
         border-radius: 100px;
-        padding:5px;
-        min-width: 200px;
-        margin-bottom: 10px;
-        text-decoration: none;
-        margin-top: 0px
-}
-.link:hover{
-    background-color:grey;
-    color:white;
-    font-weight: 900;
-}
-}
-
-.searchbox{
-    width:70%;
-}
-
-.inputbox{
-    width: 80% !important;
-}
-
-.loginlink{
-    margin-right: 10px;
-}
-
-.sidedrawer{
-    width: 20px;
-    height: 25px;
-}
-
-.profilepic{
-    border-radius: 100px;
-    width:40px;
-    height:40px;
-}
-
-.dropdown-menu{
-    // right:0px !important;
-    padding: 10px 50px 10px 50px !important;
-    margin: 5px 0px 0px -255px !important;
-    text-align: center !important;
-
+        width:40px;
+        height:40px;
+    }
+    
+    .dropdown-menu{
+        // right:0px !important;
+        padding: 10px 50px 10px 50px !important;
+        margin: 5px 0px 0px -255px !important;
+        text-align: center !important;
+    
+    }
 }
 
 ::-webkit-scrollbar {
