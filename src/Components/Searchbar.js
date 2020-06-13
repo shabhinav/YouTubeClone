@@ -130,7 +130,7 @@ class Searchbar extends Component{
                         <a href='/' className="navbar-brand navbrand">Navbar</a>
                         <form className="form-inline searchbox" onSubmit={this.reloadHandler}>
                             <input className="form-control inputbox" type="search" placeholder="Search" aria-label="Search" ref={this.search} onChange={this.onChangeHandler}/>
-                            <button style={{marginLeft:'15px'}} className="btn btn-danger my-2 my-sm-0 searchbtn" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
+                            <button style={{marginLeft:'15px'}} className="btn btn-danger  input-group-append searchbtn" type="submit" onClick={()=>this.props.searchValue(this.state.inputValue)}>Search</button>
                         </form>
                         {this.state.signIn?
                         <div className="dropdown">
