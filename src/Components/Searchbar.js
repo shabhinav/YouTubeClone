@@ -145,9 +145,9 @@ class Searchbar extends Component{
                         :<div className='loginlink'><a href='/' style={{textDecoration:'none'}} onClick={this.loadLogin}>Login / Sign In</a></div>}
                         {profile}
                     </nav>
-                    <hr className='container' style={{marginTop:'0px'}}/>
+                    <hr style={{marginTop:'0px'}}/>
                 </div>
-                <div className='chooseCat container'>
+                <div className='chooseCat'>
                     {categoryList.map(category=>
                         <NavLink key={Math.random()} className='link' to={'/category/'+category.id} onClick={()=>this.props.history.push('/category/'+category.id)}>{category.name}</NavLink>
                     )}
