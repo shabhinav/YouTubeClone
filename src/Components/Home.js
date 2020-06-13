@@ -71,7 +71,7 @@ class Home extends Component{
                 <div className='videoThumbnail'>
                 {this.state.newCategoryArray.map(category=>
                     <section key={Math.random()} className='container'>
-                     <h5  style={{textAlign:'left',marginLeft:'30px'}}>{category.name}</h5>
+                     <h5  className='categoryname'>{category.name}</h5>
                         <div className='style'>
                             {/* {
                                 this.state.categoriesDataArray[0].data.items.map(category=>
