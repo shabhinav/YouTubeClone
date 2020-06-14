@@ -43,7 +43,7 @@ background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/3b48f428-24ed-
 .input1{
   padding:12px !important;
   border-radius: 5px;
-  width: 90%;
+  width: 90% !important;
   outline: none;
   margin: 0px auto 10px auto !important;
 }
@@ -51,7 +51,7 @@ background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/3b48f428-24ed-
 .input2{
   padding:12px !important;
   border-radius: 5px;
-  width: 90%;
+  width: 90% !important;
   outline: none;
   margin: 0px auto 10px auto !important
 }
@@ -68,8 +68,19 @@ background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/3b48f428-24ed-
 
 
 @media only screen and (max-width: 425px){
+  .Login{
   .Form{
-    height: 50% !important;
+    height: 50% ;
   }
-
 }
+}
+
+
+@media only screen and (max-width: 425px){
+  .Login{
+    .Form{
+       height: 65%  !important;
+       width: 95% !important;
+        }
+      }
+    }

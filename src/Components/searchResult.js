@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {NavLink,BrowserRouter as Router} from 'react-router-dom'
-import * as actionCreators from '../store/action/index'
+import * as actionCreators from '../store/action/index';
+import Searchbar from './Searchbar'
 
 class SearchResult extends Component{
     
@@ -13,13 +14,17 @@ class SearchResult extends Component{
         console.log('searchres',this.props.value)
         return (
             <div className='searchResult'>
-                
+                {/* <Searchbar/> */}
+                <p>asdfghjhgwfg</p>
                 {this.props.value.map(val=>
                     <div className='row'>
                         <div className='col-4'>
+                            <p>swazsxdcfgvhbjnmk,lnjhbgfdrftgyhujk</p>
+                            <p>hello</p>
                             <iframe title='video' src={'http://youtube.com/embed/'+val.id.videoId} />
                          </div>
                          <div className='col-6'>
+                             <h6>asdfghygfds</h6>
                             <NavLink  to='/videoplayer' onClick={()=>this.props.onVideoPlayer(val.id.videoId,val.snippet.title)}><h5><strong>{val.snippet.title}</strong></h5></NavLink>                                                
                          </div>
                     </div>    

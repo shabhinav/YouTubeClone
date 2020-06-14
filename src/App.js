@@ -44,10 +44,10 @@ class App extends Component{
       {/* <SearchResult/> */}
       {/* <History/> */}
         <Router>
-              <Route path='/'  component={SearchBar}/>
+              <Route path='/' component={SearchBar}/>
+              <Route path='/' exact component={Home}/>
               <Route path='/searchresult' component={SearchResult}/>
               <Route path='/feedback' component={Feedback}/>
-              <Route path='/' exact component={Home}/>
               <Route path='/category/:category' component={Category}/>
               <Route path='/trending' component={Trending}/>  
               <Route path='/videoplayer' component={VideoPlayer}/>

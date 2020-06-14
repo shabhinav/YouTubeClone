@@ -23,10 +23,8 @@ class Home extends Component{
         var categoryArray=[...categoryList]
             
        await this.setState({
-            newCategoryArray:categoryArray.splice(0,5)
+            newCategoryArray:categoryArray.splice(0,4)
         })
-            // console.log(this.state.newCategoryArray)
-
             let categoryPromises=this.state.newCategoryArray.map((category)=>{
               return  axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=${category.id}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`)
             }
@@ -51,7 +49,7 @@ class Home extends Component{
         }
 
         sortAccToCat=(catId)=>{
-            console.log(catId)
+            // console.log(catId)
             this.setState({
                 redirect:true
             })
@@ -59,7 +57,7 @@ class Home extends Component{
 
 
     render() {
-        // console.log('render',this.state.categoriesDataArray)
+        console.log('render',this.state.categoriesDataArray)
         // console.log('ren',this.state.categoriesDataArray[0])
         // let a=this.state.categoriesDataArray[0]
         // console.log('category',a)
@@ -78,11 +76,16 @@ class Home extends Component{
                                 <li>{category.id.videoId}</li>
                                     )
                             } */}
-                            {
+                            {/* {console.log(this.state.categoriesDataArray)} */}
+                            <ol>
+                            {/* {
                                 this.state.categoriesDataArray.map(category=>
-                                    console.log(category.data)
-                                    )
-                            }
+                                    category.data.items.map(videoid=>
+                                    <li>{videoid.id.videoId}</li>
+                                        )    
+                                )
+                            } */}
+                            </ol>
                             <hr />
                         </div>
                     </section>

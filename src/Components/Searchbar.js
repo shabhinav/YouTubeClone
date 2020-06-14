@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './Searchbar.scss';
 import {categoryList} from './categoryList';
-import {BrowserRouter as Router,NavLink} from 'react-router-dom';
+import {BrowserRouter as Router,NavLink,withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as actionCreators from '../store/action/index';
 import Profile from './profile';
@@ -11,6 +11,7 @@ import Sidedrawer from './Sidedraw';
 import signout from '../Assests/login.svg';
 import Backdrop from './backdrop';
 import Searchresult from './searchResult'
+import Home from './Home'
 
 class Searchbar extends Component{
     constructor(props){
@@ -56,6 +57,7 @@ class Searchbar extends Component{
 
     reloadHandler=(e)=>{
         e.preventDefault()
+        this.props.history.push('/searchresult')
         this.setState({
             loadSearchresult:true
         })
@@ -95,10 +97,10 @@ class Searchbar extends Component{
     
 
     render() {
-
-        if(this.state.loadSearchresult){
-            return <Searchresult/>
-        }
+        console.log(this.state.loadSearchresult)
+        // if(this.state.loadSearchresult){
+        //     return <Searchresult/>
+        // }
 
         let backDrop;
     
@@ -156,6 +158,7 @@ class Searchbar extends Component{
                     <p className='link'>{category.name}</p>
                     )} */}
                 </div>
+                
             </div>
         )
     }
