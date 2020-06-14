@@ -9,11 +9,7 @@
         flex-flow: row nowrap;
         overflow-x: scroll;
         width:100%;
-        
         .link{
-            flex: auto;
-            // display: inline-block !important;
-            // flex: 1 1 auto;
             color: black;
             background-color: #E0E0E0;
             margin-right: 10px;
@@ -69,28 +65,6 @@
     }
 }
 
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-    border-radius: 20px;
-
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
-
 
   @media only screen and (max-width: 425px){
     .Searchbar{
@@ -104,9 +78,6 @@
          .inputbox{
             width: 65% !important;
             
-        }
-        .searchbtn{
-            // display: none !important;
         }
         .navbrand{
             display: none !important;
@@ -136,9 +107,6 @@
         .inputbox{
             width: 60% !important;
             
-        }
-        .searchbtn{
-            // display: none !important;
         }
         .navbrand{
             display: none !important;
