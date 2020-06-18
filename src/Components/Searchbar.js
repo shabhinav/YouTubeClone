@@ -10,8 +10,6 @@ import openMenu from "../Assests/open-menu.svg";
 import Sidedrawer from "./Sidedraw";
 import signout from "../Assests/login.svg";
 import Backdrop from "./backdrop";
-import Searchresult from "./searchResult";
-import Home from "./Home";
 import Search from "../Assests/search.svg";
 
 class Searchbar extends Component {
@@ -98,9 +96,6 @@ class Searchbar extends Component {
 
   render() {
     console.log(this.state.loadSearchresult);
-    // if(this.state.loadSearchresult){
-    //     return <Searchresult/>
-    // }
 
     let backDrop;
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { categoryList } from "./categoryList";
 import "./Home.scss";
-// import VideoPlayer from './VideoPlayer';
 import axios from "axios";
 import Shellapp from "./shellapp";
 // import Spinner from "./spinner";
@@ -41,13 +40,6 @@ class Home extends Component {
         });
       })
       .catch((err) => console.log(err));
-
-    //   let data = await axios.get(
-    //     `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=1&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
-    //   );
-    //   this.setState({
-    //     categoriesDataArray: data.data,
-    //   });
   }
 
   loadVideoHandler = () => {
@@ -65,12 +57,6 @@ class Home extends Component {
 
   render() {
     console.log("render", this.state.categoriesDataArray.items);
-    // console.log('ren',this.state.categoriesDataArray[0])
-    // let a=this.state.categoriesDataArray[0]
-    // console.log('category',a)
-    // console.log()
-    // if (this.state.categoriesDataArray.length){
-    // }
     return (
       //main component
       <div className="home">
