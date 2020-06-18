@@ -12,6 +12,7 @@ import signout from "../Assests/login.svg";
 import Backdrop from "./backdrop";
 import Searchresult from "./searchResult";
 import Home from "./Home";
+import Search from "../Assests/search.svg";
 
 class Searchbar extends Component {
   constructor(props) {
@@ -118,9 +119,7 @@ class Searchbar extends Component {
     }
 
     if (this.state.loadloginpage) {
-      return (
-        <Login closeloginmodel={this.closeloginmodel} signIn={this.SignedIn} />
-      );
+      return <Login closeloginmodel={this.closeloginmodel} signIn={this.SignedIn} />;
     }
 
     let profile;
@@ -143,10 +142,7 @@ class Searchbar extends Component {
             <a href="/" className="navbar-brand navbrand">
               Navbar
             </a>
-            <form
-              className="form-inline searchbox"
-              onSubmit={this.reloadHandler}
-            >
+            <form className="form-inline searchbox" onSubmit={this.reloadHandler}>
               <input
                 className="form-control inputbox"
                 type="search"
@@ -156,12 +152,15 @@ class Searchbar extends Component {
                 onChange={this.onChangeHandler}
               />
               <button
-                style={{ marginLeft: "15px" }}
-                className="btn btn-danger  input-group-append searchbtn"
+                className="searchbtn"
                 type="submit"
                 onClick={() => this.props.searchValue(this.state.inputValue)}
               >
-                Search
+                <img
+                  src={Search}
+                  style={{ width: "25px", height: "25px", padding: "0px" }}
+                  alt=""
+                />
               </button>
             </form>
             {this.state.signIn ? (
@@ -186,11 +185,7 @@ class Searchbar extends Component {
                   <hr />
                   <li>
                     <a href="#" onClick={this.SignedOut}>
-                      <img
-                        style={{ marginRight: "5px" }}
-                        src={signout}
-                        alt=""
-                      />
+                      <img style={{ marginRight: "5px" }} src={signout} alt="" />
                       Sign Out
                     </a>
                   </li>
@@ -217,17 +212,11 @@ class Searchbar extends Component {
               key={Math.random()}
               className="link"
               to={"/category/" + category.id}
-              onClick={() =>
-                this.props.history.push("/category/" + category.id)
-              }
+              onClick={() => this.props.history.push("/category/" + category.id)}
             >
               {category.name}
             </NavLink>
           ))}
-          {/* {categoryList.map(category=>
-                        <NavLink className='link' to={'/category/'+category.id}>{category.name}</NavLink>
-                    <p className='link'>{category.name}</p>
-                    )} */}
         </div>
       </div>
     );

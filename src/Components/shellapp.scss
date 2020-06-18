@@ -1,0 +1,16 @@
+.ShellApp {
+  display: flex;
+  flex-flow: row wrap;
+  .thumbnail {
+    width: 250px;
+    height: 150px;
+    background-color: #dedede;
+    margin: 30px 30px 20px 40px;
+  }
+  .title {
+    width: 240px;
+    height: 25px;
+    background-color: #dedede;
+    margin: 10px 30px 30px 40px;
+  }
+}
