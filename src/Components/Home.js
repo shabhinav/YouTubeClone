@@ -91,7 +91,9 @@ class Home extends Component {
                         this.props.onVideoPlayer(data.id.videoId, data.snippet.title)
                       }
                     >
-                      <p className="homevideotitle">{data.snippet.title}</p>
+                      <strong>
+                        <p className="homevideotitle">{data.snippet.title}</p>
+                      </strong>
                     </NavLink>
                   ))}
                 </div>
@@ -127,7 +129,9 @@ class Home extends Component {
                           )
                         }
                       >
-                        <p className="homevideotitle">{data.snippet.title}</p>
+                        <strong>
+                          <p className="homevideotitle">{data.snippet.title}</p>
+                        </strong>
                       </NavLink>
                     ))}
                   </div>
@@ -164,7 +168,9 @@ class Home extends Component {
                           )
                         }
                       >
-                        <p className="homevideotitle">{data.snippet.title}</p>
+                        <strong>
+                          <p className="homevideotitle">{data.snippet.title}</p>
+                        </strong>
                       </NavLink>
                     ))}
                   </div>

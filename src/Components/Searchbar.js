@@ -207,7 +207,7 @@ class Searchbar extends Component {
               key={Math.random()}
               className="link"
               to={"/category/" + category.id}
-              onClick={() => this.props.history.push("/category/" + category.id)}
+              // onClick={() => this.props.history.push("/category/" + category.id)}
             >
               {category.name}
             </NavLink>

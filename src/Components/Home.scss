@@ -28,6 +28,13 @@
     text-align: left;
   }
 
+  a {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
+
   a:nth-child(n + 2) {
     margin-left: 20px;
   }
