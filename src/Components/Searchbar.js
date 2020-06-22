@@ -95,7 +95,7 @@ class Searchbar extends Component {
   };
 
   render() {
-    console.log(this.state.loadSearchresult);
+    // console.log(this.state.loadSearchresult);
 
     let backDrop;
 
