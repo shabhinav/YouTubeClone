@@ -60,7 +60,7 @@ class Home extends Component {
     return (
       //main component
       <div className="home">
-        {this.state.categoriesDataArray.length == 0 ? (
+        {this.state.categoriesDataArray.length === 0 ? (
           <div className="">
             <Shellapp />
           </div>
@@ -72,11 +72,12 @@ class Home extends Component {
                   {this.state.newCategoryArray[0].name}
                 </h4>
               </div>
-              <div className="videoThumbnail">
+              <div className="videoThumbnail container">
                 <div>
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
-                    <div>
+                    <div key={Math.random()}>
                       <iframe
+                        title="video"
                         className="HomeVideos"
                         src={"https://www.youtube.com/embed/" + data.id.videoId}
                       />
@@ -112,6 +113,7 @@ class Home extends Component {
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
                       <div>
                         <iframe
+                          title="video"
                           className="HomeVideos"
                           src={"https://www.youtube.com/embed/" + data.id.videoId}
                         />
@@ -151,6 +153,7 @@ class Home extends Component {
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <div>
                         <iframe
+                          title="video"
                           className="HomeVideos"
                           src={"https://www.youtube.com/embed/" + data.id.videoId}
                         />

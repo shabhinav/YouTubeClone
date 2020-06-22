@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Searchbar.scss";
 import { categoryList } from "./categoryList";
-import { BrowserRouter as Router, NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
 import Profile from "./profile";
@@ -168,7 +168,7 @@ class Searchbar extends Component {
                 />
                 <ul class="dropdown-menu">
                   <li>
-                    <a href="#">
+                    <a href="/">
                       <img
                         className="profilepic"
                         src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
@@ -179,7 +179,7 @@ class Searchbar extends Component {
                   <li>{this.props.userData.email}</li>
                   <hr />
                   <li>
-                    <a href="#" onClick={this.SignedOut}>
+                    <a href="/" onClick={this.SignedOut}>
                       <img style={{ marginRight: "5px" }} src={signout} alt="" />
                       Sign Out
                     </a>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { categoryList } from "./categoryList";
+// import { categoryList } from "./categoryList";
 import "./shellapp.scss";
 
 class Shellapp extends Component {

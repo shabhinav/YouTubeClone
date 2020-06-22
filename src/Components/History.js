@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import * as actionCreators from "../store/action/index";
+// import * as actionCreators from "../store/action/index";
 import "./History.scss";
 
 class History extends Component {
@@ -10,10 +10,10 @@ class History extends Component {
   };
 
   async componentDidMount() {
-    const videodata = {
-      videoid: this.props.videohistory,
-      videohistory: this.props.titlehistory,
-    };
+    // const videodata = {
+    //   videoid: this.props.videohistory,
+    //   videohistory: this.props.titlehistory,
+    // };
 
     let video = await axios.post(`https://clone-1d9c2.firebaseio.com/VideoId.json`, {
       videoid: this.props.videohistory,
@@ -24,73 +24,37 @@ class History extends Component {
 
     let data = await axios.get(`https://clone-1d9c2.firebaseio.com/VideoId.json`);
 
-    // console.log("data", data.data);
-
     await this.setState({
       keys: Object.values(data.data).reverse(),
     });
-
-    // console.log('keys',keys)
-
-    // console.log("videohis", this.props.videohistory);
-    // console.log("vidtitle", this.props.titlehistory);
   }
 
   render() {
-    // console.log(this.state.keys.reverse());
+    console.log(this.state.keys);
     return (
-      <div className="history mt-3">
-        {/* <div className="row">
-          <div>
+      <div className="history mt-3 container">
+        <div className="row">
+          <div className="col-4">
             {this.state.keys.map((videos) =>
               videos.videoid.map((id) => (
-                <iframe title="video" src={"http://youtube.com/embed/" + id} />
+                <iframe
+                  title="video"
+                  src={"http://youtube.com/embed/" + id}
+                  className="videothumbnail"
+                />
+              ))
+            )}
+          </div>
+          <div className="col-6 title">
+            {this.state.keys.map((title) =>
+              title.videohistory.map((title) => (
+                <h5>
+                  <strong>{title}</strong>
+                </h5>
               ))
             )}
           </div>
         </div>
-        <div className="row">
-          <div className="col-6">
-            {this.state.keys.map((title) =>
-              title.videohistory.map((title) => <h6>{title}</h6>)
-            )}
-          </div>
-        </div> */}
-        {this.state.keys.map((videos) => (
-          <div className="row" key={Math.random()}>
-            <div className="col-4">
-              {videos.videoid.reverse().map((id) => (
-                <iframe
-                  key={Math.random()}
-                  className="videothumbnail"
-                  title="video"
-                  src={"http://youtube.com/embed/" + id}
-                />
-              ))}
-            </div>
-            <div className="col-6 title">
-              {videos.videohistory.reverse().map((title) => (
-                <h6 key={Math.random()}>
-                  <strong>{title}</strong>
-                </h6>
-              ))}
-            </div>
-          </div>
-        ))}
-        {/* {this.state.keys.map((videos) => (
-          <div className="row">
-            <div>
-              {videos.videoid.reverse().map((id) => (
-                <iframe
-                  key={Math.random()}
-                  className="videothumbnail"
-                  title="video"
-                  src={"http://youtube.com/embed/" + id}
-                />
-              ))}
-            </div>
-          </div>
-        ))} */}
       </div>
     );
   }
@@ -104,12 +68,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
-  return {
-    onVideoPlayer: (videoId, videotitle) =>
-      dispatch(actionCreators.playVideo(videoId, videotitle)),
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   console.log(dispatch);
+//   return {
+//     onVideoPlayer: (videoId, videotitle) =>
+//       dispatch(actionCreators.playVideo(videoId, videotitle)),
+//   };
+// };
 
 export default connect(mapStateToProps)(History);

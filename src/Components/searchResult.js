@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink, BrowserRouter as Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import * as actionCreators from "../store/action/index";
-import Searchbar from "./Searchbar";
+// import Searchbar from "./Searchbar";
 
 class SearchResult extends Component {
   state = {
