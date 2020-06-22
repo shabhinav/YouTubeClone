@@ -1,13 +1,28 @@
 .history {
-  margin-top: 20px !important;
-  .row {
-    margin-right: 0px !important;
+  .video {
+    display: inline-block;
   }
   .title {
-    h6:nth-child(n + 2) {
-      margin-top: 140px;
+    div:nth-child(1) {
+      margin-right: 40px;
     }
-    text-align: left;
+    .videotitle {
+      display: inline-block;
+    }
+    a {
+      color: black;
+      &:hover {
+        color: black;
+      }
+      .videolink {
+        text-align: left;
+        white-space: nowrap;
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+      }
+    }
   }
 }
 

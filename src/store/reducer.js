@@ -6,8 +6,8 @@ const initialState = {
   videoId: "",
   videotitle: "",
   logindata: [],
-  videohistory: [],
-  titlehistory: [],
+  videohistory: {},
+  titlehistory: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -26,8 +26,8 @@ const reducer = (state = initialState, action) => {
       ...state,
       videoId: action.videoId,
       videotitle: action.videoTitle,
-      videohistory: [...state.videohistory, action.videoId],
-      titlehistory: [...state.titlehistory, action.videoTitle],
+      videohistory: action.videoId,
+      titlehistory: action.videoTitle,
     };
   }
 

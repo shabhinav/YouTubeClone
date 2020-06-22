@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-// import * as actionCreators from "../store/action/index";
+import { NavLink } from "react-router-dom";
+import * as actionCreators from "../store/action/index";
 import "./History.scss";
 
 class History extends Component {
@@ -10,11 +11,6 @@ class History extends Component {
   };
 
   async componentDidMount() {
-    // const videodata = {
-    //   videoid: this.props.videohistory,
-    //   videohistory: this.props.titlehistory,
-    // };
-
     let video = await axios.post(`https://clone-1d9c2.firebaseio.com/VideoId.json`, {
       videoid: this.props.videohistory,
       videohistory: this.props.titlehistory,
@@ -30,29 +26,30 @@ class History extends Component {
   }
 
   render() {
-    console.log(this.state.keys);
+    console.log("data", this.state.keys);
     return (
       <div className="history mt-3 container">
-        <div className="row">
-          <div className="col-4">
-            {this.state.keys.map((videos) =>
-              videos.videoid.map((id) => (
-                <iframe
-                  title="video"
-                  src={"http://youtube.com/embed/" + id}
-                  className="videothumbnail"
-                />
-              ))
-            )}
+        <div>
+          <div className="video">
+            {this.state.keys.map((video) => (
+              <iframe src={"http://youtube.com/embed/" + video.videoid} />
+            ))}
           </div>
-          <div className="col-6 title">
-            {this.state.keys.map((title) =>
-              title.videohistory.map((title) => (
-                <h5>
-                  <strong>{title}</strong>
-                </h5>
-              ))
-            )}
+          <div className="title">
+            {this.state.keys.map((title) => (
+              <div className="videotitle">
+                <NavLink
+                  to="/videoplayer"
+                  onClick={() =>
+                    this.props.onVideoPlayer(title.videoid, title.videohistory)
+                  }
+                >
+                  <h6 className="videolink">
+                    <strong>{title.videohistory}</strong>
+                  </h6>
+                </NavLink>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -68,12 +65,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   console.log(dispatch);
-//   return {
-//     onVideoPlayer: (videoId, videotitle) =>
-//       dispatch(actionCreators.playVideo(videoId, videotitle)),
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
+  return {
+    onVideoPlayer: (videoId, videotitle) =>
+      dispatch(actionCreators.playVideo(videoId, videotitle)),
+  };
+};
 
-export default connect(mapStateToProps)(History);
+export default connect(mapStateToProps, mapDispatchToProps)(History);
