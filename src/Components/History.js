@@ -29,15 +29,18 @@ class History extends Component {
     console.log("data", this.state.keys);
     return (
       <div className="history mt-3 container">
-        <div>
+        <div className="historysection">
           <div className="video">
             {this.state.keys.map((video) => (
-              <iframe src={"http://youtube.com/embed/" + video.videoid} />
+              <iframe
+                key={Math.random()}
+                src={"http://youtube.com/embed/" + video.videoid}
+              />
             ))}
           </div>
           <div className="title">
             {this.state.keys.map((title) => (
-              <div className="videotitle">
+              <div key={Math.random()} className="videotitle">
                 <NavLink
                   to="/videoplayer"
                   onClick={() =>

@@ -1,4 +1,9 @@
 .history {
+  .historysection {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
   .video {
     display: inline-block;
   }

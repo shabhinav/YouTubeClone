@@ -6,23 +6,37 @@ class Category extends Component {
     data: [],
   };
 
+  async componentDidMount() {
+    let categoryid = this.props.match.params.category;
+    console.log("catid", categoryid);
+
+    let catdetails = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${categoryid}`
+    );
+    await this.setState({
+      data: catdetails,
+    });
+    console.log("data", this.state.data);
+  }
+
   async componentDidUpdate(prevState) {
-    let id = this.props.match.params.category;
-    console.log(this.state.data);
-    console.log(id);
-    if (prevState !== this.state.data) {
-      let catData = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${id}`
+    let categoryid = this.props.match.params.category;
+    console.log("catid", categoryid);
+    if (prevState.data !== this.state.data) {
+      let catdetails = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts/${categoryid}`
       );
-      console.log("api", catData);
-      this.setState({
-        data: catData,
-      });
+      // this.setState({});
+      console.log("dtatatatatt", catdetails);
     }
+
+    // this.setState({
+    //   data: categoryid,
+    // });
   }
 
   render() {
-    console.log(this.state.catData);
+    console.log(this.props.match.params.category);
     return <div className="category"></div>;
   }
 }
