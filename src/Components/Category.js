@@ -1,44 +1,17 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { connect } from "react-redux";
 
 class Category extends Component {
-  state = {
-    data: [],
-  };
-
-  async componentDidMount() {
-    let categoryid = this.props.match.params.category;
-    console.log("catid", categoryid);
-
-    let catdetails = await axios.get(
-      `https://jsonplaceholder.typicode.com/posts/${categoryid}`
-    );
-    await this.setState({
-      data: catdetails,
-    });
-    console.log("data", this.state.data);
-  }
-
-  async componentDidUpdate(prevState) {
-    let categoryid = this.props.match.params.category;
-    console.log("catid", categoryid);
-    if (prevState.data !== this.state.data) {
-      let catdetails = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${categoryid}`
-      );
-      // this.setState({});
-      console.log("dtatatatatt", catdetails);
-    }
-
-    // this.setState({
-    //   data: categoryid,
-    // });
-  }
-
   render() {
-    console.log(this.props.match.params.category);
-    return <div className="category"></div>;
+    console.log("category", this.props.category);
+    return <div></div>;
   }
 }
 
-export default Category;
+const mapStateToProps = (state) => {
+  return {
+    category: state.categoryData,
+  };
+};
+
+export default connect(mapStateToProps)(Category);

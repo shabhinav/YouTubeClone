@@ -95,8 +95,6 @@ class Searchbar extends Component {
   };
 
   render() {
-    // console.log(this.state.loadSearchresult);
-
     let backDrop;
 
     if (this.state.sidedrawer) {
@@ -207,7 +205,9 @@ class Searchbar extends Component {
               key={Math.random()}
               className="link"
               to={"/category/" + category.id}
-              // onClick={() => this.props.history.push("/category/" + category.id)}
+              onClick={() => {
+                this.props.categoryId(category.id);
+              }}
             >
               {category.name}
             </NavLink>
@@ -221,6 +221,8 @@ class Searchbar extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     searchValue: (srchval) => dispatch(actionCreators.searchedValue(srchval)),
+    categoryId: (categoryId) =>
+      dispatch(actionCreators.selectedCategpory(categoryId)),
   };
 };
 
