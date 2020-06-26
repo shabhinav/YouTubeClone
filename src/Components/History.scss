@@ -3,6 +3,9 @@
     display: flex;
     flex-flow: row wrap;
   }
+  iframe {
+    background-color: black;
+  }
 
   .video {
     display: inline-block;

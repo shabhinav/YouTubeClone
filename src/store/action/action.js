@@ -23,10 +23,10 @@ export const selectedCategpory = (categoryid) => {
   return (dispatch) => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&type=video&videoCategoryId=${categoryid}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=${categoryid}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
       )
       .then((res) => {
-        dispatch(categorySuccess(res));
+        dispatch(categorySuccess(res.data));
       })
       .catch((err) => {
         dispatch(categoryFail(err));
