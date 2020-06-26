@@ -41,8 +41,8 @@ class Category extends Component {
   }
 
   render() {
-    console.log("category", this.props.category);
-    return <div></div>;
+    console.log(this.props.match.params.category);
+    return <div className="category"></div>;
   }
 }
 
@@ -60,4 +60,3 @@ const mapDispatchToprops = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToprops)(Category);
-export default connect(mapStateToProps)(Category);
