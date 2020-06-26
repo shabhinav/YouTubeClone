@@ -72,30 +72,30 @@ const categoryFail = (catFailure) => {
   };
 };
 
-export const playVideo = (videoId, videoTitle) => {
-  console.log(videoTitle);
-  return {
-    type: actionTypes.VIDEOPLAYER,
-    videoId: videoId,
-    videoTitle: videoTitle,
-  };
-};
+// export const playVideo = (videoId, videoTitle) => {
+//   console.log(videoTitle);
+//   return {
+//     type: actionTypes.VIDEOPLAYER,
+//     videoId: videoId,
+//     videoTitle: videoTitle,
+//   };
+// };
 
-export const playVideo = (videoId, videoTitle) => {
-  console.log(videoTitle);
-  return {
-    type: actionTypes.VIDEOPLAYER,
-    videoId: videoId,
-    videoTitle: videoTitle,
-  };
-};
+// export const playVideo = (videoId, videoTitle) => {
+//   console.log(videoTitle);
+//   return {
+//     type: actionTypes.VIDEOPLAYER,
+//     videoId: videoId,
+//     videoTitle: videoTitle,
+//   };
+// };
 
-export const loginDetails = (loginData) => {
-  return {
-    type: actionTypes.LOGINDETAILS,
-    loginData: loginData,
-  };
-};
+// export const loginDetails = (loginData) => {
+//   return {
+//     type: actionTypes.LOGINDETAILS,
+//     loginData: loginData,
+//   };
+// };
 
 const successData = (success) => {
   console.log("success", success);
