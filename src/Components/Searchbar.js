@@ -4,7 +4,6 @@ import { categoryList } from "./categoryList";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
-import Profile from "./profile";
 import Login from "./Login";
 import openMenu from "../Assests/open-menu.svg";
 import Sidedrawer from "./Sidedraw";
@@ -95,8 +94,6 @@ class Searchbar extends Component {
   };
 
   render() {
-    // console.log(this.state.loadSearchresult);
-
     let backDrop;
 
     if (this.state.sidedrawer) {
@@ -115,11 +112,6 @@ class Searchbar extends Component {
 
     if (this.state.loadloginpage) {
       return <Login closeloginmodel={this.closeloginmodel} signIn={this.SignedIn} />;
-    }
-
-    let profile;
-    if (this.state.profile) {
-      profile = <Profile />;
     }
 
     return (
@@ -197,7 +189,6 @@ class Searchbar extends Component {
                 </a>
               </div>
             )}
-            {profile}
           </nav>
           <hr style={{ marginTop: "0px" }} />
         </div>
@@ -207,7 +198,9 @@ class Searchbar extends Component {
               key={Math.random()}
               className="link"
               to={"/category/" + category.id}
-              // onClick={() => this.props.history.push("/category/" + category.id)}
+              onClick={() => {
+                this.props.categoryId(category.id);
+              }}
             >
               {category.name}
             </NavLink>
@@ -221,6 +214,8 @@ class Searchbar extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     searchValue: (srchval) => dispatch(actionCreators.searchedValue(srchval)),
+    categoryId: (categoryId) =>
+      dispatch(actionCreators.selectedCategpory(categoryId)),
   };
 };
 

@@ -8,6 +8,7 @@ const initialState = {
   logindata: [],
   videohistory: {},
   titlehistory: {},
+  categoryData: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,7 +23,7 @@ const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.CATEGORYSUCCESS) {
     return {
       ...state,
-      categoryData: action.categoryDetails,
+      categoryData: action.categoryDetails.items,
     };
   }
 

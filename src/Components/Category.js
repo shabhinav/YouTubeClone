@@ -13,7 +13,10 @@ class Category extends Component {
         {this.props.category.map((category) => (
           <div className="row">
             <div className="col-4 video">
-              <iframe src={"https://www.youtube.com/embed/" + category.id.videoId} />
+              <iframe
+                title="video"
+                src={"https://www.youtube.com/embed/" + category.id.videoId}
+              />
             </div>
             <div className="col-6 title">
               <NavLink

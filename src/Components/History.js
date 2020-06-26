@@ -33,6 +33,7 @@ class History extends Component {
           <div className="video">
             {this.state.keys.map((video) => (
               <iframe
+                title="video"
                 key={Math.random()}
                 src={"http://youtube.com/embed/" + video.videoid}
               />

@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const searchedValue = (srchval) => {
   return (dispatch) => {
-    // dispatch(addData())
     if (srchval.length > 1) {
       axios
         .get(
@@ -11,7 +10,6 @@ export const searchedValue = (srchval) => {
         `
         )
         .then((res) => {
-          console.log("res", res);
           dispatch(successData(res.data));
         })
         .catch((err) => {
@@ -25,10 +23,10 @@ export const selectedCategpory = (categoryid) => {
   return (dispatch) => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&type=video&videoCategoryId=${categoryid}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&type=video&videoCategoryId=${categoryid}&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
       )
       .then((res) => {
-        dispatch(categorySuccess(res));
+        dispatch(categorySuccess(res.data));
       })
       .catch((err) => {
         dispatch(categoryFail(err));
@@ -72,33 +70,8 @@ const categoryFail = (catFailure) => {
   };
 };
 
-// export const playVideo = (videoId, videoTitle) => {
-//   console.log(videoTitle);
-//   return {
-//     type: actionTypes.VIDEOPLAYER,
-//     videoId: videoId,
-//     videoTitle: videoTitle,
-//   };
-// };
-
-// export const playVideo = (videoId, videoTitle) => {
-//   console.log(videoTitle);
-//   return {
-//     type: actionTypes.VIDEOPLAYER,
-//     videoId: videoId,
-//     videoTitle: videoTitle,
-//   };
-// };
-
-// export const loginDetails = (loginData) => {
-//   return {
-//     type: actionTypes.LOGINDETAILS,
-//     loginData: loginData,
-//   };
-// };
-
 const successData = (success) => {
-  console.log("success", success);
+  //   console.log("success", success);
   return {
     type: actionTypes.SUCCESSCONDITION,
     getData: {
