@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.CATEGORYSUCCESS) {
     return {
       ...state,
-      categoryData: action.categoryDetails.items,
+      categoryData: action.categoryDetails,
     };
   }
 

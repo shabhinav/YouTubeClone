@@ -52,11 +52,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToprops = (dispatch) => {
-  return {
-    onVideoPlayer: (videoId, videotitle) =>
-      dispatch(actionCreators.playVideo(videoId, videotitle)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToprops)(Category);
+export default connect(mapStateToProps)(Category);
