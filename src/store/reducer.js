@@ -8,7 +8,6 @@ const initialState = {
   logindata: [],
   videohistory: {},
   titlehistory: {},
-  categoryData: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +19,7 @@ const reducer = (state = initialState, action) => {
     };
   }
 
+<<<<<<< HEAD
   if (action.type === actionTypes.CATEGORYSUCCESS) {
     return {
       ...state,
@@ -27,6 +27,8 @@ const reducer = (state = initialState, action) => {
     };
   }
 
+=======
+>>>>>>> parent of a452d1e... categorypages
   if (action.type === actionTypes.VIDEOPLAYER) {
     console.log("videoId", action.videoId);
     console.log(action.videoTitle);
