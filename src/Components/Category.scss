@@ -1,27 +1,10 @@
-.category {
-  margin-top: 50px;
-  .title {
-    text-align: left;
-  }
-  a {
-    color: black;
-    &:hover {
-      color: black;
-      text-decoration: none;
+.category{
+    margin-top: 50px;
+    
+    .description{
+        white-space: nowrap; 
+        width: 100%; 
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-  }
-  p {
-    margin-bottom: 0px;
-    font-size: 13px;
-  }
-  iframe {
-    background-color: black;
-  }
-
-  .description {
-    white-space: nowrap;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }

@@ -4,6 +4,7 @@ import { categoryList } from "./categoryList";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
+import Profile from "./profile";
 import Login from "./Login";
 import openMenu from "../Assests/open-menu.svg";
 import Sidedrawer from "./Sidedraw";
@@ -116,6 +117,11 @@ class Searchbar extends Component {
       return <Login closeloginmodel={this.closeloginmodel} signIn={this.SignedIn} />;
     }
 
+    let profile;
+    if (this.state.profile) {
+      profile = <Profile />;
+    }
+
     return (
       <div className="Searchbar">
         <div className="Navbar">
@@ -191,6 +197,7 @@ class Searchbar extends Component {
                 </a>
               </div>
             )}
+            {profile}
           </nav>
           <hr style={{ marginTop: "0px" }} />
         </div>
