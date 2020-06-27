@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import * as actionCreators from "../store/action/index";
-// import Searchbar from "./Searchbar";
+import "./searchResult.scss";
+import done from "../Assests/done.svg";
 
 class SearchResult extends Component {
   state = {
@@ -12,27 +13,34 @@ class SearchResult extends Component {
   render() {
     console.log("searchres", this.props.value);
     return (
-      <div className="searchResult">
+      <div className="searchResult container">
         {/* <Searchbar/> */}
         {this.props.value.map((val) => (
           <div className="row">
-            <div className="col-4">
+            <div className="col-4 video">
               <iframe
                 title="video"
                 src={"http://youtube.com/embed/" + val.id.videoId}
               />
             </div>
-            <div className="col-6">
+            <div className="col-6 title">
               <NavLink
                 to="/videoplayer"
                 onClick={() =>
                   this.props.onVideoPlayer(val.id.videoId, val.snippet.title)
                 }
               >
-                <h5 style={{ color: "black" }}>
+                <h6 style={{ color: "black" }}>
                   <strong>{val.snippet.title}</strong>
-                </h5>
+                </h6>
               </NavLink>
+              <p>
+                {val.snippet.channelTitle}
+                <img src={done} style={{ marginLeft: "3px" }} alt="" />
+              </p>
+              <p className="description" style={{ textOverflow: "ellipsis" }}>
+                {val.snippet.description}
+              </p>
             </div>
           </div>
         ))}

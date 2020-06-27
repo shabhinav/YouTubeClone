@@ -1,0 +1,15 @@
+.searchResult {
+  margin-top: 50px;
+
+  .description {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  p {
+    margin-bottom: 0px;
+    font-size: 13px;
+  }
+}

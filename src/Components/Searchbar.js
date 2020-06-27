@@ -180,13 +180,20 @@ class Searchbar extends Component {
               </div>
             ) : (
               <div className="loginlink">
-                <a
+                {/* <a
                   href="/"
                   style={{ textDecoration: "none" }}
                   onClick={this.loadLogin}
                 >
                   Login / Sign In
-                </a>
+                </a> */}
+                <NavLink
+                  to="/login"
+                  style={{ textDecoration: "none" }}
+                  onClick={this.loadLogin}
+                >
+                  Login / Sign In
+                </NavLink>
               </div>
             )}
           </nav>
