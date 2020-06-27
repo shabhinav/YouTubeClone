@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import "./Login.scss";
+import "./SignUp.scss";
 import axios from "axios";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
 import { NavLink } from "react-router-dom";
+import "./Login.scss";
 
 class Login extends Component {
   constructor(props) {
@@ -11,42 +12,42 @@ class Login extends Component {
     this.email = React.createRef();
     this.password = React.createRef();
     this.state = {
-      signInData: "",
-      SignInError: "",
+      signUpData: "",
+      SignUpError: "",
     };
   }
 
-  onSignIn = async () => {
+  onSignUp = async () => {
     try {
-      let signIndetails = await axios.post(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDdss6K1vedOCzGxDvN2E5W4EVIP9XY-c0`,
+      let logindetails = await axios.post(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDdss6K1vedOCzGxDvN2E5W4EVIP9XY-c0`,
         {
           email: this.email.current.value,
           password: this.password.current.value,
         }
       );
       this.setState({
-        signInData: signIndetails,
+        signUpData: logindetails,
       });
-      this.props.signIn();
-      this.props.closeloginmodel();
-      this.props.getUserDetail(this.state.signInData.data);
-      console.log(signIndetails);
+      this.props.getUserDetail(this.state.signUpData.data);
+      this.props.history.push("/");
     } catch (err) {
       this.setState({
-        SignInError: err.response.data.error.message,
+        SignUpError: err.response.data.error.message,
       });
     }
   };
 
   render() {
+    console.log(this.state.SignInError);
+
     return (
       <div className="Login">
         <div className="Form">
           <span className="close" onClick={() => this.props.history.push("/")}>
             &times;
           </span>
-          <h1 className="loginheading">SIGN IN</h1>
+          <h1 className="loginheading">SIGN UP</h1>
           <div className="loginform container">
             <div className="row">
               <div className="col-12">
@@ -68,20 +69,20 @@ class Login extends Component {
             </div>
             <div>
               <p style={{ marginBottom: "0px", fontSize: "13px", color: "red" }}>
-                {this.state.SignInError}
+                {this.state.SignUpError}
               </p>
               <button
                 style={{ marginTop: "20px" }}
                 className="btn btn-danger loginbtn"
-                onClick={this.onSignIn}
+                onClick={this.onSignUp}
               >
-                SIGN IN
+                SIGN UP
               </button>
             </div>
           </div>
           <p style={{ marginTop: "30px" }}>
-            New To Website?
-            <NavLink to="/signup"> Sign Up Now</NavLink>
+            Already Have an Account?
+            <NavLink to="/login"> Sign In</NavLink>
           </p>
         </div>
       </div>

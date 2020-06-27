@@ -74,17 +74,17 @@ class Searchbar extends Component {
     console.log(this.state.sidedrawer);
   };
 
-  SignedIn = () => {
-    this.setState({
-      signIn: true,
-    });
-  };
+  // SignedIn = () => {
+  //   this.setState({
+  //     signIn: true,
+  //   });
+  // };
 
-  SignedOut = () => {
-    this.setState({
-      signIn: false,
-    });
-  };
+  // SignedOut = () => {
+  //   this.setState({
+  //     signIn: false,
+  //   });
+  // };
 
   loadprofile = (e) => {
     e.preventDefault();
@@ -109,11 +109,6 @@ class Searchbar extends Component {
         />
       );
     }
-
-    if (this.state.loadloginpage) {
-      return <Login closeloginmodel={this.closeloginmodel} signIn={this.SignedIn} />;
-    }
-
     return (
       <div className="Searchbar">
         <div className="Navbar">
@@ -150,7 +145,7 @@ class Searchbar extends Component {
                 />
               </button>
             </form>
-            {this.state.signIn ? (
+            {/* {this.state.signIn ? (
               <div className="dropdown">
                 <img
                   className="profilepic"
@@ -187,15 +182,15 @@ class Searchbar extends Component {
                 >
                   Login / Sign In
                 </a> */}
-                <NavLink
+            {/* <NavLink
                   to="/login"
                   style={{ textDecoration: "none" }}
                   onClick={this.loadLogin}
                 >
                   Login / Sign In
-                </NavLink>
-              </div>
-            )}
+                </NavLink> */}
+            {/* </div> */}
+            <NavLink to="/login">Login / Sign In</NavLink>
           </nav>
           <hr style={{ marginTop: "0px" }} />
         </div>
