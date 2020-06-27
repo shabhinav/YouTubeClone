@@ -56,7 +56,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log("render", this.state.categoriesDataArray.items);
     return (
       //main component
       <div className="home">
@@ -188,7 +187,6 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),

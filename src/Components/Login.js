@@ -28,10 +28,8 @@ class Login extends Component {
       this.setState({
         signInData: signIndetails,
       });
-      this.props.signIn();
-      this.props.closeloginmodel();
       this.props.getUserDetail(this.state.signInData.data);
-      console.log(signIndetails);
+      this.props.history.push("/");
     } catch (err) {
       this.setState({
         SignInError: err.response.data.error.message,
@@ -40,6 +38,7 @@ class Login extends Component {
   };
 
   render() {
+    console.log("", this.state.SignInError);
     return (
       <div className="Login">
         <div className="Form">

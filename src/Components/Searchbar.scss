@@ -48,8 +48,9 @@
 
   .loginlink {
     margin-right: 10px;
-    a {
-      color: #696969 !important;
+    color: #696969 !important;
+    &:hover {
+      text-decoration: none;
     }
   }
 

@@ -4,7 +4,6 @@ import { categoryList } from "./categoryList";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
-import Login from "./Login";
 import openMenu from "../Assests/open-menu.svg";
 import Sidedrawer from "./Sidedraw";
 import signout from "../Assests/login.svg";
@@ -25,25 +24,6 @@ class Searchbar extends Component {
       loadSearchresult: false,
     };
   }
-
-  loadsignin = () => {
-    this.setState({
-      loadsignin: true,
-    });
-  };
-
-  loadLogin = (e) => {
-    e.preventDefault();
-    this.setState({
-      loadloginpage: true,
-    });
-  };
-
-  closeloginmodel = () => {
-    this.setState({
-      loadloginpage: false,
-    });
-  };
 
   onChangeHandler = () => {
     this.setState({
@@ -74,28 +54,17 @@ class Searchbar extends Component {
     console.log(this.state.sidedrawer);
   };
 
-  // SignedIn = () => {
+  // loadprofile = (e) => {
+  //   e.preventDefault();
   //   this.setState({
-  //     signIn: true,
+  //     profile: true,
   //   });
   // };
-
-  // SignedOut = () => {
-  //   this.setState({
-  //     signIn: false,
-  //   });
-  // };
-
-  loadprofile = (e) => {
-    e.preventDefault();
-    this.setState({
-      profile: true,
-    });
-  };
 
   render() {
-    let backDrop;
+    console.log("userData", this.props.userData);
 
+    let backDrop;
     if (this.state.sidedrawer) {
       backDrop = <Backdrop click={this.backdropClickHandler} />;
     }
@@ -145,7 +114,7 @@ class Searchbar extends Component {
                 />
               </button>
             </form>
-            {/* {this.state.signIn ? (
+            {this.props.userData.length ? (
               <div className="dropdown">
                 <img
                   className="profilepic"
@@ -166,7 +135,7 @@ class Searchbar extends Component {
                   <li>{this.props.userData.email}</li>
                   <hr />
                   <li>
-                    <a href="/" onClick={this.SignedOut}>
+                    <a href="/" onClick={() => this.props.history.push("/")}>
                       <img style={{ marginRight: "5px" }} src={signout} alt="" />
                       Sign Out
                     </a>
@@ -174,23 +143,10 @@ class Searchbar extends Component {
                 </ul>
               </div>
             ) : (
-              <div className="loginlink">
-                {/* <a
-                  href="/"
-                  style={{ textDecoration: "none" }}
-                  onClick={this.loadLogin}
-                >
-                  Login / Sign In
-                </a> */}
-            {/* <NavLink
-                  to="/login"
-                  style={{ textDecoration: "none" }}
-                  onClick={this.loadLogin}
-                >
-                  Login / Sign In
-                </NavLink> */}
-            {/* </div> */}
-            <NavLink to="/login">Login / Sign In</NavLink>
+              <NavLink to="/login" className="loginlink">
+                Login / Sign In
+              </NavLink>
+            )}
           </nav>
           <hr style={{ marginTop: "0px" }} />
         </div>
