@@ -11,7 +11,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 20%;
+  width: 18%;
   z-index: 2;
   background-color: white;
   transform: translateX(100%);
@@ -30,7 +30,7 @@ body {
   height: 25px;
   width: 20px;
   text-align: left;
-  margin: 10px;
+  margin: 16px;
 }
 .sidedrawicon {
   text-align: left;
@@ -38,8 +38,13 @@ body {
 
 .link {
   margin-top: 50px;
-  p {
+  div {
     margin-top: 30px;
+    margin-left: 30px;
+    text-align: left;
+  }
+  .loginLink {
+    margin-top: 220px;
   }
 }
 
@@ -47,6 +52,7 @@ body {
   color: black;
   text-decoration: none !important;
   padding-bottom: 20px;
+  font-weight: 300;
 }
 
 .sidedrawlink:hover {

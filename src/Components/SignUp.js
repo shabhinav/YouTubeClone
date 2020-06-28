@@ -31,6 +31,7 @@ class Login extends Component {
       });
       this.props.getUserDetail(this.state.signUpData.data);
       this.props.history.push("/");
+      localStorage.setItem("SignUpEmail", this.state.signUpData.data.email);
       this.props.onProfile();
     } catch (err) {
       this.setState({
@@ -40,8 +41,6 @@ class Login extends Component {
   };
 
   render() {
-    console.log(this.state.SignInError);
-
     return (
       <div className="Login">
         <div className="Form">

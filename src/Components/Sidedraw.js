@@ -21,9 +21,9 @@ class Sidedraw extends Component {
       drawerClasses = "side-drawer open";
     }
     let userLogin;
-    if (localStorage.getItem("LoginEmail")) {
+    if (localStorage.getItem("LoginEmail") || localStorage.getItem("SignUpEmail")) {
       userLogin = (
-        <div>
+        <div className="loginLink">
           <img className="sidedrawicons" src={SignOut} alt="" />
           <NavLink className="sidedrawlink" to="/" onClick={this.signoutHandler}>
             Logout
@@ -32,7 +32,7 @@ class Sidedraw extends Component {
       );
     } else {
       userLogin = (
-        <div>
+        <div className="loginLink">
           <img className="sidedrawicons" src={SignOut} alt="" />
           <NavLink
             className="sidedrawlink"
@@ -57,7 +57,7 @@ class Sidedraw extends Component {
         </div>
         <div className="link">
           <hr />
-          <p>
+          <div className="Home">
             <img className="sidedrawicons" src={Home} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -66,8 +66,8 @@ class Sidedraw extends Component {
             >
               Home
             </NavLink>
-          </p>
-          <p>
+          </div>
+          <div className="Trending">
             <img className="sidedrawicons" src={Trending} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -76,9 +76,9 @@ class Sidedraw extends Component {
             >
               Trending
             </NavLink>
-          </p>
+          </div>
           <hr />
-          <p>
+          <div className="FeedBack">
             <img className="sidedrawicons" src={Message} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -87,8 +87,8 @@ class Sidedraw extends Component {
             >
               FeedBack
             </NavLink>
-          </p>
-          <p>
+          </div>
+          <div className="Your Account">
             <img className="sidedrawicons" src={Person} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -97,8 +97,8 @@ class Sidedraw extends Component {
             >
               Your Account
             </NavLink>
-          </p>
-          <p>
+          </div>
+          <div className="History">
             <img className="sidedrawicons" src={History} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -107,7 +107,7 @@ class Sidedraw extends Component {
             >
               History
             </NavLink>
-          </p>
+          </div>
           <hr />
           <p>{userLogin}</p>
         </div>

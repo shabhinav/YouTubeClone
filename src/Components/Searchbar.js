@@ -64,7 +64,7 @@ class Searchbar extends Component {
 
     let profile;
 
-    if (localStorage.getItem("LoginEmail")) {
+    if (localStorage.getItem("LoginEmail") || localStorage.getItem("SignUpEmail")) {
       profile = (
         <div className="dropdown">
           <img
@@ -83,7 +83,10 @@ class Searchbar extends Component {
                 />
               </a>
             </li>
-            <li>{localStorage.getItem("LoginEmail")}</li>
+            <li>
+              {localStorage.getItem("LoginEmail") ||
+                localStorage.getItem("SignUpEmail")}
+            </li>
             <hr />
             <li>
               <a href="/" onClick={this.signoutHandler}>
