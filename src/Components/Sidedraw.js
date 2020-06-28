@@ -98,16 +98,19 @@ class Sidedraw extends Component {
               Your Account
             </NavLink>
           </div>
-          <div className="History">
-            <img className="sidedrawicons" src={History} alt="" />
-            <NavLink
-              className="sidedrawlink"
-              to="/history"
-              onClick={this.props.sidedrawerHandler}
-            >
-              History
-            </NavLink>
-          </div>
+          {localStorage.getItem("LoginEmail") ||
+          localStorage.getItem("SignUpEmail") ? (
+            <div className="History">
+              <img className="sidedrawicons" src={History} alt="" />
+              <NavLink
+                className="sidedrawlink"
+                to="/history"
+                onClick={this.props.sidedrawerHandler}
+              >
+                History
+              </NavLink>
+            </div>
+          ) : null}
           <hr />
           <p>{userLogin}</p>
         </div>
