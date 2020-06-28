@@ -31,6 +31,7 @@ class Login extends Component {
       });
       this.props.getUserDetail(this.state.signUpData.data);
       this.props.history.push("/");
+      this.props.onProfile();
     } catch (err) {
       this.setState({
         SignUpError: err.response.data.error.message,
@@ -93,6 +94,7 @@ class Login extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     getUserDetail: (userdata) => dispatch(actionCreators.loginDetails(userdata)),
+    onProfile: () => dispatch(actionCreators.profile()),
   };
 };
 

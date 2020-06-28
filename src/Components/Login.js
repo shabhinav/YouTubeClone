@@ -28,11 +28,13 @@ class Login extends Component {
       this.setState({
         signInData: signIndetails,
       });
+      localStorage.setItem("LoginEmail", this.state.signInData.data.email);
       this.props.getUserDetail(this.state.signInData.data);
       this.props.history.push("/");
+      this.props.onProfile();
     } catch (err) {
       this.setState({
-        SignInError: err.response.data.error.message,
+        SignInError: err,
       });
     }
   };
@@ -91,6 +93,7 @@ class Login extends Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     getUserDetail: (userdata) => dispatch(actionCreators.loginDetails(userdata)),
+    onProfile: () => dispatch(actionCreators.profile()),
   };
 };
 

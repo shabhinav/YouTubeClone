@@ -7,12 +7,42 @@ import Person from "../Assests/person.png";
 import Message from "../Assests/message.png";
 import History from "../Assests/history.png";
 import Home from "../Assests/home.svg";
+import SignOut from "../Assests/login.svg";
+import { loginDetails } from "../store/action";
 
 class Sidedraw extends Component {
+  signoutHandler = () => {
+    localStorage.clear();
+    this.props.sidedrawerHandler();
+  };
   render() {
     let drawerClasses = "side-drawer";
     if (this.props.show) {
       drawerClasses = "side-drawer open";
+    }
+    let userLogin;
+    if (localStorage.getItem("LoginEmail")) {
+      userLogin = (
+        <div>
+          <img className="sidedrawicons" src={SignOut} alt="" />
+          <NavLink className="sidedrawlink" to="/" onClick={this.signoutHandler}>
+            Logout
+          </NavLink>
+        </div>
+      );
+    } else {
+      userLogin = (
+        <div>
+          <img className="sidedrawicons" src={SignOut} alt="" />
+          <NavLink
+            className="sidedrawlink"
+            to="/login"
+            onClick={this.props.sidedrawerHandler}
+          >
+            Login / Sign Up
+          </NavLink>
+        </div>
+      );
     }
     return (
       <div className={drawerClasses}>
@@ -78,8 +108,8 @@ class Sidedraw extends Component {
               History
             </NavLink>
           </p>
-          {/* <p><NavLink className='sidedrawlink' to='/login' onClick={this.props.sidedrawerHandler}>Login</NavLink></p> */}
           <hr />
+          <p>{userLogin}</p>
         </div>
       </div>
     );

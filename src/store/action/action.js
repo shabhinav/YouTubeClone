@@ -34,6 +34,12 @@ export const selectedCategpory = (categoryid) => {
   };
 };
 
+export const profile = () => {
+  return {
+    type: actionTypes.PROFILE,
+  };
+};
+
 export const playVideo = (videoId, videoTitle) => {
   console.log(videoTitle);
   return {
@@ -44,6 +50,7 @@ export const playVideo = (videoId, videoTitle) => {
 };
 
 export const loginDetails = (loginData) => {
+  console.log("loginData", loginData);
   return {
     type: actionTypes.LOGINDETAILS,
     loginData: loginData,

@@ -9,10 +9,10 @@ const initialState = {
   videohistory: {},
   titlehistory: {},
   categoryData: [],
+  profile: false,
 };
 
 const reducer = (state = initialState, action) => {
-  console.log("serdata", action.getData);
   if (action.type === actionTypes.SUCCESSCONDITION) {
     return {
       ...state,
@@ -28,8 +28,6 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionTypes.VIDEOPLAYER) {
-    console.log("videoId", action.videoId);
-    console.log(action.videoTitle);
     return {
       ...state,
       videoId: action.videoId,
@@ -44,6 +42,13 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       logindata: action.loginData,
+    };
+  }
+
+  if (action.type === actionTypes.PROFILE) {
+    return {
+      ...state,
+      profile: !state.profile,
     };
   }
 

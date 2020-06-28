@@ -86,6 +86,7 @@ class Home extends Component {
                 <div className="videotitlesec">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
                     <NavLink
+                      key={Math.random()}
                       to="/videoplayer"
                       onClick={() =>
                         this.props.onVideoPlayer(data.id.videoId, data.snippet.title)
@@ -110,7 +111,7 @@ class Home extends Component {
                 <div className="videoThumbnail">
                   <div>
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
-                      <div>
+                      <div key={Math.random()}>
                         <iframe
                           title="video"
                           className="HomeVideos"
@@ -122,6 +123,7 @@ class Home extends Component {
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
                       <NavLink
+                        key={Math.random()}
                         to="/videoplayer"
                         onClick={() =>
                           this.props.onVideoPlayer(
@@ -150,7 +152,7 @@ class Home extends Component {
                 <div className="videoThumbnail">
                   <div>
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
-                      <div>
+                      <div key={Math.random()}>
                         <iframe
                           title="video"
                           className="HomeVideos"
@@ -162,6 +164,7 @@ class Home extends Component {
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <NavLink
+                        key={Math.random()}
                         to="/videoplayer"
                         onClick={() =>
                           this.props.onVideoPlayer(

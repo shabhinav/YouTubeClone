@@ -54,15 +54,53 @@ class Searchbar extends Component {
     console.log(this.state.sidedrawer);
   };
 
-  // loadprofile = (e) => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     profile: true,
-  //   });
-  // };
+  signoutHandler = () => {
+    localStorage.clear();
+    this.props.history.push("/");
+  };
 
   render() {
     console.log("userData", this.props.userData);
+
+    let profile;
+
+    if (localStorage.getItem("LoginEmail")) {
+      profile = (
+        <div className="dropdown">
+          <img
+            className="profilepic"
+            data-toggle="dropdown"
+            src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
+            alt=""
+          />
+          <ul className="dropdown-menu">
+            <li>
+              <a href="/">
+                <img
+                  className="profilepic"
+                  src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
+                  alt=""
+                />
+              </a>
+            </li>
+            <li>{localStorage.getItem("LoginEmail")}</li>
+            <hr />
+            <li>
+              <a href="/" onClick={this.signoutHandler}>
+                <img style={{ marginRight: "5px" }} src={signout} alt="" />
+                Sign Out
+              </a>
+            </li>
+          </ul>
+        </div>
+      );
+    } else {
+      profile = (
+        <NavLink to="/login" className="loginlink">
+          Login / Sign In
+        </NavLink>
+      );
+    }
 
     let backDrop;
     if (this.state.sidedrawer) {
@@ -114,39 +152,7 @@ class Searchbar extends Component {
                 />
               </button>
             </form>
-            {this.props.userData.length ? (
-              <div className="dropdown">
-                <img
-                  className="profilepic"
-                  data-toggle="dropdown"
-                  src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
-                  alt=""
-                />
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="/">
-                      <img
-                        className="profilepic"
-                        src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
-                        alt=""
-                      />
-                    </a>
-                  </li>
-                  <li>{this.props.userData.email}</li>
-                  <hr />
-                  <li>
-                    <a href="/" onClick={() => this.props.history.push("/")}>
-                      <img style={{ marginRight: "5px" }} src={signout} alt="" />
-                      Sign Out
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              <NavLink to="/login" className="loginlink">
-                Login / Sign In
-              </NavLink>
-            )}
+            {profile}
           </nav>
           <hr style={{ marginTop: "0px" }} />
         </div>
@@ -180,6 +186,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     userData: state.logindata,
+    profile: state.profile,
   };
 };
 

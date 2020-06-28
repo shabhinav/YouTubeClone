@@ -1,1 +1,7 @@
-export { searchedValue, selectedCategpory, playVideo, loginDetails } from "./action";
+export {
+  searchedValue,
+  selectedCategpory,
+  playVideo,
+  loginDetails,
+  profile,
+} from "./action";
