@@ -34,7 +34,7 @@ class Login extends Component {
       this.props.onProfile();
     } catch (err) {
       this.setState({
-        SignInError: err,
+        SignInError: err.response.data.error.message,
       });
     }
   };

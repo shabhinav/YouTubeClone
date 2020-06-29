@@ -89,6 +89,12 @@ class Searchbar extends Component {
             </li>
             <hr />
             <li>
+              <NavLink to="/Yourac" className="youraclink">
+                Your Account
+              </NavLink>
+            </li>
+            <hr />
+            <li>
               <a href="/" onClick={this.signoutHandler}>
                 <img style={{ marginRight: "5px" }} src={signout} alt="" />
                 Sign Out

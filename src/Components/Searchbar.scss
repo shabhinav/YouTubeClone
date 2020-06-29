@@ -29,6 +29,15 @@
     }
   }
 
+  .youraclink {
+    color: black;
+    margin-top: 10px;
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
   .searchbox {
     width: 70%;
   }
