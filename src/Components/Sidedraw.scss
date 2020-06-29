@@ -1,3 +1,9 @@
+@mixin sidedrawLinkHover {
+  &:hover {
+    background-color: #eeeeee;
+  }
+}
+
 html {
   height: 100%;
 }
@@ -39,13 +45,14 @@ body {
 .link {
   margin-top: 50px;
   div {
-    margin-top: 30px;
-    margin-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
     text-align: left;
   }
-  // .loginLink {
-  //   margin-top: 230px;
-  // }
+  .loginLink {
+    @include sidedrawLinkHover;
+  }
 }
 
 .sidedrawlink {
@@ -53,10 +60,27 @@ body {
   text-decoration: none !important;
   padding-bottom: 20px;
   font-weight: 300;
+  font-size: 15px;
 }
 
 .sidedrawlink:hover {
   color: black;
+}
+
+.Home {
+  @include sidedrawLinkHover;
+}
+.Trending {
+  @include sidedrawLinkHover;
+}
+.History {
+  @include sidedrawLinkHover;
+}
+.FeedBack {
+  @include sidedrawLinkHover;
+}
+.YourAccount {
+  @include sidedrawLinkHover;
 }
 
 @media only screen and (max-width: 425px) {

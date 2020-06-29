@@ -88,16 +88,19 @@ class Sidedraw extends Component {
               FeedBack
             </NavLink>
           </div>
-          <div className="Your Account">
-            <img className="sidedrawicons" src={Person} alt="" />
-            <NavLink
-              className="sidedrawlink"
-              to="/Yourac"
-              onClick={this.props.sidedrawerHandler}
-            >
-              Your Account
-            </NavLink>
-          </div>
+          {localStorage.getItem("LoginEmail") ||
+          localStorage.getItem("SignUpEmail") ? (
+            <div className="YourAccount">
+              <img className="sidedrawicons" src={Person} alt="" />
+              <NavLink
+                className="sidedrawlink"
+                to="/Yourac"
+                onClick={this.props.sidedrawerHandler}
+              >
+                Your Account
+              </NavLink>
+            </div>
+          ) : null}
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
             <div className="History">
@@ -109,9 +112,9 @@ class Sidedraw extends Component {
               >
                 History
               </NavLink>
+              <hr />
             </div>
           ) : null}
-          <hr />
           <p>{userLogin}</p>
         </div>
       </div>

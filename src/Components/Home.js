@@ -7,6 +7,7 @@ import Shellapp from "./shellapp";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/action/index";
+import done from "../Assests/done.svg";
 
 class Home extends Component {
   constructor(props) {
@@ -92,10 +93,16 @@ class Home extends Component {
                         this.props.onVideoPlayer(data.id.videoId, data.snippet.title)
                       }
                     >
-                      <strong>
-                        <p className="homevideotitle">{data.snippet.title}</p>
-                      </strong>
+                      <p className="homevideotitle">{data.snippet.title}</p>
                     </NavLink>
+                  ))}
+                </div>
+                <div>
+                  {this.state.categoriesDataArray[0].data.items.map((data) => (
+                    <p>
+                      {data.snippet.channelTitle}
+                      <img src={done} alt="" />
+                    </p>
                   ))}
                 </div>
               </div>
@@ -132,10 +139,16 @@ class Home extends Component {
                           )
                         }
                       >
-                        <strong>
-                          <p className="homevideotitle">{data.snippet.title}</p>
-                        </strong>
+                        <p className="homevideotitle">{data.snippet.title}</p>
                       </NavLink>
+                    ))}
+                  </div>
+                  <div>
+                    {this.state.categoriesDataArray[0].data.items.map((data) => (
+                      <p>
+                        {data.snippet.channelTitle}
+                        <img src={done} alt="" />
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -173,10 +186,16 @@ class Home extends Component {
                           )
                         }
                       >
-                        <strong>
-                          <p className="homevideotitle">{data.snippet.title}</p>
-                        </strong>
+                        <p className="homevideotitle">{data.snippet.title}</p>
                       </NavLink>
+                    ))}
+                  </div>
+                  <div>
+                    {this.state.categoriesDataArray[0].data.items.map((data) => (
+                      <p>
+                        {data.snippet.channelTitle}
+                        <img src={done} alt="" />
+                      </p>
                     ))}
                   </div>
                 </div>
