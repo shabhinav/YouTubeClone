@@ -1,12 +1,6 @@
 .home {
   background-color: #f9f9f9;
 
-  img {
-    width: 250px;
-    height: 150px;
-    padding-right: 10px;
-  }
-
   .videoThumbnail {
     // overflow: scroll;
     div {
@@ -40,11 +34,23 @@
   }
 
   .homevideotitle {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 900;
     display: inline-block;
     white-space: nowrap;
     width: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .channelTitle {
+    display: inline-block;
+    width: 250px;
+  }
+  .channelTitle:nth-child(n + 2) {
+    margin-left: 20px;
+  }
+  .channelTitleSection {
+    text-align: left;
   }
 }

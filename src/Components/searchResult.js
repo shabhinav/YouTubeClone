@@ -17,11 +17,18 @@ class SearchResult extends Component {
         {/* <Searchbar/> */}
         {this.props.value.map((val) => (
           <div className="row">
-            <div className="col-4 video">
-              <iframe
-                title="video"
-                src={"http://youtube.com/embed/" + val.id.videoId}
-              />
+            <div className="col-4 videothumbnail">
+              <NavLink
+                to="/videoplayer"
+                onClick={() =>
+                  this.props.onVideoPlayer(val.id.videoId, val.snippet.title)
+                }
+              >
+                <img
+                  className="HomeVideos"
+                  src={val.snippet.thumbnails.medium.url}
+                />
+              </NavLink>
             </div>
             <div className="col-6 title">
               <NavLink
@@ -30,7 +37,7 @@ class SearchResult extends Component {
                   this.props.onVideoPlayer(val.id.videoId, val.snippet.title)
                 }
               >
-                <h6 style={{ color: "black" }}>
+                <h6 style={{ color: "black", textDecoration: "none" }}>
                   <strong>{val.snippet.title}</strong>
                 </h6>
               </NavLink>

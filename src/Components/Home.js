@@ -76,30 +76,40 @@ class Home extends Component {
                 <div>
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
                     <div key={Math.random()}>
-                      <iframe
-                        title="video"
-                        className="HomeVideos"
-                        src={"https://www.youtube.com/embed/" + data.id.videoId}
-                      />
+                      <NavLink
+                        to="/videoplayer"
+                        onClick={() =>
+                          this.props.onVideoPlayer(
+                            data.id.videoId,
+                            data.snippet.title
+                          )
+                        }
+                      >
+                        <img
+                          className="HomeVideos"
+                          src={data.snippet.thumbnails.medium.url}
+                        />
+                      </NavLink>
                     </div>
                   ))}
                 </div>
                 <div className="videotitlesec">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
                     <NavLink
+                      className="homevideotitle"
                       key={Math.random()}
                       to="/videoplayer"
                       onClick={() =>
                         this.props.onVideoPlayer(data.id.videoId, data.snippet.title)
                       }
                     >
-                      <p className="homevideotitle">{data.snippet.title}</p>
+                      {data.snippet.title}
                     </NavLink>
                   ))}
                 </div>
-                <div>
+                <div className="channelTitleSection">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
-                    <p>
+                    <p className="channelTitle">
                       {data.snippet.channelTitle}
                       <img src={done} alt="" />
                     </p>
@@ -119,17 +129,27 @@ class Home extends Component {
                   <div>
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
                       <div key={Math.random()}>
-                        <iframe
-                          title="video"
-                          className="HomeVideos"
-                          src={"https://www.youtube.com/embed/" + data.id.videoId}
-                        />
+                        <NavLink
+                          to="/videoplayer"
+                          onClick={() =>
+                            this.props.onVideoPlayer(
+                              data.id.videoId,
+                              data.snippet.title
+                            )
+                          }
+                        >
+                          <img
+                            className="HomeVideos"
+                            src={data.snippet.thumbnails.medium.url}
+                          />
+                        </NavLink>
                       </div>
                     ))}
                   </div>
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
                       <NavLink
+                        className="homevideotitle"
                         key={Math.random()}
                         to="/videoplayer"
                         onClick={() =>
@@ -139,13 +159,13 @@ class Home extends Component {
                           )
                         }
                       >
-                        <p className="homevideotitle">{data.snippet.title}</p>
+                        {data.snippet.title}
                       </NavLink>
                     ))}
                   </div>
-                  <div>
-                    {this.state.categoriesDataArray[0].data.items.map((data) => (
-                      <p>
+                  <div className="channelTitleSection">
+                    {this.state.categoriesDataArray[1].data.items.map((data) => (
+                      <p className="channelTitle">
                         {data.snippet.channelTitle}
                         <img src={done} alt="" />
                       </p>
@@ -166,17 +186,27 @@ class Home extends Component {
                   <div>
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <div key={Math.random()}>
-                        <iframe
-                          title="video"
-                          className="HomeVideos"
-                          src={"https://www.youtube.com/embed/" + data.id.videoId}
-                        />
+                        <NavLink
+                          to="/videoplayer"
+                          onClick={() =>
+                            this.props.onVideoPlayer(
+                              data.id.videoId,
+                              data.snippet.title
+                            )
+                          }
+                        >
+                          <img
+                            className="HomeVideos"
+                            src={data.snippet.thumbnails.medium.url}
+                          />
+                        </NavLink>
                       </div>
                     ))}
                   </div>
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <NavLink
+                        className="homevideotitle"
                         key={Math.random()}
                         to="/videoplayer"
                         onClick={() =>
@@ -186,13 +216,13 @@ class Home extends Component {
                           )
                         }
                       >
-                        <p className="homevideotitle">{data.snippet.title}</p>
+                        {data.snippet.title}
                       </NavLink>
                     ))}
                   </div>
-                  <div>
-                    {this.state.categoriesDataArray[0].data.items.map((data) => (
-                      <p>
+                  <div className="channelTitleSection">
+                    {this.state.categoriesDataArray[2].data.items.map((data) => (
+                      <p className="channelTitle">
                         {data.snippet.channelTitle}
                         <img src={done} alt="" />
                       </p>

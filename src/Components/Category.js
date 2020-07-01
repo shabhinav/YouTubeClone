@@ -12,11 +12,22 @@ class Category extends Component {
       <div className="category container">
         {this.props.category.map((category) => (
           <div className="row">
-            <div className="col-4 video">
-              <iframe
+            <div className="col-4 videothumbnail">
+              {/* <iframe
                 title="video"
                 src={"https://www.youtube.com/embed/" + category.id.videoId}
-              />
+              /> */}
+              <NavLink
+                to="/videoplayer"
+                onClick={() =>
+                  this.props.onVideoPlayer(
+                    category.id.videoId,
+                    category.snippet.title
+                  )
+                }
+              >
+                <img src={category.snippet.thumbnails.medium.url} alt="" />
+              </NavLink>
             </div>
             <div className="col-6 title">
               <NavLink

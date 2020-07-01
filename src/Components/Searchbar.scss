@@ -10,22 +10,21 @@
     overflow-x: scroll;
     width: 100%;
     .link {
+      flex-shrink: 0;
       color: black;
-      background-color: #e0e0e0;
+      background-color: #eeeeee;
       margin-right: 10px;
       border: 0.5px solid #d0d0d0;
-      width: 200px !important;
+      // width: 170px !important;
       border-radius: 100px;
       padding: 5px;
-      min-width: 200px;
+      min-width: 170px;
       margin-bottom: 10px;
       text-decoration: none !important;
       margin-top: 0px;
     }
     .link:hover {
-      background-color: #575151;
-      color: white;
-      font-weight: 900;
+      background-color: #e0e0e0;
     }
   }
 
