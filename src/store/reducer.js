@@ -10,9 +10,17 @@ const initialState = {
   titlehistory: {},
   categoryData: [],
   profile: false,
+  channelInfo: [],
 };
 
 const reducer = (state = initialState, action) => {
+  if (action.type === actionTypes.CHANNELSUCCESS) {
+    return {
+      ...state,
+      channelInfo: action.channnelDetails,
+    };
+  }
+
   if (action.type === actionTypes.SUCCESSCONDITION) {
     return {
       ...state,

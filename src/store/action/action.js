@@ -34,6 +34,39 @@ export const selectedCategpory = (categoryid) => {
   };
 };
 
+export const channelInfo = (channelId) => {
+  return (dispatch) => {
+    axios
+      .get(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=2&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
+      )
+      .then((res) => {
+        dispatch(channelIdSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(channelIdFail(err));
+      });
+  };
+};
+
+const channelIdSuccess = (success) => {
+  return {
+    type: actionTypes.CHANNELSUCCESS,
+    channnelDetails: {
+      ...success,
+    },
+  };
+};
+
+const channelIdFail = (fail) => {
+  return {
+    type: actionTypes.CHANNELFAIL,
+    channnelDetails: {
+      ...fail,
+    },
+  };
+};
+
 export const profile = () => {
   return {
     type: actionTypes.PROFILE,

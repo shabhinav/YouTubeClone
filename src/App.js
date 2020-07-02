@@ -13,6 +13,7 @@ import Profile from "./Components/profile";
 import History from "./Components/History";
 import Yourac from "./Components/YourAc";
 import SignUp from "./Components/SignUp";
+import ChannelInfo from "./Components/channelInfo";
 
 class App extends Component {
   state = {
@@ -54,6 +55,7 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/yourac" component={Yourac} />
           <Route path="/history" component={History} />
+          <Route path="/channelinfo" component={ChannelInfo} />
         </Router>
       </div>
     );

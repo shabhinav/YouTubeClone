@@ -68,9 +68,15 @@ class Home extends Component {
           <div>
             <div className="style">
               <div className="container">
-                <h4 style={{ textAlign: "left", marginLeft: "20px" }}>
+                <h5
+                  style={{
+                    textAlign: "left",
+                    marginLeft: "20px",
+                    fontWeight: "500",
+                  }}
+                >
                   {this.state.newCategoryArray[0].name}
-                </h4>
+                </h5>
               </div>
               <div className="videoThumbnail container">
                 <div>
@@ -111,13 +117,13 @@ class Home extends Component {
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
                     <p className="channelTitle">
                       {data.snippet.channelTitle}
-                      <img src={done} alt="" />
+                      <img style={{ marginLeft: "5px" }} src={done} alt="" />
                     </p>
                   ))}
                 </div>
               </div>
 
-              <hr style={{ width: "90%" }} />
+              {/* <hr style={{ width: "90%" }} /> */}
               {/* second category */}
               <div>
                 <div className="container">
@@ -165,16 +171,21 @@ class Home extends Component {
                   </div>
                   <div className="channelTitleSection">
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
-                      <p className="channelTitle">
+                      // <p className="channelTitle">
+                      //   {/* <NavLink path="/videoplayer"> */}
+                      //   {data.snippet.channelTitle}
+                      //   {/* </NavLink> */}
+                      //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
+                      // </p>
+                      <NavLink className="channelTitle" to="channelinfo">
                         {data.snippet.channelTitle}
-                        <img src={done} alt="" />
-                      </p>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <hr style={{ width: "90%" }} />
+              {/* <hr style={{ width: "90%" }} /> */}
               {/* Third category */}
               <div>
                 <div className="container">
@@ -224,7 +235,7 @@ class Home extends Component {
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <p className="channelTitle">
                         {data.snippet.channelTitle}
-                        <img src={done} alt="" />
+                        <img style={{ marginLeft: "5px" }} src={done} alt="" />
                       </p>
                     ))}
                   </div>
@@ -242,6 +253,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),
+    // channelinfo:()=>dispatch(actionCreators.)
   };
 };
 
