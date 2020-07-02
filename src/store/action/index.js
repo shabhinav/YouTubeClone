@@ -4,4 +4,5 @@ export {
   playVideo,
   loginDetails,
   profile,
+  channelInfo,
 } from "./action";

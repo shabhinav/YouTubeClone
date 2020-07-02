@@ -15,6 +15,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.CHANNELSUCCESS) {
+    console.log(action.channnelDetails);
     return {
       ...state,
       channelInfo: action.channnelDetails,

@@ -115,10 +115,18 @@ class Home extends Component {
                 </div>
                 <div className="channelTitleSection">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
-                    <p className="channelTitle">
+                    // <p className="channelTitle">
+                    //   {data.snippet.channelTitle}
+                    //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
+                    // </p>
+                    <NavLink
+                      className="channelTitle"
+                      to="channelinfo"
+                      onClick={() => this.props.channelInfo(data.snippet.channelId)}
+                    >
                       {data.snippet.channelTitle}
                       <img style={{ marginLeft: "5px" }} src={done} alt="" />
-                    </p>
+                    </NavLink>
                   ))}
                 </div>
               </div>
@@ -177,8 +185,15 @@ class Home extends Component {
                       //   {/* </NavLink> */}
                       //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
                       // </p>
-                      <NavLink className="channelTitle" to="channelinfo">
+                      <NavLink
+                        className="channelTitle"
+                        to="channelinfo"
+                        onClick={() =>
+                          this.props.channelInfo(data.snippet.channelId)
+                        }
+                      >
                         {data.snippet.channelTitle}
+                        <img style={{ marginLeft: "5px" }} src={done} alt="" />
                       </NavLink>
                     ))}
                   </div>
@@ -233,10 +248,20 @@ class Home extends Component {
                   </div>
                   <div className="channelTitleSection">
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
-                      <p className="channelTitle">
+                      // <p className="channelTitle">
+                      //   {data.snippet.channelTitle}
+                      //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
+                      // </p>
+                      <NavLink
+                        className="channelTitle"
+                        to="channelinfo"
+                        onClick={() =>
+                          this.props.channelInfo(data.snippet.channelId)
+                        }
+                      >
                         {data.snippet.channelTitle}
                         <img style={{ marginLeft: "5px" }} src={done} alt="" />
-                      </p>
+                      </NavLink>
                     ))}
                   </div>
                 </div>
@@ -253,7 +278,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),
-    // channelinfo:()=>dispatch(actionCreators.)
+    channelInfo: (channeldata) => dispatch(actionCreators.channelInfo(channeldata)),
   };
 };
 
