@@ -15,10 +15,10 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.CHANNELSUCCESS) {
-    console.log(action.channnelDetails);
+    console.log("reducer", action.channnelDetails);
     return {
       ...state,
-      channelInfo: action.channnelDetails,
+      channelInfo: action.channnelDetails.items,
     };
   }
 

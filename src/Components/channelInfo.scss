@@ -1,0 +1,15 @@
+.ChannelInfo {
+  .videothumbnail {
+    margin-top: 10px;
+  }
+  .videotitle {
+    text-align: left;
+    margin-top: 10px;
+    .title {
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
