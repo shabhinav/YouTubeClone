@@ -8,8 +8,12 @@
     display: inline-block;
   }
   .title {
+    // width: 50px;
     div:nth-child(1) {
-      margin-right: 40px;
+      margin-right: 60px;
+    }
+    div:nth-child(n + 3) {
+      margin-left: 60px;
     }
     .videotitle {
       display: inline-block;

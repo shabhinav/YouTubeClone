@@ -103,7 +103,7 @@ class Sidedraw extends Component {
           ) : null}
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
-            <div>
+            <section>
               <div className="History">
                 <img className="sidedrawicons" src={History} alt="" />
                 <NavLink
@@ -115,9 +115,9 @@ class Sidedraw extends Component {
                 </NavLink>
               </div>
               <hr />
-            </div>
+            </section>
           ) : null}
-          <section>{userLogin}</section>
+          <section> {userLogin}</section>
         </div>
       </div>
     );
