@@ -11,6 +11,7 @@ const initialState = {
   categoryData: [],
   profile: false,
   channelInfo: [],
+  channelName: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +19,8 @@ const reducer = (state = initialState, action) => {
     console.log("reducer", action.channnelDetails);
     return {
       ...state,
-      channelInfo: action.channnelDetails.items,
+      channelInfo: [...action.channnelDetails.items],
+      channelName: action.channelName,
     };
   }
 

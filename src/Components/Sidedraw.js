@@ -103,19 +103,21 @@ class Sidedraw extends Component {
           ) : null}
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
-            <div className="History">
-              <img className="sidedrawicons" src={History} alt="" />
-              <NavLink
-                className="sidedrawlink"
-                to="/history"
-                onClick={this.props.sidedrawerHandler}
-              >
-                History
-              </NavLink>
+            <div>
+              <div className="History">
+                <img className="sidedrawicons" src={History} alt="" />
+                <NavLink
+                  className="sidedrawlink"
+                  to="/history"
+                  onClick={this.props.sidedrawerHandler}
+                >
+                  History
+                </NavLink>
+              </div>
               <hr />
             </div>
           ) : null}
-          <p>{userLogin}</p>
+          <section>{userLogin}</section>
         </div>
       </div>
     );

@@ -34,14 +34,14 @@ export const selectedCategpory = (categoryid) => {
   };
 };
 
-export const channelInfo = (channelId) => {
+export const channelInfo = (channelId, channelName) => {
   return (dispatch) => {
     axios
       .get(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=2&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&maxResults=5&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
       )
       .then((res) => {
-        dispatch(channelIdSuccess(res.data));
+        dispatch(channelIdSuccess(res.data, channelName));
       })
       .catch((err) => {
         dispatch(channelIdFail(err));
@@ -49,12 +49,13 @@ export const channelInfo = (channelId) => {
   };
 };
 
-const channelIdSuccess = (success) => {
+const channelIdSuccess = (success, channelName) => {
   return {
     type: actionTypes.CHANNELSUCCESS,
     channnelDetails: {
       ...success,
     },
+    channelName: channelName,
   };
 };
 

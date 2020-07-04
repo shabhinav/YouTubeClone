@@ -9,7 +9,6 @@ import SearchResult from "./Components/searchResult";
 import Trending from "./Components/Trending";
 import VideoPlayer from "./Components/VideoPlayer";
 import Feedback from "./Components/feedback";
-import Profile from "./Components/profile";
 import History from "./Components/History";
 import Yourac from "./Components/YourAc";
 import SignUp from "./Components/SignUp";
@@ -18,13 +17,6 @@ import ChannelInfo from "./Components/channelInfo";
 class App extends Component {
   state = {
     loginpage: true,
-    loadprofile: false,
-  };
-
-  loadprofile = () => {
-    this.setState({
-      loadprofile: true,
-    });
   };
 
   loadLoginPage = (e) => {
@@ -35,10 +27,6 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.loadprofile) {
-      return <Profile />;
-    }
-
     return (
       <div className="App">
         {/* <SearchResult/> */}

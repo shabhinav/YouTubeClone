@@ -115,14 +115,16 @@ class Home extends Component {
                 </div>
                 <div className="channelTitleSection">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
-                    // <p className="channelTitle">
-                    //   {data.snippet.channelTitle}
-                    //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
-                    // </p>
                     <NavLink
+                      key={Math.random()}
                       className="channelTitle"
                       to="channelinfo"
-                      onClick={() => this.props.channelInfo(data.snippet.channelId)}
+                      onClick={() =>
+                        this.props.channelInfo(
+                          data.snippet.channelId,
+                          data.snippet.channelTitle
+                        )
+                      }
                     >
                       {data.snippet.channelTitle}
                       <img style={{ marginLeft: "5px" }} src={done} alt="" />
@@ -179,17 +181,15 @@ class Home extends Component {
                   </div>
                   <div className="channelTitleSection">
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
-                      // <p className="channelTitle">
-                      //   {/* <NavLink path="/videoplayer"> */}
-                      //   {data.snippet.channelTitle}
-                      //   {/* </NavLink> */}
-                      //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
-                      // </p>
                       <NavLink
+                        key={Math.random()}
                         className="channelTitle"
                         to="channelinfo"
                         onClick={() =>
-                          this.props.channelInfo(data.snippet.channelId)
+                          this.props.channelInfo(
+                            data.snippet.channelId,
+                            data.snippet.channelTitle
+                          )
                         }
                       >
                         {data.snippet.channelTitle}
@@ -248,15 +248,15 @@ class Home extends Component {
                   </div>
                   <div className="channelTitleSection">
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
-                      // <p className="channelTitle">
-                      //   {data.snippet.channelTitle}
-                      //   <img style={{ marginLeft: "5px" }} src={done} alt="" />
-                      // </p>
                       <NavLink
+                        key={Math.random()}
                         className="channelTitle"
                         to="channelinfo"
                         onClick={() =>
-                          this.props.channelInfo(data.snippet.channelId)
+                          this.props.channelInfo(
+                            data.snippet.channelId,
+                            data.snippet.channelTitle
+                          )
                         }
                       >
                         {data.snippet.channelTitle}
@@ -278,7 +278,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),
-    channelInfo: (channeldata) => dispatch(actionCreators.channelInfo(channeldata)),
+    channelInfo: (channeldata, channelName) =>
+      dispatch(actionCreators.channelInfo(channeldata, channelName)),
   };
 };
 

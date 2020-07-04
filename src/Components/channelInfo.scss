@@ -7,9 +7,13 @@
     margin-top: 10px;
     .title {
       color: black;
+      font-weight: 600;
       &:hover {
         text-decoration: none;
       }
     }
+  }
+  .heading {
+    margin: 10px 0px 10px 0px;
   }
 }
