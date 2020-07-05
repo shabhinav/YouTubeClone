@@ -170,7 +170,7 @@ class Searchbar extends Component {
             <NavLink
               key={Math.random()}
               className="link"
-              to={"/category/" + category.id}
+              to={"/category/" + category.name}
               onClick={() => {
                 this.props.categoryId(category.id);
               }}

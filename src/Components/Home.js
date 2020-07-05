@@ -70,6 +70,7 @@ class Home extends Component {
               <div className="container">
                 <h5
                   style={{
+                    marginTop: "25px",
                     textAlign: "left",
                     marginLeft: "20px",
                     fontWeight: "500",

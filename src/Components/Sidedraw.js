@@ -67,7 +67,7 @@ class Sidedraw extends Component {
               Home
             </NavLink>
           </div>
-          <div className="Trending">
+          <div className="trending">
             <img className="sidedrawicons" src={Trending} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -78,7 +78,7 @@ class Sidedraw extends Component {
             </NavLink>
           </div>
           <hr />
-          <div className="FeedBack">
+          <div className="feedBack">
             <img className="sidedrawicons" src={Message} alt="" />
             <NavLink
               className="sidedrawlink"
@@ -90,7 +90,7 @@ class Sidedraw extends Component {
           </div>
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
-            <div className="YourAccount">
+            <div className="yourAccount">
               <img className="sidedrawicons" src={Person} alt="" />
               <NavLink
                 className="sidedrawlink"
@@ -104,7 +104,7 @@ class Sidedraw extends Component {
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
             <section>
-              <div className="History">
+              <div className="history">
                 <img className="sidedrawicons" src={History} alt="" />
                 <NavLink
                   className="sidedrawlink"

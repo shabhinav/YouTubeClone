@@ -12,8 +12,32 @@
         text-decoration: none;
       }
     }
+    p {
+      font-size: 13px;
+    }
   }
-  .heading {
-    margin: 10px 0px 10px 0px;
+  .headingSection {
+    background-color: black;
+    padding: 50px 0px 60px 0px;
+    margin: 0px 0px 10px 0px;
+    .heading {
+      display: inline-block;
+      border: 5px solid white;
+      color: white;
+      margin: 10px 0px 20px 0px;
+      font-weight: 900;
+      padding: 10px 20px 10px 20px !important;
+      // text-decoration: underline;
+      font-size: 55px;
+    }
+  }
+  .description {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p {
+    margin-bottom: 0px;
   }
 }

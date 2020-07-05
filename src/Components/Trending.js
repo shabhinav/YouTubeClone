@@ -29,37 +29,42 @@ class Trending extends Component {
   render() {
     return (
       <div className="Trending container">
-        {this.state.trendingVideosdata.map((videoId) => (
-          <div className="row" key={Math.random()}>
-            <div className="col-4">
-              <iframe
-                className="videoframe"
-                src={"http://youtube.com/embed/" + videoId.id}
-                title="video"
-                onClick={() => this.props.onVideoPlayer(videoId.id)}
-              />
+        <div className="headingSection">
+          <h5 className="heading">Trending List</h5>
+        </div>
+        <div>
+          {this.state.trendingVideosdata.map((videoId) => (
+            <div className="row" key={Math.random()}>
+              <div className="col-4">
+                <iframe
+                  className="videoframe"
+                  src={"http://youtube.com/embed/" + videoId.id}
+                  title="video"
+                  onClick={() => this.props.onVideoPlayer(videoId.id)}
+                />
+              </div>
+              <div className="col-6">
+                <NavLink
+                  className="videolink"
+                  to="/videoplayer"
+                  onClick={() =>
+                    this.props.onVideoPlayer(videoId.id, videoId.snippet.title)
+                  }
+                >
+                  <h6>
+                    <strong>{videoId.snippet.title}</strong>
+                  </h6>
+                </NavLink>
+                <p>
+                  {videoId.snippet.channelTitle} <img src={done} alt="" />
+                </p>
+                <p className="description" style={{ textOverflow: "ellipsis" }}>
+                  {videoId.snippet.description}
+                </p>
+              </div>
             </div>
-            <div className="col-6">
-              <NavLink
-                className="videolink"
-                to="/videoplayer"
-                onClick={() =>
-                  this.props.onVideoPlayer(videoId.id, videoId.snippet.title)
-                }
-              >
-                <h6>
-                  <strong>{videoId.snippet.title}</strong>
-                </h6>
-              </NavLink>
-              <p>
-                {videoId.snippet.channelTitle} <img src={done} alt="" />
-              </p>
-              <p className="description" style={{ textOverflow: "ellipsis" }}>
-                {videoId.snippet.description}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

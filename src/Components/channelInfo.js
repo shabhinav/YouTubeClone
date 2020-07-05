@@ -10,35 +10,39 @@ class ChannelInfo extends Component {
     console.log(this.props.channelName);
     return (
       <div className="ChannelInfo container">
-        <div>
-          <h1 className="heading">{this.props.channelName}</h1>
+        <div className=" headingSection container">
+          <h1 className="heading ">{this.props.channelName}</h1>
         </div>
-        {this.props.channeldetails.map((channelvideo) => (
-          <div key={Math.random()}>
-            <div
-              className="row"
-              onClick={() =>
-                this.props.onVideoPlayer(
-                  channelvideo.id.videoId,
-                  channelvideo.snippet.title
-                )
-              }
-            >
-              <div className="col-4 videothumbnail">
-                <NavLink to="/videoplayer">
-                  <img src={channelvideo.snippet.thumbnails.medium.url} />
-                </NavLink>
-              </div>
-              <div className="col-6 videotitle">
-                <NavLink to="/videoplayer" className="title">
-                  {channelvideo.snippet.title}
-                </NavLink>
-                <p>{channelvideo.snippet.channelTitle}</p>
-                <img src={done} alt="" />
+        <div>
+          {this.props.channeldetails.map((channelvideo) => (
+            <div key={Math.random()}>
+              <div
+                className="row"
+                onClick={() =>
+                  this.props.onVideoPlayer(
+                    channelvideo.id.videoId,
+                    channelvideo.snippet.title
+                  )
+                }
+              >
+                <div className="col-4 videothumbnail">
+                  <NavLink to="/videoplayer">
+                    <img src={channelvideo.snippet.thumbnails.medium.url} />
+                  </NavLink>
+                </div>
+                <div className="col-6 videotitle">
+                  <NavLink to="/videoplayer" className="title">
+                    {channelvideo.snippet.title}
+                  </NavLink>
+                  <p>
+                    {channelvideo.snippet.channelTitle} <img src={done} alt="" />
+                  </p>
+                  <p className="description">{channelvideo.snippet.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }
