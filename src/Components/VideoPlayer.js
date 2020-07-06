@@ -37,37 +37,48 @@ class VideoPlayer extends Component {
             <Comment />
           </div>
           <div className="col-md-4 vidrecomend">
-            {this.state.recomendvideo.map((recomendvideo) => (
-              <div key={Math.random()}>
-                <NavLink
-                  to="/videoplayer"
-                  onClick={() =>
-                    this.props.onVideoPlayer(
-                      recomendvideo.id.videoId,
-                      recomendvideo.snippet.title
-                    )
-                  }
-                >
-                  <img
-                    className="HomeVideos"
-                    src={recomendvideo.snippet.thumbnails.medium.url}
-                  />
-                </NavLink>
-                {/* <iframe title='video' src={'http://youtube.com/embed/'+recomendvideo.id.videoId} className='recomendvideo'/> */}
-                <p
-                  className="videotitle"
-                  style={{ fontSize: "15px", textAlign: "justify" }}
-                  onClick={() =>
-                    this.props.onVideoPlayer(
-                      recomendvideo.id.videoId,
-                      recomendvideo.snippet.title
-                    )
-                  }
-                >
-                  <strong>{recomendvideo.snippet.title}</strong>
-                </p>
-              </div>
-            ))}
+            <div>
+              <h6
+                style={{ fontWeight: "700", textAlign: "left", marginLeft: "15px" }}
+              >
+                UP Next
+              </h6>
+            </div>
+            <div>
+              {this.state.recomendvideo.map((recomendvideo) => (
+                <div key={Math.random()}>
+                  <NavLink
+                    to="/videoplayer"
+                    onClick={() =>
+                      this.props.onVideoPlayer(
+                        recomendvideo.id.videoId,
+                        recomendvideo.snippet.title
+                      )
+                    }
+                  >
+                    <img
+                      className="HomeVideos"
+                      src={recomendvideo.snippet.thumbnails.medium.url}
+                    />
+                  </NavLink>
+                  {/* <iframe title='video' src={'http://youtube.com/embed/'+recomendvideo.id.videoId} className='recomendvideo'/> */}
+                  <div>
+                    <p
+                      className="videotitle"
+                      style={{ textAlign: "left", fontSize: "15px" }}
+                      onClick={() =>
+                        this.props.onVideoPlayer(
+                          recomendvideo.id.videoId,
+                          recomendvideo.snippet.title
+                        )
+                      }
+                    >
+                      <strong>{recomendvideo.snippet.title}</strong>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

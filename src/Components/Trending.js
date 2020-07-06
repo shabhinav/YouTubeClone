@@ -16,7 +16,7 @@ class Trending extends Component {
 
   async componentDidMount() {
     let Trendinglist = await axios.get(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=15&chart=mostPopular&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=7&chart=mostPopular&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
     );
     console.log(Trendinglist.data.items);
     this.setState({

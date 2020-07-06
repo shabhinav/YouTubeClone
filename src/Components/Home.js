@@ -73,7 +73,7 @@ class Home extends Component {
                     marginTop: "25px",
                     textAlign: "left",
                     marginLeft: "20px",
-                    fontWeight: "500",
+                    fontWeight: "700",
                   }}
                 >
                   {this.state.newCategoryArray[0].name}
@@ -138,7 +138,14 @@ class Home extends Component {
               {/* second category */}
               <div>
                 <div className="container">
-                  <h4 style={{ textAlign: "left", marginLeft: "20px" }}>
+                  <h4
+                    style={{
+                      textAlign: "left",
+                      marginLeft: "20px",
+                      marginTop: "35px",
+                      fontWeight: "700",
+                    }}
+                  >
                     {this.state.newCategoryArray[1].name}
                   </h4>
                 </div>
@@ -205,7 +212,14 @@ class Home extends Component {
               {/* Third category */}
               <div>
                 <div className="container">
-                  <h4 style={{ textAlign: "left", marginLeft: "20px" }}>
+                  <h4
+                    style={{
+                      textAlign: "left",
+                      marginLeft: "20px",
+                      marginTop: "35px",
+                      fontWeight: "700",
+                    }}
+                  >
                     {this.state.newCategoryArray[2].name}
                   </h4>
                 </div>

@@ -9,6 +9,7 @@ import Sidedrawer from "./Sidedraw";
 import signout from "../Assests/login.svg";
 import Backdrop from "./backdrop";
 import Search from "../Assests/search.svg";
+import youtube from "../Assests/youtube.svg";
 
 class Searchbar extends Component {
   constructor(props) {
@@ -138,7 +139,10 @@ class Searchbar extends Component {
             {sidedrawer}
             {backDrop}
             <a href="/" className="navbar-brand navbrand">
-              Navbar
+              <img src={youtube} alt="" />
+              <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
+                YouTube
+              </span>
             </a>
             <form className="form-inline searchbox" onSubmit={this.reloadHandler}>
               <input

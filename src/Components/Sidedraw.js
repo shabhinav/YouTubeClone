@@ -8,7 +8,7 @@ import Message from "../Assests/message.png";
 import History from "../Assests/history.png";
 import Home from "../Assests/home.svg";
 import SignOut from "../Assests/login.svg";
-import { loginDetails } from "../store/action";
+import youtube from "../Assests/youtube.svg";
 
 class Sidedraw extends Component {
   signoutHandler = () => {
@@ -53,10 +53,13 @@ class Sidedraw extends Component {
             className="sidedraw"
             onClick={this.props.sidedrawerHandler}
           />
+          <img style={{ marginLeft: "15px" }} src={youtube} alt="" />
+          <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
+            YouTube
+          </span>{" "}
           {/* <h5 >YouTube</h5> */}
         </div>
         <div className="link">
-          <hr />
           <div className="Home">
             <img className="sidedrawicons" src={Home} alt="" />
             <NavLink
@@ -104,7 +107,7 @@ class Sidedraw extends Component {
           {localStorage.getItem("LoginEmail") ||
           localStorage.getItem("SignUpEmail") ? (
             <section>
-              <div className="history">
+              <div className="History">
                 <img className="sidedrawicons" src={History} alt="" />
                 <NavLink
                   className="sidedrawlink"

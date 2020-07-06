@@ -29,6 +29,9 @@ class History extends Component {
     console.log("data", this.state.keys);
     return (
       <div className="history mt-3 container">
+        <div>
+          <h5 style={{ textAlign: "left", fontWeight: "700" }}>History</h5>
+        </div>
         <div className="historysection">
           <div className="video">
             {this.state.keys.map((video) => (
