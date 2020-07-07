@@ -25,3 +25,17 @@
     margin-bottom: 10px;
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .category {
+    .videothumbnail {
+      padding: 0px 0px 10px 0px;
+    }
+    .video {
+      margin-bottom: 20px !important;
+    }
+    .title {
+      display: none;
+    }
+  }
+}

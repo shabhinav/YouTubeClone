@@ -26,7 +26,11 @@ class Category extends Component {
                   )
                 }
               >
-                <img src={category.snippet.thumbnails.medium.url} alt="" />
+                <img
+                  className="video"
+                  src={category.snippet.thumbnails.medium.url}
+                  alt=""
+                />
               </NavLink>
             </div>
             <div className="col-6 title">

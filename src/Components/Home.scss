@@ -61,3 +61,17 @@
     text-align: left;
   }
 }
+
+//
+
+@media only screen and (max-width: 425px) {
+  .homevideotitle {
+    display: none !important;
+  }
+  .channelTitle {
+    display: none !important;
+  }
+  .HomeVideos {
+    margin-bottom: 10px;
+  }
+}
