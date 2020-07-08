@@ -53,10 +53,12 @@ class Sidedraw extends Component {
             className="sidedraw"
             onClick={this.props.sidedrawerHandler}
           />
-          <img style={{ marginLeft: "15px" }} src={youtube} alt="" />
-          <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
-            YouTube
-          </span>{" "}
+          <a href="/" style={{ textDecoration: "none" }}>
+            <img style={{ marginLeft: "15px" }} src={youtube} alt="" />
+            <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
+              YouTube
+            </span>
+          </a>
           {/* <h5 >YouTube</h5> */}
         </div>
         <div className="link">

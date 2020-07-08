@@ -1,49 +1,49 @@
-.comment{
-    .profileimage{
-        border-radius: 100px;
-        width:50px;
-        height:50px;
-    }
-    input{
-        width: 80%;
-        border:none;
-        border-bottom: 1px solid rgb(172, 169, 169);
-        background-color: #F9F9F9;
-        margin-left: 10px;
-        outline: none;
-    }
-    .cancelbtn{
-        margin-left: 15px;
-        border: none;
-        outline: none;
-    }&hover{
-        background-color:#F9F9F9 ;
-        border: none;
-        outline: none;
-    }
-    p{
-        margin:0px;
-        font-size: 15px;
-    }
-    .displaybtn{
-        text-align: right;
-        // margin-left: 100px;
-    }
+.comment {
+  .profileimage {
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+  }
+  input {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid rgb(172, 169, 169);
+    background-color: #f9f9f9;
+    margin-left: 10px;
+    outline: none;
+  }
+  .cancelbtn {
+    margin-right: 20px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+  }
+  &hover {
+    background-color: #f9f9f9;
+    border: none;
+    outline: none;
+  }
+  p {
+    margin: 0px;
+    font-size: 15px;
+  }
+  .displaybtn {
+    text-align: right;
+    // margin-left: 100px;
+  }
 }
 
-
-
-@media only screen and (max-width: 320px){
-    input{
-        width: 60% !important;
-    }
-    .displaybtn{
-        margin-top: 10px !important;
-    }
-    .addbtn{
-        font-size: 12px !important;
-    }
-    .cancelbtn{
-        font-size: 12px !important;
-    }
+@media only screen and (max-width: 320px) {
+  input {
+    width: 60% !important;
+  }
+  .displaybtn {
+    margin-top: 10px !important;
+  }
+  .addbtn {
+    font-size: 12px !important;
+  }
+  .cancelbtn {
+    font-size: 12px !important;
+  }
 }

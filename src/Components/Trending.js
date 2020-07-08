@@ -35,15 +35,16 @@ class Trending extends Component {
         <div>
           {this.state.trendingVideosdata.map((videoId) => (
             <div className="row" key={Math.random()}>
-              <div className="col-4">
-                <iframe
-                  className="videoframe"
-                  src={"http://youtube.com/embed/" + videoId.id}
-                  title="video"
-                  onClick={() => this.props.onVideoPlayer(videoId.id)}
-                />
+              <div className="col-lg-4 col-sm-12 videothumbnail">
+                <NavLink to="/videoplayer">
+                  <img
+                    className="video"
+                    src={videoId.snippet.thumbnails.medium.url}
+                    alt=""
+                  />
+                </NavLink>
               </div>
-              <div className="col-6">
+              <div className="col-lg-6 title">
                 <NavLink
                   className="videolink"
                   to="/videoplayer"

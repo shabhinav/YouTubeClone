@@ -38,8 +38,25 @@
   }
 }
 @media only screen and (max-width: 425px) {
-  .videoframe {
-    width: 250px !important;
-    height: 150px !important;
+  // .videoframe {
+  //   width: 250px !important;
+  //   height: 150px !important;
+  // }
+  .Trending {
+    .videothumbnail {
+      padding: 0px;
+      margin-bottom: 10px;
+    }
+    .row {
+      margin: 0px 0px 30px 10px;
+      // margin-bottom: 35px;
+    }
+    .title {
+      display: none;
+    }
+    .video {
+      width: 275px !important;
+      height: 175px !important;
+    }
   }
 }

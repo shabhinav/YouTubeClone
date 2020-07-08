@@ -28,12 +28,14 @@
 
 @media only screen and (max-width: 425px) {
   .category {
-    .videothumbnail {
-      padding: 0px 0px 10px 0px;
+    .row {
+      margin-bottom: 35px;
     }
     .video {
-      margin-bottom: 20px !important;
+      width: 275px !important;
+      height: 175px !important;
     }
+
     .title {
       display: none;
     }

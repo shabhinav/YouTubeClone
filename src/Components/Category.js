@@ -7,16 +7,13 @@ import * as actionCreators from "../store/action/index";
 
 class Category extends Component {
   render() {
-    console.log("category", this.props.category);
+    // console.log("category", this.props.category);
+    console.log("");
     return (
       <div className="category container">
         {this.props.category.map((category) => (
-          <div className="row">
-            <div className="col-4 videothumbnail">
-              {/* <iframe
-                title="video"
-                src={"https://www.youtube.com/embed/" + category.id.videoId}
-              /> */}
+          <div className="row ">
+            <div className="col-lg-4 col-sm-12 videothumbnail">
               <NavLink
                 to="/videoplayer"
                 onClick={() =>

@@ -31,7 +31,10 @@ class VideoPlayer extends Component {
               src={"http://youtube.com/embed/" + this.props.videoId}
               className="mainvideo"
             />
-            <h5 style={{ textAlign: "left", marginTop: "10px" }}>
+            <h5
+              className="mainVideoTitle"
+              style={{ textAlign: "left", marginTop: "10px" }}
+            >
               {this.props.videoTitle}
             </h5>
             <Comment />
