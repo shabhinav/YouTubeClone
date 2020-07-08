@@ -25,6 +25,7 @@ class SearchResult extends Component {
                 }
               >
                 <img
+                  alt=""
                   className="HomeVideos"
                   src={val.snippet.thumbnails.medium.url}
                 />

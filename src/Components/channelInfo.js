@@ -27,7 +27,7 @@ class ChannelInfo extends Component {
               >
                 <div className="col-4 videothumbnail">
                   <NavLink to="/videoplayer">
-                    <img src={channelvideo.snippet.thumbnails.medium.url} />
+                    <img alt="" src={channelvideo.snippet.thumbnails.medium.url} />
                   </NavLink>
                 </div>
                 <div className="col-6 videotitle">

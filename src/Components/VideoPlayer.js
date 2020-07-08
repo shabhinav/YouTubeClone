@@ -60,6 +60,7 @@ class VideoPlayer extends Component {
                     }
                   >
                     <img
+                      alt=""
                       className="HomeVideos"
                       src={recomendvideo.snippet.thumbnails.medium.url}
                     />

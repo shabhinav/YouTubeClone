@@ -93,6 +93,7 @@ class Home extends Component {
                         }
                       >
                         <img
+                          alt=""
                           className="HomeVideos"
                           src={data.snippet.thumbnails.medium.url}
                         />
@@ -163,6 +164,7 @@ class Home extends Component {
                           }
                         >
                           <img
+                            alt=""
                             className="HomeVideos"
                             src={data.snippet.thumbnails.medium.url}
                           />
@@ -237,6 +239,7 @@ class Home extends Component {
                           }
                         >
                           <img
+                            alt=""
                             className="HomeVideos"
                             src={data.snippet.thumbnails.medium.url}
                           />
