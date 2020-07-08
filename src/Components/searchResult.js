@@ -11,7 +11,6 @@ class SearchResult extends Component {
   };
 
   render() {
-    console.log("searchres", this.props.value);
     return (
       <div className="searchResult container">
         {/* <Searchbar/> */}
@@ -64,7 +63,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),

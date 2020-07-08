@@ -40,7 +40,6 @@ class Login extends Component {
   };
 
   render() {
-    console.log("", this.state.SignInError);
     return (
       <div className="Login">
         <div className="Form">

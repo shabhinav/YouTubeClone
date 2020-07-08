@@ -75,7 +75,6 @@ export const profile = () => {
 };
 
 export const playVideo = (videoId, videoTitle) => {
-  console.log(videoTitle);
   return {
     type: actionTypes.VIDEOPLAYER,
     videoId: videoId,
@@ -84,7 +83,6 @@ export const playVideo = (videoId, videoTitle) => {
 };
 
 export const loginDetails = (loginData) => {
-  console.log("loginData", loginData);
   return {
     type: actionTypes.LOGINDETAILS,
     loginData: loginData,
@@ -92,7 +90,6 @@ export const loginDetails = (loginData) => {
 };
 
 const categorySuccess = (catsuccess) => {
-  console.log("catsuccess", catsuccess);
   return {
     type: actionTypes.CATEGORYSUCCESS,
     categoryDetails: {
@@ -102,7 +99,6 @@ const categorySuccess = (catsuccess) => {
 };
 
 const categoryFail = (catFailure) => {
-  console.log("catsuccess", catFailure);
   return {
     type: actionTypes.CATEGORYFAILURE,
     failed: {
@@ -112,7 +108,6 @@ const categoryFail = (catFailure) => {
 };
 
 const successData = (success) => {
-  //   console.log("success", success);
   return {
     type: actionTypes.SUCCESSCONDITION,
     getData: {

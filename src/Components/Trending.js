@@ -18,12 +18,9 @@ class Trending extends Component {
     let Trendinglist = await axios.get(
       `https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=7&chart=mostPopular&key=${process.env.REACT_APP_NOT_SECRET_CODE}`
     );
-    console.log(Trendinglist.data.items);
     this.setState({
       trendingVideosdata: Trendinglist.data.items,
     });
-
-    console.log();
   }
 
   render() {
@@ -72,7 +69,6 @@ class Trending extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),

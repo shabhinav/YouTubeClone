@@ -52,7 +52,6 @@ class Searchbar extends Component {
     this.setState({
       sidedrawer: !this.state.sidedrawer,
     });
-    console.log(this.state.sidedrawer);
   };
 
   signoutHandler = () => {
@@ -61,8 +60,6 @@ class Searchbar extends Component {
   };
 
   render() {
-    console.log("userData", this.props.userData);
-
     let profile;
 
     if (localStorage.getItem("LoginEmail") || localStorage.getItem("SignUpEmail")) {

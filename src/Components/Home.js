@@ -35,7 +35,6 @@ class Home extends Component {
     });
     Promise.all(categoryPromises)
       .then((res) => {
-        console.log("res", res);
         this.setState({
           categoriesDataArray: res,
         });
@@ -50,7 +49,6 @@ class Home extends Component {
   };
 
   sortAccToCat = (catId) => {
-    // console.log(catId)
     this.setState({
       redirect: true,
     });

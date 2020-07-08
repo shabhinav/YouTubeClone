@@ -7,7 +7,6 @@ import done from "../Assests/done.svg";
 
 class ChannelInfo extends Component {
   render() {
-    console.log(this.props.channelName);
     return (
       <div className="ChannelInfo container">
         <div className=" headingSection container">

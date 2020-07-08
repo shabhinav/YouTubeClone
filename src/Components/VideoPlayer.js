@@ -21,7 +21,6 @@ class VideoPlayer extends Component {
   }
 
   render() {
-    console.log(this.props.videohistory);
     return (
       <div className="videoplayer container">
         <div className="row">
@@ -91,7 +90,6 @@ class VideoPlayer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.videoId);
   return {
     videoId: state.videoId,
     videoTitle: state.videotitle,

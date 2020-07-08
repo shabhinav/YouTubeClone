@@ -7,8 +7,6 @@ import * as actionCreators from "../store/action/index";
 
 class Category extends Component {
   render() {
-    // console.log("category", this.props.category);
-    console.log("");
     return (
       <div className="category container">
         {this.props.category.map((category) => (

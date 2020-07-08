@@ -16,8 +16,6 @@ class History extends Component {
       videohistory: this.props.titlehistory,
     });
 
-    console.log("hisvid", video.data.name);
-
     let data = await axios.get(`https://clone-1d9c2.firebaseio.com/VideoId.json`);
 
     await this.setState({
@@ -26,7 +24,6 @@ class History extends Component {
   }
 
   render() {
-    console.log("data", this.state.keys);
     return (
       <div className="history mt-3 container">
         <div>
@@ -75,7 +72,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(dispatch);
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),

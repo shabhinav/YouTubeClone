@@ -16,7 +16,6 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   if (action.type === actionTypes.CHANNELSUCCESS) {
-    console.log("reducer", action.channnelDetails);
     return {
       ...state,
       channelInfo: [...action.channnelDetails.items],
@@ -49,7 +48,6 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionTypes.LOGINDETAILS) {
-    console.log("loginData", action.loginData);
     return {
       ...state,
       logindata: action.loginData,
