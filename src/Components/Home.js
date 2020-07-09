@@ -132,8 +132,7 @@ class Home extends Component {
                   ))}
                 </div>
               </div>
-
-              {/* <hr style={{ width: "90%" }} /> */}
+              <hr style={{ width: "90%" }} />
               {/* second category */}
               <div>
                 <div className="container">
@@ -207,8 +206,7 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-
-              {/* <hr style={{ width: "90%" }} /> */}
+              <hr style={{ width: "90%" }} />
               {/* Third category */}
               <div>
                 <div className="container">

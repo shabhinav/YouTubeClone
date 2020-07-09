@@ -8,7 +8,7 @@ class Shellapp extends Component {
   };
   render() {
     return (
-      <div className="ShellApp">
+      <div className="ShellApp container">
         {this.state.array.map((id) => (
           <div key={Math.random()}>
             <div className="thumbnail"></div>
