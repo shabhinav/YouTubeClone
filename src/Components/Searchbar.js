@@ -164,7 +164,14 @@ class Searchbar extends Component {
             </form>
             {profile}
           </nav>
-          <hr style={{ marginTop: "0px" }} />
+          <hr
+            style={{
+              marginTop: "0px",
+              width: "95%",
+              height: "1.5px",
+              backgroundColor: "#DEDEDE",
+            }}
+          />
         </div>
         <div className="chooseCat">
           {categoryList.map((category) => (

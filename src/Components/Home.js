@@ -77,7 +77,7 @@ class Home extends Component {
                   {this.state.newCategoryArray[0].name}
                 </h5>
               </div>
-              <div className="videoThumbnail container">
+              <div className="videoThumbnail">
                 <div>
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
                     <div key={Math.random()}>
@@ -101,16 +101,21 @@ class Home extends Component {
                 </div>
                 <div className="videotitlesec">
                   {this.state.categoriesDataArray[0].data.items.map((data) => (
-                    <NavLink
-                      className="homevideotitle"
-                      key={Math.random()}
-                      to="/videoplayer"
-                      onClick={() =>
-                        this.props.onVideoPlayer(data.id.videoId, data.snippet.title)
-                      }
-                    >
-                      {data.snippet.title}
-                    </NavLink>
+                    <p className="title">
+                      <NavLink
+                        className="homevideotitle"
+                        key={Math.random()}
+                        to="/videoplayer"
+                        onClick={() =>
+                          this.props.onVideoPlayer(
+                            data.id.videoId,
+                            data.snippet.title
+                          )
+                        }
+                      >
+                        {data.snippet.title}
+                      </NavLink>
+                    </p>
                   ))}
                 </div>
                 <div className="channelTitleSection">
@@ -132,7 +137,15 @@ class Home extends Component {
                   ))}
                 </div>
               </div>
-              <hr style={{ width: "90%" }} />
+              <hr
+                style={{
+                  width: "89%",
+                  height: "3px",
+                  marginTop: "15px",
+                  marginBottom: "0px",
+                  backgroundColor: "#DEDEDE",
+                }}
+              />
               {/* second category */}
               <div>
                 <div className="container">
@@ -171,19 +184,21 @@ class Home extends Component {
                   </div>
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[1].data.items.map((data) => (
-                      <NavLink
-                        className="homevideotitle"
-                        key={Math.random()}
-                        to="/videoplayer"
-                        onClick={() =>
-                          this.props.onVideoPlayer(
-                            data.id.videoId,
-                            data.snippet.title
-                          )
-                        }
-                      >
-                        {data.snippet.title}
-                      </NavLink>
+                      <p className="title">
+                        <NavLink
+                          className="homevideotitle"
+                          key={Math.random()}
+                          to="/videoplayer"
+                          onClick={() =>
+                            this.props.onVideoPlayer(
+                              data.id.videoId,
+                              data.snippet.title
+                            )
+                          }
+                        >
+                          {data.snippet.title}
+                        </NavLink>
+                      </p>
                     ))}
                   </div>
                   <div className="channelTitleSection">
@@ -206,7 +221,7 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <hr style={{ width: "90%" }} />
+              <hr style={{ width: "80%", marginTop: "0px", marginBottom: "0px" }} />
               {/* Third category */}
               <div>
                 <div className="container">
@@ -245,19 +260,21 @@ class Home extends Component {
                   </div>
                   <div className="videotitlesec">
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
-                      <NavLink
-                        className="homevideotitle"
-                        key={Math.random()}
-                        to="/videoplayer"
-                        onClick={() =>
-                          this.props.onVideoPlayer(
-                            data.id.videoId,
-                            data.snippet.title
-                          )
-                        }
-                      >
-                        {data.snippet.title}
-                      </NavLink>
+                      <p className="title">
+                        <NavLink
+                          className="homevideotitle"
+                          key={Math.random()}
+                          to="/videoplayer"
+                          onClick={() =>
+                            this.props.onVideoPlayer(
+                              data.id.videoId,
+                              data.snippet.title
+                            )
+                          }
+                        >
+                          {data.snippet.title}
+                        </NavLink>
+                      </p>
                     ))}
                   </div>
                   <div className="channelTitleSection">

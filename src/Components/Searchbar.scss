@@ -8,17 +8,17 @@
     display: flex;
     flex-flow: row nowrap;
     overflow-x: scroll;
-    width: 100%;
+    width: 95%;
+    margin: auto;
     .link {
-      flex-shrink: 0;
+      font-size: 14px;
       color: black;
       background-color: #eeeeee;
-      margin-right: 10px;
+      margin-left: 10px;
       border: 0.5px solid #d0d0d0;
-      // width: 170px !important;
       border-radius: 100px;
       padding: 5px;
-      min-width: 170px;
+      min-width: 150px;
       margin-bottom: 10px;
       text-decoration: none !important;
       margin-top: 0px;
@@ -42,14 +42,13 @@
   }
 
   .searchbtn {
-    padding: 5px 25px 5px 25px;
+    padding: 5.5px 25px 5px 25px;
     border: 0.1px solid #b8b8b8 !important;
   }
 
   .inputbox {
     width: 80% !important;
     border-radius: 0px !important;
-    outline: none;
     box-shadow: none !important;
     border: 1px solid #ccc !important;
   }

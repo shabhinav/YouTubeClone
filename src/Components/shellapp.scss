@@ -1,17 +1,32 @@
 .ShellApp {
   display: flex;
   flex-flow: row wrap;
+  margin-top: 60px;
+  margin-left: 60px;
   .thumbnail {
-    width: 250px;
-    height: 150px;
+    width: 280px;
+    height: 157px;
     background-color: #dedede;
-    margin: 15px 5px 5px 10px;
+    margin: 15px 10px 5px 10px;
   }
 
   .title {
-    width: 220px;
+    width: 260px;
     height: 25px;
     background-color: #dedede;
-    margin: 5px 5px 15px 10px;
+    margin: 5px 5px 15px -10px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .ShellApp {
+    text-align: left;
+    margin-left: 0px;
+    .thumbnail {
+      margin-left: 20px;
+    }
+    .title {
+      display: none;
+    }
   }
 }
