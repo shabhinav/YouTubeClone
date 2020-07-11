@@ -55,9 +55,7 @@ class Sidedraw extends Component {
           />
           <a href="/" style={{ textDecoration: "none" }}>
             <img style={{ marginLeft: "15px" }} src={youtube} alt="" />
-            <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
-              YouTube
-            </span>
+            <span className="logoText"><strong>YouTube</strong></span>
           </a>
           {/* <h5 >YouTube</h5> */}
         </div>

@@ -20,17 +20,15 @@
   .HomeVideos {
     width: 280px;
     height: 157px;
-    margin-left: 10px;
+    margin-left: 15px;
   }
   .videotitlesec {
     text-align: left;
     height: 0px;
-    // margin-top: 10px;
   }
 
   a {
     color: black;
-    // height: 0px;
     &:hover {
       color: black;
       text-decoration: none;
@@ -79,8 +77,6 @@
 
   .channelTitleSection {
     text-align: left;
-    // margin-top: -10px;
-    // margin-bottom: 20px;
     height: 0px;
   }
 }

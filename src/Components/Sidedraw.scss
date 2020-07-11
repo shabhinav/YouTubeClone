@@ -17,7 +17,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 18%;
+  width: 17%;
   z-index: 2;
   background-color: white;
   transform: translateX(100%);
@@ -52,6 +52,13 @@ body {
   }
   .loginLink {
     @include sidedrawLinkHover;
+  }
+
+  .logoText {
+    margin-left: 3px;
+    color: black;
+    margin-top: 3px;
+    font-family: "Oswald", sans-serif;
   }
 }
 

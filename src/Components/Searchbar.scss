@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 .Searchbar {
   .Navbar {
     width: 100%;
@@ -10,6 +11,8 @@
     overflow-x: scroll;
     width: 95%;
     margin: auto;
+    background-color: #f9f9f9;
+
     .link {
       font-size: 14px;
       color: black;
@@ -77,6 +80,13 @@
     padding: 10px 50px 10px 50px !important;
     margin: 5px 0px 0px -255px !important;
     text-align: center !important;
+  }
+
+  .logoText {
+    margin-left: 3px;
+    color: black;
+    margin-top: 3px;
+    font-family: "Oswald", sans-serif;
   }
 }
 

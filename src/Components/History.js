@@ -15,7 +15,7 @@ class History extends Component {
       videoid: this.props.videohistory,
       videohistory: this.props.titlehistory,
     });
-
+    console.log(video);
     let data = await axios.get(`https://clone-1d9c2.firebaseio.com/VideoId.json`);
 
     await this.setState({

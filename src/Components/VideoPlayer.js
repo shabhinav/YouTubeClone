@@ -22,9 +22,9 @@ class VideoPlayer extends Component {
 
   render() {
     return (
-      <div className="videoplayer container">
+      <div className="videoplayer">
         <div className="row">
-          <div className="col-md-6 mainscreen">
+          <div className="mainscreen">
             <iframe
               title="video"
               src={"http://youtube.com/embed/" + this.props.videoId}
@@ -38,17 +38,17 @@ class VideoPlayer extends Component {
             </h5>
             <Comment />
           </div>
-          <div className="col-md-4 vidrecomend">
+          <div className="vidrecomend">
             <div>
               <h6
-                style={{ fontWeight: "700", textAlign: "left", marginLeft: "15px" }}
+                style={{ fontWeight: "700", textAlign: "left", marginLeft: "3rem" }}
               >
                 UP Next
               </h6>
             </div>
-            <div>
+            <div style={{ textAlign: "left" }}>
               {this.state.recomendvideo.map((recomendvideo) => (
-                <div key={Math.random()}>
+                <div key={Math.random()} style={{ marginBottom: "10px" }}>
                   <NavLink
                     to="/videoplayer"
                     onClick={() =>
@@ -65,10 +65,13 @@ class VideoPlayer extends Component {
                     />
                   </NavLink>
                   {/* <iframe title='video' src={'http://youtube.com/embed/'+recomendvideo.id.videoId} className='recomendvideo'/> */}
-                  <div>
+                  <div style={{ display: "inline-block", marginLeft: "8px" }}>
                     <p
                       className="videotitle"
-                      style={{ textAlign: "left", fontSize: "15px" }}
+                      style={{
+                        textAlign: "left",
+                        fontSize: "14px",
+                      }}
                       onClick={() =>
                         this.props.onVideoPlayer(
                           recomendvideo.id.videoId,

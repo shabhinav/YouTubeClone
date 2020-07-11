@@ -137,8 +137,8 @@ class Searchbar extends Component {
             {backDrop}
             <a href="/" className="navbar-brand navbrand">
               <img src={youtube} alt="" />
-              <span style={{ marginLeft: "3px", color: "black", marginTop: "3px" }}>
-                YouTube
+              <span className="logoText">
+                <strong>YouTube</strong>
               </span>
             </a>
             <form className="form-inline searchbox" onSubmit={this.reloadHandler}>
@@ -164,6 +164,7 @@ class Searchbar extends Component {
             </form>
             {profile}
           </nav>
+          {/* <div style={{ paddingTop: "40px" }}> */}
           <hr
             style={{
               marginTop: "0px",
@@ -172,6 +173,7 @@ class Searchbar extends Component {
               backgroundColor: "#DEDEDE",
             }}
           />
+          {/* </div> */}
         </div>
         <div className="chooseCat">
           {categoryList.map((category) => (

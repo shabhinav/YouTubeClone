@@ -64,8 +64,8 @@ class Home extends Component {
           </div>
         ) : (
           <div>
-            <div className="style">
-              <div className="container">
+            <div>
+              <div style={{ margin: "30px 0px 30px 60px" }}>
                 <h5
                   style={{
                     marginTop: "25px",
@@ -141,24 +141,26 @@ class Home extends Component {
                 style={{
                   width: "89%",
                   height: "3px",
-                  marginTop: "15px",
+                  marginTop: "25px",
                   marginBottom: "0px",
                   backgroundColor: "#DEDEDE",
                 }}
               />
               {/* second category */}
               <div>
-                <div className="container">
-                  <h4
-                    style={{
-                      textAlign: "left",
-                      marginLeft: "20px",
-                      marginTop: "35px",
-                      fontWeight: "700",
-                    }}
-                  >
-                    {this.state.newCategoryArray[1].name}
-                  </h4>
+                <div>
+                  <div style={{ margin: "30px 0px 30px 60px" }}>
+                    <h4
+                      style={{
+                        textAlign: "left",
+                        marginLeft: "20px",
+                        marginTop: "35px",
+                        fontWeight: "700",
+                      }}
+                    >
+                      {this.state.newCategoryArray[1].name}
+                    </h4>
+                  </div>
                 </div>
                 <div className="videoThumbnail">
                   <div>
@@ -221,20 +223,30 @@ class Home extends Component {
                   </div>
                 </div>
               </div>
-              <hr style={{ width: "80%", marginTop: "0px", marginBottom: "0px" }} />
+              <hr
+                style={{
+                  width: "89%",
+                  height: "3px",
+                  marginTop: "35px",
+                  marginBottom: "0px",
+                  backgroundColor: "#DEDEDE",
+                }}
+              />{" "}
               {/* Third category */}
               <div>
-                <div className="container">
-                  <h4
-                    style={{
-                      textAlign: "left",
-                      marginLeft: "20px",
-                      marginTop: "35px",
-                      fontWeight: "700",
-                    }}
-                  >
-                    {this.state.newCategoryArray[2].name}
-                  </h4>
+                <div>
+                  <div style={{ margin: "30px 0px 30px 60px" }}>
+                    <h4
+                      style={{
+                        textAlign: "left",
+                        marginLeft: "20px",
+                        marginTop: "35px",
+                        fontWeight: "700",
+                      }}
+                    >
+                      {this.state.newCategoryArray[2].name}
+                    </h4>
+                  </div>
                 </div>
                 <div className="videoThumbnail">
                   <div>
@@ -277,7 +289,10 @@ class Home extends Component {
                       </p>
                     ))}
                   </div>
-                  <div className="channelTitleSection">
+                  <div
+                    className="channelTitleSection"
+                    style={{ paddingBottom: "20px" }}
+                  >
                     {this.state.categoriesDataArray[2].data.items.map((data) => (
                       <NavLink
                         key={Math.random()}
