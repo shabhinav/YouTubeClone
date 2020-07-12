@@ -55,6 +55,7 @@ class Home extends Component {
   };
 
   render() {
+    console.log(this.state.categoriesDataArray);
     return (
       //main component
       <div className="home">

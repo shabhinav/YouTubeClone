@@ -9,6 +9,7 @@ class Comment extends Component {
       comment: "",
       showbutton: false,
       blankinput: "",
+      displayName: false,
     };
     this.comment = React.createRef();
   }
@@ -28,6 +29,7 @@ class Comment extends Component {
   addcomment = () => {
     this.setState({
       comment: this.comment.current.value,
+      displayName: true,
     });
   };
 
@@ -54,6 +56,26 @@ class Comment extends Component {
         </div>
       );
     }
+
+    let commentName;
+
+    if (localStorage.getItem("LoginEmail") || localStorage.getItem("SignUpEmail")) {
+      commentName = (
+        <div className="commentsection">
+          {showbutton}
+          <h6
+            style={{ fontSize: "14px", display: "inline-block", marginLeft: "5px" }}
+          >
+            <strong>
+              {localStorage.getItem("LoginEmail") ||
+                localStorage.getItem("SignUpEmail")}
+              :
+            </strong>
+          </h6>
+          <p style={{ display: "inline-block" }}>{this.state.comment}</p>
+        </div>
+      );
+    }
     return (
       <div className="comment">
         <hr />
@@ -69,13 +91,7 @@ class Comment extends Component {
           ref={this.comment}
           onClick={this.showButtonHandler}
         />
-        <div className="commentsection">
-          {showbutton}
-          <h6 style={{ fontSize: "12px" }}>
-            <strong>{this.props.userData.email}</strong>
-          </h6>
-          <p>{this.state.comment}</p>
-        </div>
+        {commentName}
         {/* </form> */}
       </div>
     );

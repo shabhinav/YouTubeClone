@@ -32,7 +32,7 @@ class VideoPlayer extends Component {
             />
             <h5
               className="mainVideoTitle"
-              style={{ textAlign: "left", marginTop: "10px" }}
+              style={{ textAlign: "left", marginTop: "10px", marginLeft: "55px" }}
             >
               {this.props.videoTitle}
             </h5>
