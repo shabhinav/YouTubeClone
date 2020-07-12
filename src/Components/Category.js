@@ -45,9 +45,7 @@ class Category extends Component {
               <p>
                 {category.snippet.channelTitle} <img src={done} alt="" />
               </p>
-              <p className="description" style={{ textOverflow: "ellipsis" }}>
-                {category.snippet.description}
-              </p>
+              <p className="description">{category.snippet.description}</p>
             </div>
           </div>
         ))}

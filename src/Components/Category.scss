@@ -1,8 +1,5 @@
 .category {
   margin-top: 50px;
-  img {
-    background-color: #dedede;
-  }
   .title {
     text-align: left;
   }
@@ -19,10 +16,12 @@
   }
 
   .description {
-    white-space: nowrap;
+    margin-top: 10px;
     width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
   .videothumbnail {
     margin-bottom: 10px;

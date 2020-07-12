@@ -39,6 +39,10 @@ class Comment extends Component {
     });
   };
 
+  redirectLogin = () => {
+    this.props.history.push("/login");
+  };
+
   render() {
     let showbutton;
     if (this.state.showbutton) {
@@ -57,42 +61,52 @@ class Comment extends Component {
       );
     }
 
-    let commentName;
-
-    if (localStorage.getItem("LoginEmail") || localStorage.getItem("SignUpEmail")) {
-      commentName = (
-        <div className="commentsection">
-          {showbutton}
-          <h6
-            style={{ fontSize: "14px", display: "inline-block", marginLeft: "5px" }}
-          >
-            <strong>
-              {localStorage.getItem("LoginEmail") ||
-                localStorage.getItem("SignUpEmail")}
-              :
-            </strong>
-          </h6>
-          <p style={{ display: "inline-block" }}>{this.state.comment}</p>
-        </div>
-      );
-    }
     return (
       <div className="comment">
         <hr />
-        {/* <form onSubmit={this.onSubmit}> */}
-        <img
-          className="profileimage"
-          src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
-          alt=""
-        />
-        <input
-          type="text"
-          placeholder="Add a public comment..."
-          ref={this.comment}
-          onClick={this.showButtonHandler}
-        />
-        {commentName}
-        {/* </form> */}
+        <h3>ADD COMMENT</h3>
+        {localStorage.getItem("LoginEmail") ||
+        localStorage.getItem("SignUpEmail") ? (
+          <div>
+            <img
+              className="profileimage"
+              src="//lh5.googleusercontent.com/-ymtPego061Q/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnrJE5mUmn4Drd_RtcR_YyZ3Rxdww/s88/photo.jpg"
+              alt=""
+            />
+            <input
+              type="text"
+              placeholder="Add a public comment..."
+              ref={this.comment}
+              onClick={this.showButtonHandler}
+            />
+            <div className="commentsection">
+              {showbutton}
+              <h6
+                style={{
+                  fontSize: "14px",
+                  display: "inline-block",
+                  marginLeft: "5px",
+                }}
+              >
+                <strong>
+                  {localStorage.getItem("LoginEmail") ||
+                    localStorage.getItem("SignUpEmail")}
+                  :
+                </strong>
+              </h6>
+              <p style={{ display: "inline-block" }}>{this.state.comment}</p>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <input
+              type="text"
+              placeholder="Add a public comment..."
+              ref={this.comment}
+              onClick={this.redirectLogin}
+            />
+          </div>
+        )}
       </div>
     );
   }
