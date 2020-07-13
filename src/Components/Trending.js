@@ -54,11 +54,22 @@ class Trending extends Component {
                   </h6>
                 </NavLink>
                 <p>
-                  {videoId.snippet.channelTitle} <img src={done} alt="" />
+                  <NavLink
+                    key={Math.random()}
+                    className="channelTitle"
+                    to="channelinfo"
+                    onClick={() =>
+                      this.props.channelInfo(
+                        videoId.snippet.channelId,
+                        videoId.snippet.channelTitle
+                      )
+                    }
+                  >
+                    {videoId.snippet.channelTitle}
+                    <img style={{ marginLeft: "5px" }} src={done} alt="" />
+                  </NavLink>
                 </p>
-                <p className="description" style={{ textOverflow: "ellipsis" }}>
-                  {videoId.snippet.description}
-                </p>
+                <p className="description">{videoId.snippet.description}</p>
               </div>
             </div>
           ))}
@@ -72,6 +83,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onVideoPlayer: (videoId, videotitle) =>
       dispatch(actionCreators.playVideo(videoId, videotitle)),
+    channelInfo: (channeldata, channelName) =>
+      dispatch(actionCreators.channelInfo(channeldata, channelName)),
   };
 };
 

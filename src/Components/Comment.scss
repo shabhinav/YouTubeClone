@@ -34,16 +34,25 @@
 }
 
 @media only screen and (max-width: 320px) {
-  input {
-    width: 60% !important;
-  }
-  .displaybtn {
-    margin-top: 10px !important;
-  }
-  .addbtn {
-    font-size: 12px !important;
-  }
-  .cancelbtn {
-    font-size: 12px !important;
+  .comment {
+    input {
+      width: 60% !important;
+    }
+    .displaybtn {
+      margin-top: 10px !important;
+    }
+    .addbtn {
+      font-size: 12px !important;
+    }
+    .cancelbtn {
+      font-size: 12px !important;
+    }
+    .commentsection {
+      h6 {
+        margin-top: 10px;
+        margin-left: 40px !important;
+        text-align: left;
+      }
+    }
   }
 }

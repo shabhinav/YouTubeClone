@@ -3,15 +3,26 @@
     margin-top: 5px;
   }
 
-  img {
-    background-color: #dedede;
+  .channelTitle {
+    display: inline-block;
+    width: 250px;
+    height: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    color: grey;
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
   }
 
   .description {
-    white-space: nowrap;
+    margin-top: 10px;
     width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .videolink {

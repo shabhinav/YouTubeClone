@@ -1,15 +1,13 @@
 .searchResult {
   margin-top: 50px;
 
-  img {
-    background-color: #dedede;
-  }
-
   .description {
-    white-space: nowrap;
+    margin-top: 10px;
     width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   p {
@@ -21,5 +19,20 @@
   }
   .title {
     text-align: left;
+  }
+  .videoTitle:hover {
+    text-decoration: none !important;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .searchResult {
+    .HomeVideos {
+      width: 275px !important;
+      height: 175px !important;
+    }
+    .row {
+      margin: 10px 0px 30px 8px !important;
+    }
   }
 }

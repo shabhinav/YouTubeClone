@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Comment.scss";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class Comment extends Component {
   constructor(props) {
@@ -64,7 +65,9 @@ class Comment extends Component {
     return (
       <div className="comment">
         <hr />
-        <h3>ADD COMMENT</h3>
+        <div style={{ textAlign: "left", marginLeft: "40px" }} className="container">
+          <h5>ADD COMMENT</h5>
+        </div>
         {localStorage.getItem("LoginEmail") ||
         localStorage.getItem("SignUpEmail") ? (
           <div>
@@ -81,20 +84,22 @@ class Comment extends Component {
             />
             <div className="commentsection">
               {showbutton}
-              <h6
-                style={{
-                  fontSize: "14px",
-                  display: "inline-block",
-                  marginLeft: "5px",
-                }}
-              >
-                <strong>
-                  {localStorage.getItem("LoginEmail") ||
-                    localStorage.getItem("SignUpEmail")}
-                  :
-                </strong>
-              </h6>
-              <p style={{ display: "inline-block" }}>{this.state.comment}</p>
+              <div style={{ textAlign: "left" }}>
+                <h6
+                  style={{
+                    fontSize: "14px",
+                    display: "inline-block",
+                    marginLeft: "5px",
+                  }}
+                >
+                  <strong>
+                    {localStorage.getItem("LoginEmail") ||
+                      localStorage.getItem("SignUpEmail")}
+                    :
+                  </strong>
+                  <span>{this.state.comment}</span>
+                </h6>
+              </div>
             </div>
           </div>
         ) : (
@@ -118,4 +123,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Comment);
+export default connect(mapStateToProps)(withRouter(Comment));
