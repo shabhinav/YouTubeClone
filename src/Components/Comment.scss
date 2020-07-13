@@ -31,6 +31,13 @@
     text-align: right;
     // margin-left: 100px;
   }
+  .commentsection {
+    h6 {
+      margin-top: 20px;
+      margin-left: 100px;
+      text-align: left;
+    }
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -50,7 +57,7 @@
     .commentsection {
       h6 {
         margin-top: 10px;
-        margin-left: 40px !important;
+        margin-left: 40px;
         text-align: left;
       }
     }

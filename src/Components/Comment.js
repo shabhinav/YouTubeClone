@@ -89,7 +89,6 @@ class Comment extends Component {
                   style={{
                     fontSize: "14px",
                     display: "inline-block",
-                    marginLeft: "5px",
                   }}
                 >
                   <strong>
