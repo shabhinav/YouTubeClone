@@ -27,7 +27,7 @@ class VideoPlayer extends Component {
           <div className="mainscreen">
             <iframe
               title="video"
-              src={"http://youtube.com/embed/" + this.props.videoId}
+              src={"https://youtube.com/embed/" + this.props.videoId}
               className="mainvideo"
             />
             <h5
