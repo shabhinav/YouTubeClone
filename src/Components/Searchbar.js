@@ -124,9 +124,9 @@ class Searchbar extends Component {
       );
     }
     return (
-      <div className="Searchbar">
+      <div className="Searchbar ">
         <div className="Navbar">
-          <nav className="navbar navbar-fixed-top">
+          <nav className="navbar ">
             <img
               src={openMenu}
               alt="openmenu"
